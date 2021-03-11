@@ -51,7 +51,7 @@ bot.on('message', msg => {
     if (text.includes('-cargo')) {
         const rText = text.replace('-cargo', '').trim()
         if (rText === 'games') {
-            var role = msg.member.guild.roles.cache.find(role => role.id === "818235836206153768")
+            var role = msg.member.guild.roles.cache.find(role => role.id=== "818235836206153768")
             msg.member.roles.add(role)
             msg.reply(`Seu cargo foi atualizado com liberação de Gamer, boa partida até\n:wolf::wolf:`)
         }
@@ -65,6 +65,17 @@ bot.on('message', msg => {
             msg.reply(`:wolf:Por favor verique se digitou certo o cargo de desejado no ${informacoes}:wolf:`)
         }
     }
+    if(msg.content === 'Ajuda' || msg.content === 'ajuda')
+    {
+        var role = msg.member.guild.roles.cache.find(role => role.id === "707000297490481262")
+        const informacoes = msg.member.guild.channels.cache.find((channel) => channel.name.includes('informações'))
+        const bots = msg.member.guild.channels.cache.find((channel) => channel.name.includes('bots'))
+        const channel = msg.member.guild.channels.cache.find((channel) => channel.name.includes('ajuda'))
+        const message= `<@${msg.member.id}>:wolf:Se quiser saber como utilizar ganhar cargos está aqui: ${informacoes},\n
+                         Agora se quiser saber como utiliziar os Bots está aqui: ${bots}\n
+                         Se nenhuma das opções ajudar entre em contato com um dos ${role} que irão te ajudar :wolf::wolf:`
+        channel.send((message)) 
+    }
 
 })
 
@@ -77,47 +88,12 @@ bot.on('guildMemberAdd', (member) => {
     const regras = member.guild.channels.cache.find((channel) => channel.name.includes('regras'))
 
 
-    const message = `:wolf:Bem vindo <@${member.id}> ao servidor,\n  Por favor verificar nossas ${regras}:wolf:`
+    const message = `:wolf:Bem vindo <@${member.id}> ao servidor,\n  Por favor verificar nossas ${regras}:wolf:,
+    se precisar de ajuda digite 'Ajuda' em qualquer canal`
 
     channel.send(message)
     var role = member.guild.roles.cache.find(role => role.id === "707012360367505480")
     member.roles.add(role)
 
 })
-
-
-/*bot.on('ban', (message) => {
-    const { member, metions } = message
-
-    const tag = `<@${member.id}>`
-
-    if (
-        member.hasPermission('ADMINISTRATOR') ||
-        member.hasPermission('BAN_MEMBERS')
-    ) {
-        const target = mentions.users.first()
-        if (target) {
-            const targetMember = message.guild.members.chache.get(target.id)
-            targetMember.ban()
-            message.channel.send(`${tag}, Ta banido.`)
-        } else {
-            message.channel.send(`${tag}, Escreve certo por favor`)
-        }
-
-    } else {
-        message.channel.send(`${tag}, Você não pode banir ele`)
-    }
-})
-bot.on(['cc','limpa'], (msg) => {
-    if(msg.content==='cc'){
-        if (msg.member.hasPermission('ADMINISTRATOR')) {
-         msg.channel.msg.fetch().then((results) => {
-               msg.channel.bulkDelete(results)
-            })
-        }
-
-    }
-}
-)*/
-
 
