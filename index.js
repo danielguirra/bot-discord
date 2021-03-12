@@ -50,9 +50,9 @@ bot.on('message', msg => {
     }
     if (text.includes('-cargo')) {
         const rText = text.replace('-cargo', '').trim()
-        var rolere = msg.member.guild.roles.cache.find(role => role.id=== "707012360367505480")
+        var rolere = msg.member.guild.roles.cache.find(role => role.id === "707012360367505480")
         if (rText === 'games') {
-            var role = msg.member.guild.roles.cache.find(role => role.id=== "818235836206153768")
+            var role = msg.member.guild.roles.cache.find(role => role.id === "818235836206153768")
             msg.member.roles.add(role)
             msg.reply(`Seu cargo foi atualizado com liberação de Gamer, boa partida até\n:wolf::wolf:`)
             msg.member.roles.remove(rolere)
@@ -68,16 +68,15 @@ bot.on('message', msg => {
             msg.reply(`:wolf:Por favor verique se digitou certo o cargo de desejado no ${informacoes}:wolf:`)
         }
     }
-    if(msg.content === 'Ajuda' || msg.content === 'ajuda')
-    {
+    if (msg.content === 'Ajuda' || msg.content === 'ajuda') {
         var role = msg.member.guild.roles.cache.find(role => role.id === "707000297490481262")
         const informacoes = msg.member.guild.channels.cache.find((channel) => channel.name.includes('informações'))
         const bots = msg.member.guild.channels.cache.find((channel) => channel.name.includes('bots'))
         const channel = msg.member.guild.channels.cache.find((channel) => channel.name.includes('ajuda'))
-        const message= `<@${msg.member.id}>:wolf:Se quiser saber como utilizar ganhar cargos está aqui: ${informacoes},\n
+        const message = `<@${msg.member.id}>:wolf:Se quiser saber como utilizar ganhar cargos está aqui: ${informacoes},\n
                          Agora se quiser saber como utiliziar os Bots está aqui: ${bots}\n
                          Se nenhuma das opções ajudar entre em contato com um dos ${role} que irão te ajudar :wolf::wolf:`
-        channel.send((message)) 
+        channel.send((message))
     }
 
 })
