@@ -64,14 +64,6 @@ global.bot.on("message", (msg) => {
       }
     }
 
-    // if (text === "salve") {
-    // msg.reply(
-    //   "Auuuuuuuuuuuuuuuuuuuuuu:wolf::wolf::wolf::wolf::wolf::wolf::wolf::wolf:"
-    // );
-    // }
-    // if (text === "hora") {
-    //   hourController.currentTime(msg);
-    // }
     // if (text === "avatar") {
     // msg.reply(
     //   `O seu avatar é esse::wolf::wolf::wolf::wolf:\n` +
