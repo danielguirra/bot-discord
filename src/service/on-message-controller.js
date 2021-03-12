@@ -1,6 +1,5 @@
 const hourController = require("../controllers/hour-controller");
 const helpController = require("../controllers/help-controller");
-
 global.bot.on("message", (msg) => {
   if (msg.author.id !== msg.client.user.id) {
     const text = msg.content.toLowerCase().trim();
@@ -62,6 +61,12 @@ global.bot.on("message", (msg) => {
           `:wolf:Por favor verique se digitou certo o cargo de desejado no ${informacoes}:wolf:`
         );
       }
+    }
+    if (msg.author.id === "409772439137026050" || msg.content === "corvo") {
+      const reactionEmoji = msg.guild.emojis.cache.find(
+        (emoji) => emoji.name === "corvo_itachi"
+      );
+      msg.react(reactionEmoji);
     }
   }
 });
