@@ -63,32 +63,5 @@ global.bot.on("message", (msg) => {
         );
       }
     }
-
-    // if (text === "avatar") {
-    // msg.reply(
-    //   `O seu avatar é esse::wolf::wolf::wolf::wolf:\n` +
-    //     msg.author.displayAvatarURL()
-    // );
-    // }
-    // if (text === "naruto") {
-    //   msg.reply(
-    //     "-p https://www.youtube.com/watch?v=Xc7lUbWEbqY&list=RDXc7lUbWEbqY"
-    //   );
-    // }
-    // if (text === "alok") {
-    //   msg.reply(
-    //     "-p https://open.spotify.com/playlist/37i9dQZF1DWZUWZIwpqsT3#_=_"
-    //   );
-    // }
-    // if (text === "servidor") {
-    //   msg.channel.send(
-    //     `Nome do Serv: ${msg.guild.name}\nTotal de Animais: ${msg.guild.memberCount}:wolf:`
-    //   );
-    // }
-    // if (text === `usuario`) {
-    //   msg.channel.send(
-    //     `Seu Nome de Usuário: ${msg.author.username}\nSeu ID: ${msg.author.id}:wolf:`
-    //   );
-    // }
   }
 });
