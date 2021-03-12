@@ -62,7 +62,7 @@ global.bot.on("message", (msg) => {
         );
       }
     }
-    if (msg.author.id === "409772439137026050" || msg.content === "corvo") {
+    if (msg.author.id === "409772439137026050" || text.includes("corvo")) {
       const reactionEmoji = msg.guild.emojis.cache.find(
         (emoji) => emoji.name === "corvo_itachi"
       );
