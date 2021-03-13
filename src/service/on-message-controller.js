@@ -1,5 +1,6 @@
 const hourController = require("../controllers/hour-controller");
 const helpController = require("../controllers/help-controller");
+const diceController = require("../controllers/dice-controller");
 global.bot.on("message", (msg) => {
   if (msg.author.id !== msg.client.user.id) {
     const text = msg.content.toLowerCase().trim();
@@ -29,6 +30,7 @@ global.bot.on("message", (msg) => {
         break;
       }
     }
+    diceController.dice(msg); //Dice roll
 
     if (text.includes("-cargo")) {
       const rText = text.replace("-cargo", "").trim();
