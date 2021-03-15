@@ -1,7 +1,11 @@
 const hourController = require("../controllers/hour-controller");
 const helpController = require("../controllers/help-controller");
 const diceController = require("../controllers/dice-controller");
-global.bot.on("message", (msg) => {
+const fs = require("fs");
+const prefix = "*";
+const ytdl = require("ytdl-core");
+const queue = new Map();
+global.bot.on("msg", async (msg) => {
   if (msg.author.id !== msg.client.user.id) {
     const text = msg.content.toLowerCase().trim();
     const ifs = [
@@ -71,6 +75,12 @@ global.bot.on("message", (msg) => {
         (emoji) => emoji.name === "corvo_itachi"
       );
       msg.react(reactionEmoji);
+    }
+    if (msg.member.voice.channel === "*ww" || text.includes("*ww")) {
+      const connection = await msg.member.voice.channel.join(); //Faz bot conectar quando ocorre uma mensagem "*ww"
+      connection.play(
+        "https://www.youtube.com/watch?v=2UGvMcZ_V9s&ab_channel=OneStar"
+      );
     }
   }
 });
