@@ -1,4 +1,4 @@
-const currentTime = (msg) => {
+const currentTime = (message) => {
   var data = new Date();
   var dia = data.getDate(); // 1-31
   var dia_sem = data.getDay(); // 0-6 (zero=domingo)
@@ -16,7 +16,7 @@ const currentTime = (msg) => {
   var str_hora = hora + ":" + min + ":" + seg;
 
   // Mostra o resultado
-  msg.reply(
+  message.reply(
     ":wolf::wolf::wolf::wolf::wolf::wolf::wolf::wolf:Hoje é " +
       str_data +
       " às " +
