@@ -1,6 +1,7 @@
 const hourController = require("../controllers/hour-controller");
 const helpController = require("../controllers/help-controller");
 const diceController = require("../controllers/dice-controller");
+const prefix = "*";
 global.bot.on("message", (msg) => {
   if (msg.author.id !== msg.client.user.id) {
     const text = msg.content.toLowerCase().trim();
@@ -10,10 +11,7 @@ global.bot.on("message", (msg) => {
       {
         text: "avatar",
         f: () =>
-          msg.reply(
-            `O seu avatar é esse::wolf::wolf::wolf::wolf:\n` +
-              msg.author.displayAvatarURL()
-          ),
+          msg.reply(`O seu avatar é esse:\n` + msg.author.displayAvatarURL()),
       },
       {
         text: "salve",
@@ -45,7 +43,7 @@ global.bot.on("message", (msg) => {
         );
         msg.member.roles.add(role);
         msg.reply(
-          `Seu cargo foi atualizado com liberação de Gamer, boa partida até\n:wolf::wolf:`
+          `Seu cargo foi atualizado com liberação de Gamer, boa partida até\n:`
         );
         msg.member.roles.remove(rolere);
       } else if (rText === "dev") {
@@ -54,7 +52,7 @@ global.bot.on("message", (msg) => {
         );
         msg.member.roles.add(role);
         msg.reply(
-          `Seu cargo foi atualizado com liberação de Dev, bom estudo até\n:wolf::wolf:`
+          `Seu cargo foi atualizado com liberação de Dev, bom estudo até\n`
         );
         msg.member.roles.remove(rolere);
       } else {

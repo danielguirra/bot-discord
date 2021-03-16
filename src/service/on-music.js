@@ -1,4 +1,4 @@
-const Discord = require("discord.js");
+const helpController = require("../controllers/help-controller");
 const prefix = "*";
 const ytdl = require("ytdl-core");
 const queue = new Map();
@@ -19,7 +19,7 @@ global.bot.on("message", async (message) => {
     stop(message, serverQueue);
     return;
   } else {
-    message.channel.send("Digita certo infeliz");
+    return;
   }
 });
 

@@ -1,4 +1,4 @@
-const currentTime = (message) => {
+const currentTime = (msg) => {
   var data = new Date();
   var dia = data.getDate(); // 1-31
   var dia_sem = data.getDay(); // 0-6 (zero=domingo)
@@ -16,13 +16,7 @@ const currentTime = (message) => {
   var str_hora = hora + ":" + min + ":" + seg;
 
   // Mostra o resultado
-  message.reply(
-    ":wolf::wolf::wolf::wolf::wolf::wolf::wolf::wolf:Hoje é " +
-      str_data +
-      " às " +
-      str_hora +
-      ":wolf::wolf::wolf::wolf::wolf::wolf::wolf::wolf:"
-  );
+  msg.reply("Hoje é " + str_data + " às " + str_hora);
 };
 
 module.exports = { currentTime };
