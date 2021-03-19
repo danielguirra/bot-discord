@@ -27,7 +27,7 @@ global.bot.on("message", async (message) => {
 
 async function execute(message, serverQueue) {
   const args = message.content.split(" ")[1];
-  const url = args.replace(/<(.+)>/g);
+  const url = args.replace(/<(.+)>/g, 1);
 
   const voiceChannel = message.member.voice.channel;
   if (!voiceChannel)
