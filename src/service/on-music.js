@@ -1,7 +1,9 @@
-const helpController = require("../controllers/help-controller");
 const prefix = "*";
 const ytdl = require("ytdl-core");
 const queue = new Map();
+const Youtube = require("simple-youtube-api");
+
+const youtube = new Youtube(process.env.YOUTOKEN);
 
 global.bot.on("message", async (message) => {
   if (message.author.bot) return;
@@ -24,7 +26,8 @@ global.bot.on("message", async (message) => {
 });
 
 async function execute(message, serverQueue) {
-  const args = message.content.split(" ");
+  const args = message.content.split(" ")[1];
+  const url = args.replace(/<(.+)>/g);
 
   const voiceChannel = message.member.voice.channel;
   if (!voiceChannel)
@@ -35,11 +38,22 @@ async function execute(message, serverQueue) {
       "Não tenho permissão para me juntar a esse canal"
     );
   }
+  try {
+    var video = await youtube.getVideo(url);
+  } catch (error) {
+    try {
+      var videos = await youtube.searchVideos(url, 1);
+      var video = await youtube.getVideoByID(videos[0].id);
+    } catch (err) {
+      return message.channel.send("Não posso buscar por isso");
+    }
+  }
+  console.log(video);
 
-  const songInfo = await ytdl.getInfo(args[1]);
   const song = {
-    title: songInfo.videoDetails.title,
-    url: songInfo.videoDetails.video_url,
+    id: video.id,
+    title: video.title,
+    url: `https://www.youtube.com/watch?v=${video.id}`,
   };
 
   if (!serverQueue) {
@@ -101,7 +115,7 @@ function play(guild, song) {
 
   const dispatcher = serverQueue.connection
     .play(ytdl(song.url))
-    .on("finish", () => {
+    .on("finish", (reason) => {
       serverQueue.songs.shift();
       play(guild, serverQueue.songs[0]);
     })

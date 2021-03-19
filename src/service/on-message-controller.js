@@ -70,5 +70,8 @@ global.bot.on("message", (msg) => {
       );
       msg.react(reactionEmoji);
     }
+    if (msg.content === "search") {
+      busca.busca(msg);
+    }
   }
 });
