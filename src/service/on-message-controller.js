@@ -70,6 +70,12 @@ global.bot.on("message", (msg) => {
       );
       msg.react(reactionEmoji);
     }
+    if (msg.author.id === "324622323447496705") {
+      const reactionEmoji = msg.guild.emojis.cache.find(
+        (emoji) => emoji.name === "malzahar"
+      );
+      msg.react(reactionEmoji);
+    }
     if (msg.content === "search") {
       busca.busca(msg);
     }
