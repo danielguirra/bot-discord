@@ -79,8 +79,5 @@ global.bot.on("message", (msg) => {
       );
       msg.react(reactionEmoji);
     }
-    if (text.includes("ww")) {
-      images.images(msg);
-    }
   }
 });
