@@ -44,7 +44,7 @@ global.bot.on("message", (msg) => {
         );
         msg.member.roles.add(role);
         msg.reply(
-          `Seu cargo foi atualizado com liberação de Gamer, boa partida até\n:`
+          `Seu cargo foi atualizado com liberação de Gamer, boa partida até\n`
         );
         msg.member.roles.remove(rolere);
         images.images(msg);
