@@ -1,3 +1,5 @@
+const images = require("../service/images.js");
+
 const help = (msg) => {
   var role = msg.member.guild.roles.cache.find(
     (role) => role.id === "707000297490481262"
@@ -15,6 +17,7 @@ const help = (msg) => {
 Agora se quiser saber como utiliziar os Bots está aqui: ${bots}\n
 Se nenhuma das opções ajudar entre em contato com um dos ${role} que irão te ajudar :wolf::wolf:`;
   msg.reply(message);
+  images.images(msg);
 };
 
 module.exports = { help };
