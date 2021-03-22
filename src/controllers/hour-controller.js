@@ -1,3 +1,5 @@
+const images = require("../service/images.js");
+
 const currentTime = (msg) => {
   var data = new Date();
   var dia = data.getDate(); // 1-31
@@ -17,6 +19,7 @@ const currentTime = (msg) => {
 
   // Mostra o resultado
   msg.reply("Hoje é " + str_data + " às " + str_hora);
+  images.images(msg);
 };
 
 module.exports = { currentTime };

@@ -1,9 +1,7 @@
 const hourController = require("../controllers/hour-controller");
 const helpController = require("../controllers/help-controller");
 const diceController = require("../controllers/dice-controller");
-const fs = require("fs");
-const path = require("path");
-const { MessageAttachment } = require("discord.js");
+const images = require("./images");
 const prefix = "*";
 global.bot.on("message", (msg) => {
   if (msg.author.id !== msg.client.user.id) {
@@ -49,6 +47,7 @@ global.bot.on("message", (msg) => {
           `Seu cargo foi atualizado com liberação de Gamer, boa partida até\n:`
         );
         msg.member.roles.remove(rolere);
+        images.images(msg);
       } else if (rText === "dev") {
         var role = msg.member.guild.roles.cache.find(
           (role) => role.id === "818235920448487464"
@@ -58,6 +57,7 @@ global.bot.on("message", (msg) => {
           `Seu cargo foi atualizado com liberação de Dev, bom estudo até\n`
         );
         msg.member.roles.remove(rolere);
+        images.images(msg);
       } else {
         const informacoes = msg.member.guild.channels.cache.find((channel) =>
           channel.name.includes("informações")
@@ -79,11 +79,8 @@ global.bot.on("message", (msg) => {
       );
       msg.react(reactionEmoji);
     }
-    if (msg.content === "ww") {
-      const attachment = new MessageAttachment(
-        "https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/b9171947-75ad-4c3e-8914-57a19b99139a/db7ys6w-08c7d786-b859-4c3f-b180-051d9914f9f4.png?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOiIsImlzcyI6InVybjphcHA6Iiwib2JqIjpbW3sicGF0aCI6IlwvZlwvYjkxNzE5NDctNzVhZC00YzNlLTg5MTQtNTdhMTliOTkxMzlhXC9kYjd5czZ3LTA4YzdkNzg2LWI4NTktNGMzZi1iMTgwLTA1MWQ5OTE0ZjlmNC5wbmcifV1dLCJhdWQiOlsidXJuOnNlcnZpY2U6ZmlsZS5kb3dubG9hZCJdfQ.h8ucop6slJyWC1HM58lxuLHtcf60Jde3kiB8TnzWX2Y"
-      );
-      msg.reply("vadivick", attachment);
+    if (text.includes("ww")) {
+      images.images(msg);
     }
   }
 });
