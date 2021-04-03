@@ -1,4 +1,4 @@
-const prefix = "*";
+/*const prefix = "*";
 const ytdl = require("ytdl-core");
 const queue = new Map();
 const Youtube = require("simple-youtube-api");
@@ -126,3 +126,4 @@ function play(guild, song) {
   dispatcher.setVolumeLogarithmic(serverQueue.volume / 5);
   serverQueue.textChannel.send(`Vai tocar: **${song.title}**`);
 }
+*/
