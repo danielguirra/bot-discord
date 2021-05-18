@@ -13,3 +13,4 @@ const dice = (msg) => {
 };
 
 module.exports = { dice };
+//Control of the draw dice Controle do dado de sorteio
