@@ -21,4 +21,4 @@ Se nenhuma das opções ajudar entre em contato com um dos ${role} que irão te 
   images.images(msg);
 };
 
-module.exports = { help };
+module.exports = { help }
