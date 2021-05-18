@@ -70,8 +70,9 @@ global.bot.on("message", (msg) => {
     if (msg.author.id === "409772439137026050" || text.includes("corvo")) {
       const reactionEmoji = msg.guild.emojis.cache.find(
         (emoji) => emoji.name === "corvo_itachi"
-      );
+      );if(reactionEmoji === "corvo_itachi"){}
       msg.react(reactionEmoji);
+
     }
     if (msg.author.id === "324622323447496705") {
       const reactionEmoji = msg.guild.emojis.cache.find(
