@@ -81,8 +81,7 @@ global.bot.on("message", (msg) => {
     }
     if (msg.author.id === "324622323447496705") {
       try{const reactionEmoji = msg.guild.emojis.cache.find(
-        (emoji) => emoji.name === "malzahar"
-      );
+        (emoji) => emoji.name === "malzahar");
       msg.react(reactionEmoji);
       
     }
