@@ -2,8 +2,11 @@ const hourController = require("../controllers/hour-controller");
 const helpController = require("../controllers/help-controller");
 const diceController = require("../controllers/dice-controller");
 const images = require("./images");
+const embed = require("./on-embed-role-manager")
+const { DiscordAPIError } = require("discord.js");
 const prefix = "*";
-global.bot.on("message", (msg) => {
+global.bot.on("message", async (msg) => {
+  
   if (msg.author.id !== msg.client.user.id) {
     const text = msg.content.toLowerCase().trim();
     const ifs = [
@@ -89,6 +92,11 @@ global.bot.on("message", (msg) => {
       msg.reply("Lembre-se dos Voids")
     }
   }
+  if (msg.content === 'embed')
+  {
+   channel.send(embed())
+  }
 
   }
+  
 });
