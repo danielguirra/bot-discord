@@ -12,7 +12,7 @@ global.bot.on("message", async (msg) => {
 
   if (msg.author.id !== msg.client.user.id) {
     const text = msg.content.toLowerCase().trim();
-    if (text.includes = 'embed') {
+    if (msg.content === 'Daniel Lindo') {
       roleemoji.roleemoji(msg)
     }
     const ifs = [
