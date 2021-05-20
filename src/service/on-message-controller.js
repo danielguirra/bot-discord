@@ -2,21 +2,19 @@ const hourController = require("../controllers/hour-controller");
 const helpController = require("../controllers/help-controller");
 const diceController = require("../controllers/dice-controller");
 const images = require("./images");
-const banana = require("./on-embed-role-manager")
+const roleemoji = require("./on-embed-role-manager")
 const { DiscordAPIError } = require("discord.js");
 const prefix = "*";
 global.bot.on("message", async (msg) => {
-  
-  
-  
+
+
+
 
   if (msg.author.id !== msg.client.user.id) {
-    if (msg.content === 'embed') {
-      banana.banana(msg)
-    }
-  
-    
     const text = msg.content.toLowerCase().trim();
+    if (text.includes = 'embed') {
+      roleemoji.roleemoji(msg)
+    }
     const ifs = [
       { text: "hora", f: () => hourController.currentTime(msg) },
       { text: "ajuda", f: () => helpController.help(msg) },
@@ -102,7 +100,7 @@ global.bot.on("message", async (msg) => {
         msg.reply("Lembre-se dos Voids")
       }
     }
-    
+
 
   }
 
