@@ -41,7 +41,8 @@ async function execute(message, serverQueue) {
       "Não tenho permissão para me juntar a esse canal"
     );
   }
-  try {
+  try {//Aqui pega o texto e busca na API e pega o id do video
+        // Here take the text and search the API and get the video id
     var video = await youtube.getVideo(url);
   } catch (error) {
     try {
@@ -51,7 +52,7 @@ async function execute(message, serverQueue) {
       return message.channel.send("Não posso buscar por isso");
     }
   }
-  console.log(video);
+  console.log("tá tocano:"+video.title);//returns what is playing, retorna oque está tocando
 
   const song = {
     id: video.id,
@@ -84,11 +85,12 @@ async function execute(message, serverQueue) {
     }
   } else {
     serverQueue.songs.push(song);
-    return message.channel.send(`${song.title}${song.url} Foi adicionado a fila!`);
+    return message.channel.send(//                           //song.url creates a youtube embed with the link
+      `Foi adicionado a fila!\n${song.title}\n${song.url} `);// o song.url cria uma embed do youtube com o link
   }
 }
 
-function skip(message, serverQueue) {
+function skip(message, serverQueue) {//Function for skip music Função que pula a musica
   if (!message.member.voice.channel)
     return message.channel.send("Tem que estar em um canal de voz para pular!");
   if (!serverQueue)
@@ -96,7 +98,7 @@ function skip(message, serverQueue) {
   serverQueue.connection.dispatcher.end();
 }
 
-function stop(message, serverQueue) {
+function stop(message, serverQueue) {//Function for stop music Função que para a musica
   if (!message.member.voice.channel)
     return message.channel.send(
       "Você tem que estar em um canal de voz para parar a música!"
@@ -108,7 +110,7 @@ function stop(message, serverQueue) {
   serverQueue.connection.dispatcher.end();
 }
 
-function play(guild, song) {
+function play(guild, song) {//Function for play music Função que toca a musica
   const serverQueue = queue.get(guild.id);
   if (!song) {
     serverQueue.voiceChannel.leave();
@@ -124,5 +126,6 @@ function play(guild, song) {
     })
     .on("error", (error) => console.error(error));
   dispatcher.setVolumeLogarithmic(serverQueue.volume / 5);
-  serverQueue.textChannel.send(`Vai tocar: **${song.title}** \n${song.url}`);
+  serverQueue.textChannel.send( //song.url creates a youtube embed with the link
+  `Vai tocar: **${song.title}** \n${song.url}`);// o song.url cria uma embed do youtube com o link
 }
