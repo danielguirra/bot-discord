@@ -8,7 +8,8 @@ global.bot.on("guildMemberAdd", (member) => {
     channel.name.includes("regras")
   );
 
-  const message = `:wolf:Bem vindo <@${member.id}> ao servidor,\n  Por favor verificar nossas ${regras}:wolf:,
+  const message = `:wolf:Bem vindo <@${member.id}> ao servidor,\n  
+  Por favor verificar nossas ${regras}:wolf:,
     se precisar de ajuda digite 'Ajuda' em qualquer canal`;
 
   channel.send(message);
