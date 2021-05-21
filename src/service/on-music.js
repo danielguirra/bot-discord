@@ -29,8 +29,8 @@ global.bot.on("message", async (message) => {
 });
 
 async function execute(message, serverQueue) {
-  const args = message.content.split(" ")[1];
-  const url = args.replace(/<(.+)>/g, 1);
+  const args = message.content.replace("*p", "")
+  const url = args.replace(/<(.+)>/g, 1)
 
   const voiceChannel = message.member.voice.channel;
   if (!voiceChannel)
@@ -43,6 +43,7 @@ async function execute(message, serverQueue) {
   }
   try {//Aqui pega o texto e busca na API e pega o id do video
         // Here take the text and search the API and get the video id
+        console.log(url)
     var video = await youtube.getVideo(url);
   } catch (error) {
     try {
