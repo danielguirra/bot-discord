@@ -9,14 +9,10 @@ const roleemoji = async (msg) => {
   );
   var a = 0
   let embed = new Discord.MessageEmbed()
-    .setColor('#fffff')
+    .setColor('#1fffff')
     .setTitle("Escolha Seus Cargos !")
     .setDescription("Clique no computador para liberação de Dev: :computer:\n Ou no Joystick para Gamer: :joystick:")
     ;
-
-
-  const reactionEmoji = msg.guild.emojis.cache.find(
-    (emoji) => emoji.name === "computer");
   msg.channel.send({ embed: embed }).then(embedMessage => {
     embedMessage.react("💻");
     embedMessage.react("🕹")
