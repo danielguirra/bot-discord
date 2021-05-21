@@ -1,3 +1,3 @@
 global.bot.on("ready", () => {
-  console.log("Vai");
+  console.log("Dalkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkke");
 });
