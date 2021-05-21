@@ -1,4 +1,4 @@
-/*const prefix = "*";
+const prefix = "*";
 const ytdl = require("ytdl-core");
 const queue = new Map();
 const Youtube = require("simple-youtube-api");
@@ -124,6 +124,5 @@ function play(guild, song) {
     })
     .on("error", (error) => console.error(error));
   dispatcher.setVolumeLogarithmic(serverQueue.volume / 5);
-  serverQueue.textChannel.send(`Vai tocar: **${song.title}**`);
+  serverQueue.textChannel.send(`Vai tocar: **${song.title}** \n${song.url}`);
 }
-*/
