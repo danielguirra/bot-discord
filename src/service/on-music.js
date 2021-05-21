@@ -84,7 +84,7 @@ async function execute(message, serverQueue) {
     }
   } else {
     serverQueue.songs.push(song);
-    return message.channel.send(`${song.title} Foi adicionado a fila!`);
+    return message.channel.send(`${song.title}${song.url} Foi adicionado a fila!`);
   }
 }
 
