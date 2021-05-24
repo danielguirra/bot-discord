@@ -42,8 +42,8 @@ async function execute(message, serverQueue) {
     );
   }
   try {//Aqui pega o texto e busca na API e pega o id do video
-        // Here take the text and search the API and get the video id
-        console.log(url)
+    // Here take the text and search the API and get the video id
+    console.log(url)
     var video = await youtube.getVideo(url);
   } catch (error) {
     try {
@@ -53,7 +53,6 @@ async function execute(message, serverQueue) {
       return message.channel.send("Não posso buscar por isso");
     }
   }
-  console.log("tá tocano:"+video.title);//returns what is playing, retorna oque está tocando
 
   const song = {
     id: video.id,
@@ -86,17 +85,33 @@ async function execute(message, serverQueue) {
     }
   } else {
     serverQueue.songs.push(song);
-    return message.channel.send(//                           //song.url creates a youtube embed with the link
-      `Foi adicionado a fila!\n${song.title}\n${song.url} `);// o song.url cria uma embed do youtube com o link
+    const embed = new Discord.MessageEmbed()
+      .setColor('#526')
+      .setTitle(song.title+'\n🐺')
+      .setDescription('Foi Adicionado a fila:' + '\n' + song.url)
+    return message.channel.send(embed)
+
   }
 }
 
 function skip(message, serverQueue) {//Function for skip music Função que pula a musica
-  if (!message.member.voice.channel)
-    return message.channel.send("Tem que estar em um canal de voz para pular!");
-  if (!serverQueue)
-    return message.channel.send("Não há música que eu possa pular!");
-  serverQueue.connection.dispatcher.end();
+  if (!message.member.voice.channel) {
+    const embed = new Discord.MessageEmbed()
+      .setColor('#526')
+      .setTitle('Tem que estar em um canal de voz para pular!')
+    return message.channel.send(embed)
+  }
+  if (!serverQueue) {
+    const embed = new Discord.MessageEmbed()
+      .setColor('#526')
+      .setTitle('Não há nada para pular!')
+    return message.channel.send(embed)
+  }
+  serverQueue.connection.dispatcher.end()
+  const embed = new Discord.MessageEmbed()
+    .setColor('#526')
+    .setTitle('Musica pulada :')
+  return message.channel.send(embed)
 }
 
 function stop(message, serverQueue) {//Function for stop music Função que para a musica
@@ -112,13 +127,16 @@ function stop(message, serverQueue) {//Function for stop music Função que para
 }
 
 function play(guild, song) {//Function for play music Função que toca a musica
+  const embed = new Discord.MessageEmbed()
+    .setColor('#526')
+    .setTitle(song.title +'\n🐺')
+    .setDescription('Vai tocar agora\n' +  '\n' + song.url)
   const serverQueue = queue.get(guild.id);
   if (!song) {
     serverQueue.voiceChannel.leave();
     queue.delete(guild.id);
     return;
   }
-
   const dispatcher = serverQueue.connection
     .play(ytdl(song.url))
     .on("finish", (reason) => {
@@ -127,6 +145,5 @@ function play(guild, song) {//Function for play music Função que toca a musica
     })
     .on("error", (error) => console.error(error));
   dispatcher.setVolumeLogarithmic(serverQueue.volume / 5);
-  serverQueue.textChannel.send( //song.url creates a youtube embed with the link
-  `Vai tocar: **${song.title}** \n${song.url}`);// o song.url cria uma embed do youtube com o link
+  serverQueue.textChannel.send(embed)
 }
