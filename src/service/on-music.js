@@ -86,7 +86,7 @@ async function execute(message, serverQueue) {
   } else {
     serverQueue.songs.push(song);
     const embed = new Discord.MessageEmbed()
-      .setColor('#526')
+      .setColor('#6c856f')
       .setTitle(song.title+'\n🐺')
       .setDescription('Foi Adicionado a fila:' + '\n' + song.url)
     return message.channel.send(embed)
@@ -97,19 +97,19 @@ async function execute(message, serverQueue) {
 function skip(message, serverQueue) {//Function for skip music Função que pula a musica
   if (!message.member.voice.channel) {
     const embed = new Discord.MessageEmbed()
-      .setColor('#526')
+      .setColor('#6c856f')
       .setTitle('Tem que estar em um canal de voz para pular!')
     return message.channel.send(embed)
   }
   if (!serverQueue) {
     const embed = new Discord.MessageEmbed()
-      .setColor('#526')
+      .setColor('#6c856f')
       .setTitle('Não há nada para pular!')
     return message.channel.send(embed)
   }
   serverQueue.connection.dispatcher.end()
   const embed = new Discord.MessageEmbed()
-    .setColor('#526')
+    .setColor('#6c856f')
     .setTitle('Musica pulada :')
   return message.channel.send(embed)
 }
@@ -128,7 +128,7 @@ function stop(message, serverQueue) {//Function for stop music Função que para
 
 function play(guild, song) {//Function for play music Função que toca a musica
   const embed = new Discord.MessageEmbed()
-    .setColor('#526')
+    .setColor('#6c856f')
     .setTitle(song.title +'\n🐺')
     .setDescription('Vai tocar agora\n' +  '\n' + song.url)
   const serverQueue = queue.get(guild.id);
@@ -145,5 +145,5 @@ function play(guild, song) {//Function for play music Função que toca a musica
     })
     .on("error", (error) => console.error(error));
   dispatcher.setVolumeLogarithmic(serverQueue.volume / 5);
-  serverQueue.textChannel.send(embed)
+    serverQueue.textChannel.send(embed)
 }

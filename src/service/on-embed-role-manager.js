@@ -9,7 +9,7 @@ const roleemoji = async (msg) => {
   );
   var a = 0
   let embed = new Discord.MessageEmbed()
-    .setColor('#1fffff')
+    .setColor('#6c856f')
     .setTitle("Escolha Seus Cargos !")
     .setDescription("Clique no computador para liberação de Dev: :computer:\n Ou no Joystick para Gamer: :joystick:")
     ;
