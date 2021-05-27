@@ -26,7 +26,7 @@ global.bot.on("message", async (message) => {
   } else {
     return;
   }
-});
+});console.log('Passou');
 
 async function execute(message, serverQueue) {
   const args = message.content.replace("*p", "")
@@ -146,4 +146,37 @@ function play(guild, song) {//Function for play music Função que toca a musica
     .on("error", (error) => console.error(error));
   dispatcher.setVolumeLogarithmic(serverQueue.volume / 5);
     serverQueue.textChannel.send(embed)
+    //: embed }).then(embedMessage => {
+    //   embedMessage.react("⏸");
+    //   embedMessage.react("⏭")
+    //   reaction();
+    //   console.log('tesadasd')
+    // });
+
 }
+// function reaction(){
+//   global.bot.on("MessageReaction", async (reaction, user) => {
+//     console.log('Passou');
+//     if (reaction.message.partial) await reaction.message.fetch();
+//       if (reaction.partial) await reaction.fetch();
+//       if (user.bot) return;
+//       if (!reaction.message.guild) return;
+//     const channel='818242035101859851'
+//     const serverQueue = queue.get(reaction.guild.id)
+//     if (reaction.message.partial) await reaction.message.fetch();
+//     if (reaction.partial) await reaction.fetch();
+//     if (user.bot) return;
+//     if (!reaction.message.guild) return;
+  
+//     if (reaction.message.channel.id === channel) {
+//       if (reaction.emoji.name === "⏸") {
+//         await reaction.message.guild.members.cache.get(stop(`${prefix}stop`,serverQueue));
+//       }
+//       if (reaction.emoji.name === "⏭") {
+//         await reaction.message.guild.members.cache.get(skip(`${prefix}skip`,serverQueue));
+//       }
+//     } else {
+//       return;
+//     }
+//   })
+// }
