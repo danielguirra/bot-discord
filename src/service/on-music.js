@@ -26,11 +26,12 @@ global.bot.on("message", async (message) => {
   } else {
     return;
   }
-});console.log('Passou');
+});
+console.log("Passou");
 
 async function execute(message, serverQueue) {
-  const args = message.content.replace("*p", "")
-  const url = args.replace(/<(.+)>/g, 1)
+  const args = message.content.replace("*p", "");
+  const url = args.replace(/<(.+)>/g, 1);
 
   const voiceChannel = message.member.voice.channel;
   if (!voiceChannel)
@@ -41,9 +42,10 @@ async function execute(message, serverQueue) {
       "Não tenho permissão para me juntar a esse canal"
     );
   }
-  try {//Aqui pega o texto e busca na API e pega o id do video
+  try {
+    //Aqui pega o texto e busca na API e pega o id do video
     // Here take the text and search the API and get the video id
-    console.log(url)
+    console.log(url);
     var video = await youtube.getVideo(url);
   } catch (error) {
     try {
@@ -86,35 +88,36 @@ async function execute(message, serverQueue) {
   } else {
     serverQueue.songs.push(song);
     const embed = new Discord.MessageEmbed()
-      .setColor('#6c856f')
-      .setTitle(song.title+'\n🐺')
-      .setDescription('Foi Adicionado a fila:' + '\n' + song.url)
-    return message.channel.send(embed)
-
+      .setColor("#6c856f")
+      .setTitle(song.title + "\n🐺")
+      .setDescription("Foi Adicionado a fila:" + "\n" + song.url);
+    return message.channel.send(embed);
   }
 }
 
-function skip(message, serverQueue) {//Function for skip music Função que pula a musica
+function skip(message, serverQueue) {
+  //Function for skip music Função que pula a musica
   if (!message.member.voice.channel) {
     const embed = new Discord.MessageEmbed()
-      .setColor('#6c856f')
-      .setTitle('Tem que estar em um canal de voz para pular!')
-    return message.channel.send(embed)
+      .setColor("#6c856f")
+      .setTitle("Tem que estar em um canal de voz para pular!");
+    return message.channel.send(embed);
   }
   if (!serverQueue) {
     const embed = new Discord.MessageEmbed()
-      .setColor('#6c856f')
-      .setTitle('Não há nada para pular!')
-    return message.channel.send(embed)
+      .setColor("#6c856f")
+      .setTitle("Não há nada para pular!");
+    return message.channel.send(embed);
   }
-  serverQueue.connection.dispatcher.end()
+  serverQueue.connection.dispatcher.end();
   const embed = new Discord.MessageEmbed()
-    .setColor('#6c856f')
-    .setTitle('Musica pulada :')
-  return message.channel.send(embed)
+    .setColor("#6c856f")
+    .setTitle("Musica pulada :");
+  return message.channel.send(embed);
 }
 
-function stop(message, serverQueue) {//Function for stop music Função que para a musica
+function stop(message, serverQueue) {
+  //Function for stop music Função que para a musica
   if (!message.member.voice.channel)
     return message.channel.send(
       "Você tem que estar em um canal de voz para parar a música!"
@@ -126,11 +129,12 @@ function stop(message, serverQueue) {//Function for stop music Função que para
   serverQueue.connection.dispatcher.end();
 }
 
-function play(guild, song) {//Function for play music Função que toca a musica
+function play(guild, song) {
+  //Function for play music Função que toca a musica
   const embed = new Discord.MessageEmbed()
-    .setColor('#6c856f')
-    .setTitle(song.title +'\n🐺')
-    .setDescription('Vai tocar agora\n' +  '\n' + song.url)
+    .setColor("#6c856f")
+    .setTitle(song.title + "\n🐺")
+    .setDescription("Vai tocar agora\n" + "\n" + song.url);
   const serverQueue = queue.get(guild.id);
   if (!song) {
     serverQueue.voiceChannel.leave();
@@ -145,14 +149,13 @@ function play(guild, song) {//Function for play music Função que toca a musica
     })
     .on("error", (error) => console.error(error));
   dispatcher.setVolumeLogarithmic(serverQueue.volume / 5);
-    serverQueue.textChannel.send(embed)
-    //: embed }).then(embedMessage => {
-    //   embedMessage.react("⏸");
-    //   embedMessage.react("⏭")
-    //   reaction();
-    //   console.log('tesadasd')
-    // });
-
+  serverQueue.textChannel.send(embed);
+  //: embed }).then(embedMessage => {
+  //   embedMessage.react("⏸");
+  //   embedMessage.react("⏭")
+  //   reaction();
+  //   console.log('tesadasd')
+  // });
 }
 // function reaction(){
 //   global.bot.on("MessageReaction", async (reaction, user) => {
@@ -167,7 +170,7 @@ function play(guild, song) {//Function for play music Função que toca a musica
 //     if (reaction.partial) await reaction.fetch();
 //     if (user.bot) return;
 //     if (!reaction.message.guild) return;
-  
+
 //     if (reaction.message.channel.id === channel) {
 //       if (reaction.emoji.name === "⏸") {
 //         await reaction.message.guild.members.cache.get(stop(`${prefix}stop`,serverQueue));
