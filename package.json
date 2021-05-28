@@ -19,6 +19,7 @@
     "fluent-ffmpeg": "^2.1.2",
     "opus": "^0.0.0",
     "opusscript": "^0.0.8",
+    "python": "^0.0.4",
     "simple-youtube-api": "^5.2.1",
     "sinon-as-promised": "^4.0.3",
     "youtube-search": "^1.1.6",
