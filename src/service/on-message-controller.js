@@ -2,18 +2,12 @@ const hourController = require("../controllers/hour-controller");
 const helpController = require("../controllers/help-controller");
 const diceController = require("../controllers/dice-controller");
 const images = require("./images");
-const roleemoji = require("./on-embed-role-manager")
-const { DiscordAPIError } = require("discord.js");
-const prefix = "*";
+const roleemoji = require("./on-embed-role-manager");
 global.bot.on("message", async (msg) => {
-
-
-
-
   if (msg.author.id !== msg.client.user.id) {
     const text = msg.content.toLowerCase().trim();
-    if (msg.content === 'Daniel Lindo') {
-      roleemoji.roleemoji(msg)
+    if (msg.content === "Daniel Lindo") {
+      roleemoji.roleemoji(msg);
     }
     const ifs = [
       { text: "hora", f: () => hourController.currentTime(msg) },
@@ -31,7 +25,6 @@ global.bot.on("message", async (msg) => {
           ),
       },
     ];
-
     for (const myIf of ifs) {
       if (myIf.text === text) {
         myIf.f();
@@ -41,7 +34,6 @@ global.bot.on("message", async (msg) => {
     if (text.includes("*d")) {
       diceController.dice(msg); //Dice roll
     }
-
     if (text.includes("-cargo")) {
       const rText = text.replace("-cargo", "").trim();
       var rolere = msg.member.guild.roles.cache.find(
@@ -77,31 +69,26 @@ global.bot.on("message", async (msg) => {
       }
     }
     if (msg.author.id === "409772439137026050" || text.includes("corvo")) {
-
       try {
         const reactionEmoji = msg.guild.emojis.cache.find(
-          (emoji) => emoji.name === "corvo_itachi");
-        if (reactionEmoji === "corvo_itachi") { }
+          (emoji) => emoji.name === "corvo_itachi"
+        );
+        if (reactionEmoji === "corvo_itachi") {
+        }
         msg.react(reactionEmoji);
-
-      }
-      catch (error) {
-        msg.reply("Lembre-se dos Corvos")
+      } catch (error) {
+        msg.reply("Lembre-se dos Corvos");
       }
     }
     if (msg.author.id === "324622323447496705") {
       try {
         const reactionEmoji = msg.guild.emojis.cache.find(
-          (emoji) => emoji.name === "malzahar");
+          (emoji) => emoji.name === "malzahar"
+        );
         msg.react(reactionEmoji);
-
-      }
-      catch (error) {
-        msg.reply("Lembre-se dos Voids")
+      } catch (error) {
+        msg.reply("Lembre-se dos Voids");
       }
     }
-
-
   }
-
 });

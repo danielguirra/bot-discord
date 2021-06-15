@@ -1,7 +1,6 @@
 const fs = require("fs");
 const path = require("path");
 const { MessageAttachment } = require("discord.js");
-
 const images = (msg) => {
   const image = fs.readFileSync(path.join(__dirname, "./images/warwick.png"));
   const attachment = new MessageAttachment( //Para enviar images use o image se não URL direto
@@ -10,5 +9,4 @@ const images = (msg) => {
   );
   msg.channel.send("Warwickzinho", attachment);
 };
-
 module.exports = { images };
