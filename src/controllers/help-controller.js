@@ -1,6 +1,7 @@
 
 
 const help = (msg) => {
+  let member = msg.guild.member(msg.author);
   var role = msg.member.guild.roles.cache.find(
     (role) => role.id === "707000297490481262"
   );
@@ -13,9 +14,15 @@ const help = (msg) => {
   const channel = msg.member.guild.channels.cache.find((channel) =>
     channel.name.includes("ajuda")
   );
-  const message = `Se quiser saber como utilizar ganhar cargos está aqui: ${cargo},Agora se quiser saber como utiliziar os Bots está aqui: ${bots}
-  Se nenhuma das opções ajudar entre em contato com um dos ${role} que irão te ajudar :wolf:`;
-  msg.reply(message);
+  let embed = new Discord.MessageEmbed()
+      .setColor("#6c856f")
+      .setTitle(`Meu chamou?`)
+      .setDescription(`${member}
+      Se quiser saber como pegar seus cargos está aqui: ${cargo},
+      Comandos para usar os Bots: ${bots}
+
+      Se nenhuma das opções ajudar entre em contato com um dos ${role} que irão te ajudar :wolf:`)
+  msg.reply(embed);
   ;
 };
 

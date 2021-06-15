@@ -1,15 +1,15 @@
-const dice = async (msg) => {
-  let author = await  msg.author.nickname
+const dice =  (msg) => {
   const text = msg.content.toLowerCase().trim();
   const rText = text.replace("*d", "").trim();
   if (!isNaN(Number(rText))) {
     if (rText >= 2) {
+      let member = msg.guild.member(msg.author);
       var dado = Math.floor(Math.random() * rText);
       dado + 1;
       let embed = new Discord.MessageEmbed()
       .setColor("#6c856f")
-      .setTitle(`Seu número é:`)
-      .setDescription(dado);
+      .setTitle(`SORTEANDOOO`)
+      .setDescription(`${member} seu número é : ${dado}`);
       msg.channel.send(embed)
     } else {let embed = new Discord.MessageEmbed()
       .setColor("#6c856f")
@@ -17,7 +17,7 @@ const dice = async (msg) => {
       msg.channel.send(embed)
     }
   }
-};
+  };
 
 module.exports = { dice };
 //Control of the draw dice Controle do dado de sorteio
