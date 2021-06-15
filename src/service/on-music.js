@@ -27,8 +27,6 @@ global.bot.on("message", async (message) => {
     return;
   }
 });
-console.log("Passou");
-
 async function execute(message, serverQueue) {
   const args = message.content.replace("*p", "");
   const url = args.replace(/<(.+)>/g, 1);
