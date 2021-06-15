@@ -68,26 +68,32 @@ global.bot.on("message", async (msg) => {
         );
       }
     }
-    if (msg.author.id === "409772439137026050" || text.includes("corvo")) {
+    if (msg.author.id === "409772439137026050" ) {
       try {
-        const reactionEmoji = msg.guild.emojis.cache.find(
-          (emoji) => emoji.name === "corvo_itachi"
-        );
-        if (reactionEmoji === "corvo_itachi") {
-        }
-        msg.react(reactionEmoji);
+        msg.react('🐀');
       } catch (error) {
-        msg.reply("Lembre-se dos Corvos");
+        msg.reply("MUKEY");
       }
     }
     if (msg.author.id === "324622323447496705") {
       try {
-        const reactionEmoji = msg.guild.emojis.cache.find(
-          (emoji) => emoji.name === "malzahar"
-        );
-        msg.react(reactionEmoji);
+        msg.react('🐈');
       } catch (error) {
-        msg.reply("Lembre-se dos Voids");
+        msg.reply("MIAUUUU");
+      }
+    }
+    if (msg.author.id === "454452038915457037") {
+      try {
+        msg.react('🔪');
+      } catch (error) {
+        msg.reply("OLHA A FACA");
+      }
+    }
+    if (msg.author.id === "473630307514449947") {
+      try {
+        msg.react('👽');
+      } catch (error) {
+        msg.reply("alien");
       }
     }
   }
