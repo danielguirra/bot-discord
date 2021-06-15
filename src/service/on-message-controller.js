@@ -32,7 +32,8 @@ global.bot.on("message", async (msg) => {
       }
     }
     if (text.includes("*d")) {
-      diceController.dice(msg); //Dice roll
+      ; //Dice roll
+      msg.reply(diceController.dice(msg))
     }
     if (text.includes("-cargo")) {
       const rText = text.replace("-cargo", "").trim();
