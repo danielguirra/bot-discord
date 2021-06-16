@@ -5,7 +5,7 @@ A bot for discord
 ---
 ## Requirements
 
-For development, you will only need Node.js and a node global package, Yarn, installed in your environement.
+For development, you will only need Node.js and a node global package, installed in your environement.
 
 ### Node
 - #### Node installation on Windows
