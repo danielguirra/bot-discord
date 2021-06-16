@@ -1,3 +1,4 @@
+const { DiscordAPIError } = require("discord.js");
 const images = require("../service/images.js");
 
 const currentTime = (msg) => {
@@ -18,8 +19,15 @@ const currentTime = (msg) => {
   var str_hora = hora + ":" + min + ":" + seg;
 
   // Mostra o resultado
-  msg.reply("Hoje é " + str_data + " às " + str_hora);
+  let embed = new Discord.MessageEmbed()
+    .setColor("#6c856f")
+    .setTitle('Hum no meu relógio são :')
+    .setDescription(`${str_hora} e dia é ${str_data}`)
+
+
+  msg.channel.send(embed);
   images.images(msg);
+  msg.react('⌚')
 };
 
 module.exports = { currentTime };

@@ -11,7 +11,7 @@ global.bot.on("message", async (msg) => {
     }
     const ifs = [
       { text: "hora", f: () => hourController.currentTime(msg) },
-      { text: "ajuda", f: () => helpController.help(msg) },
+      { text: "ajuda", f: () => helpController.help(msg)},
       {
         text: "avatar",
         f: () =>

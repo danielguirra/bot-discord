@@ -11,10 +11,12 @@ const dice =  (msg) => {
       .setTitle(`SORTEANDOOO`)
       .setDescription(`${member} seu número é : ${dado}`);
       msg.channel.send(embed)
+      msg.react('🤞')
     } else {let embed = new Discord.MessageEmbed()
       .setColor("#6c856f")
       .setTitle("Digite um valor maior ou igual a 2")
       msg.channel.send(embed)
+      msg.react('❌')
     }
   }
   };

@@ -23,6 +23,7 @@ const help = (msg) => {
 
       Se nenhuma das opções ajudar entre em contato com um dos ${role} que irão te ajudar :wolf:`)
   msg.reply(embed);
+  msg.react('🆘')
   ;
 };
 
