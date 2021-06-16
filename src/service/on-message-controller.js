@@ -1,7 +1,6 @@
 const hourController = require("../controllers/hour-controller");
 const helpController = require("../controllers/help-controller");
 const diceController = require("../controllers/dice-controller");
-const images = require("./images");
 const roleemoji = require("./on-embed-role-manager");
 global.bot.on("message", async (msg) => {
   if (msg.author.id !== msg.client.user.id) {
@@ -9,27 +8,17 @@ global.bot.on("message", async (msg) => {
     if (msg.content === "Daniel Lindo") {
       roleemoji.roleemoji(msg);
     }
-    const ifs = [
-      { text: "hora", f: () => hourController.currentTime(msg) },
-      { text: "ajuda", f: () => helpController.help(msg) },
-      {
-        text: "avatar",
-        f: () =>
-          msg.reply(`O seu avatar é esse:\n` + msg.author.displayAvatarURL()),
-      },
-      {
-        text: "salve",
-        f: () =>
-          msg.reply(
-            "Auuuuuuuuuuuuuuuuuuuuuu:wolf::wolf::wolf::wolf::wolf::wolf::wolf::wolf:"
-          ),
-      },
-    ];
-    for (const myIf of ifs) {
-      if (myIf.text === text) {
-        myIf.f();
-        break;
-      }
+    if (msg.content === "hora"){
+      hourController.currentTime(msg)
+    }
+    if (msg.content === "ajuda"){
+      helpController.help(msg)
+    }
+    if (msg.content === "avatar"){
+      msg.reply(msg.author.displayAvatarURL())
+    }
+    if (msg.content === "salve"){
+      msg.reply("🐺")
     }
     if (text.includes("*d")) {
       diceController.dice(msg); //Dice roll

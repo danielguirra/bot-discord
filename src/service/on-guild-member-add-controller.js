@@ -1,9 +1,7 @@
 const { DiscordAPIError, Message, ReactionCollector } = require("discord.js");
-
 global.bot.on("guildMemberAdd", async (member) => {
   console.log(member);
   channel.send(`Welcome to the server, ${member}!`, attachment);
-
   const channel = member.guild.channels.cache.find((channel) =>
     channel.name.includes("bem-vindo")
   );

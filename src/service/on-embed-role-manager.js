@@ -20,7 +20,6 @@ const roleemoji = async (msg) => {
     embedMessage.react("💻");
     embedMessage.react("🕹");
   });
-
   global.bot.on(
     "messageReactionAdd",
     async (reaction, user) => {
@@ -28,7 +27,6 @@ const roleemoji = async (msg) => {
       if (reaction.partial) await reaction.fetch();
       if (user.bot) return;
       if (!reaction.message.guild) return;
-
       if (reaction.message.channel.id === channel) {
         if (reaction.emoji.name === "💻") {
           await reaction.message.guild.members.cache
@@ -55,7 +53,6 @@ const roleemoji = async (msg) => {
       if (reaction.partial) await reaction.fetch();
       if (user.bot) return;
       if (!reaction.message.guild) return;
-
       if (reaction.message.channel.id === channel) {
         if (reaction.emoji.name === "💻") {
           await reaction.message.guild.members.cache
