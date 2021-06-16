@@ -15,12 +15,16 @@ global.bot.on("message", async (message) => {
     message.content.startsWith(`${prefix}play`) ||
     message.content.startsWith(`${prefix}p`)
   ) {
+    message.react('🤙')
     execute(message, serverQueue);
     return;
   } else if (message.content.startsWith(`${prefix}skip`)) {
+    message.react('👌')
+    message.react('⏭')
     skip(message, serverQueue);
     return;
   } else if (message.content.startsWith(`${prefix}stop`)) {
+    message.react('⏹')
     stop(message, serverQueue);
     return;
   } else {

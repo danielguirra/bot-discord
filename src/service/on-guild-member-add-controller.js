@@ -17,11 +17,11 @@ global.bot.on("guildMemberAdd", async (member) => {
     :wolf:Bem vindo <@${member.id}> ao servidor,  
     por favor verificar nossas ${regras}:wolf:,
     se precisar de ajuda digite 'Ajuda' em qualquer canal`)
-    channel.send({ embed: embed }).then((embedMessage) => {
-      embedMessage.react("😁");
-      embedMessage.react("😀");
-      embedMessage.react("🐺")
-    });
+  channel.send({ embed: embed }).then((embedMessage) => {
+    embedMessage.react("😁");
+    embedMessage.react("😀");
+    embedMessage.react("🐺")
+  });
   var role = member.guild.roles.cache.find(
     (role) => role.id === "707012360367505480"
   );

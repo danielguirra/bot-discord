@@ -1,4 +1,4 @@
-const dice =  (msg) => {
+const dice = (msg) => {
   const text = msg.content.toLowerCase().trim();
   const rText = text.replace("*d", "").trim();
   if (!isNaN(Number(rText))) {
@@ -7,19 +7,20 @@ const dice =  (msg) => {
       var dado = Math.floor(Math.random() * rText);
       dado + 1;
       let embed = new Discord.MessageEmbed()
-      .setColor("#6c856f")
-      .setTitle(`SORTEANDOOO`)
-      .setDescription(`${member} seu número é : ${dado}`);
+        .setColor("#6c856f")
+        .setTitle(`SORTEANDOOO`)
+        .setDescription(`${member} seu número é : ${dado}`);
       msg.channel.send(embed)
       msg.react('🤞')
-    } else {let embed = new Discord.MessageEmbed()
-      .setColor("#6c856f")
-      .setTitle("Digite um valor maior ou igual a 2")
+    } else {
+      let embed = new Discord.MessageEmbed()
+        .setColor("#6c856f")
+        .setTitle("Digite um valor maior ou igual a 2")
       msg.channel.send(embed)
       msg.react('❌')
     }
   }
-  };
+};
 
 module.exports = { dice };
 //Control of the draw dice Controle do dado de sorteio

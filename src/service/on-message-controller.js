@@ -11,7 +11,7 @@ global.bot.on("message", async (msg) => {
     }
     const ifs = [
       { text: "hora", f: () => hourController.currentTime(msg) },
-      { text: "ajuda", f: () => helpController.help(msg)},
+      { text: "ajuda", f: () => helpController.help(msg) },
       {
         text: "avatar",
         f: () =>
@@ -32,7 +32,7 @@ global.bot.on("message", async (msg) => {
       }
     }
     if (text.includes("*d")) {
-      diceController.dice(msg)  ; //Dice roll
+      diceController.dice(msg); //Dice roll
     }
     if (text.includes("-cargo")) {
       const rText = text.replace("-cargo", "").trim();
@@ -68,7 +68,7 @@ global.bot.on("message", async (msg) => {
         );
       }
     }
-    if (msg.author.id === "409772439137026050" ) {
+    if (msg.author.id === "409772439137026050") {
       try {
         msg.react('🐀');
       } catch (error) {

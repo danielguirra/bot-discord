@@ -15,16 +15,16 @@ const help = (msg) => {
     channel.name.includes("ajuda")
   );
   let embed = new Discord.MessageEmbed()
-      .setColor("#6c856f")
-      .setTitle(`Meu chamou?`)
-      .setDescription(`${member}
+    .setColor("#6c856f")
+    .setTitle(`Meu chamou?`)
+    .setDescription(`${member}
       Se quiser saber como pegar seus cargos está aqui: ${cargo},
       Comandos para usar os Bots: ${bots}
 
       Se nenhuma das opções ajudar entre em contato com um dos ${role} que irão te ajudar :wolf:`)
   msg.reply(embed);
   msg.react('🆘')
-  ;
+    ;
 };
 
 module.exports = { help }
