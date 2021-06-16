@@ -8,16 +8,16 @@ global.bot.on("message", async (msg) => {
     if (msg.content === "Daniel Lindo") {
       roleemoji.roleemoji(msg);
     }
-    if (msg.content === "hora"){
+    if (msg.content === "hora") {
       hourController.currentTime(msg)
     }
-    if (msg.content === "ajuda"){
+    if (msg.content === "ajuda") {
       helpController.help(msg)
     }
-    if (msg.content === "avatar"){
+    if (msg.content === "avatar") {
       msg.reply(msg.author.displayAvatarURL())
     }
-    if (msg.content === "salve"){
+    if (msg.content === "salve") {
       msg.reply("🐺")
     }
     if (text.includes("*d")) {
