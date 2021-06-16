@@ -36,13 +36,18 @@ async function execute(message, serverQueue) {
   const url = args.replace(/<(.+)>/g, 1);
 
   const voiceChannel = message.member.voice.channel;
-  if (!voiceChannel)
-    return message.channel.send("Você tem que estar em um canal de voz");
+  if (!voiceChannel){
+    const embed = new Discord.MessageEmbed()
+    .setColor("#6c856f")
+    .setTitle("Você tem que estar em um canal de voz!");
+    return message.channel.send(embed);
+  }
   const permissions = voiceChannel.permissionsFor(message.client.user);
   if (!permissions.has("CONNECT") || !permissions.has("SPEAK")) {
-    return message.channel.send(
-      "Não tenho permissão para me juntar a esse canal"
-    );
+    const embed = new Discord.MessageEmbed()
+      .setColor("#6c856f")
+      .setTitle("Não tenho permissão para me juntar a esse canal!");
+      return message.channel.send(embed);
   }
   try {
     //Aqui pega o texto e busca na API e pega o id do video
@@ -54,7 +59,10 @@ async function execute(message, serverQueue) {
       var videos = await youtube.searchVideos(url, 1);
       var video = await youtube.getVideoByID(videos[0].id);
     } catch (err) {
-      return message.channel.send("Não posso buscar por isso");
+      const embed = new Discord.MessageEmbed()
+      .setColor("#6c856f")
+      .setTitle("Não posso buscar por isso!");
+      return message.channel.send(embed);
     }
   }
 
@@ -121,12 +129,19 @@ function skip(message, serverQueue) {
 function stop(message, serverQueue) {
   //Function for stop music Função que para a musica
   if (!message.member.voice.channel)
-    return message.channel.send(
-      "Você tem que estar em um canal de voz para parar a música!"
-    );
-
-  if (!serverQueue) return message.channel.send("Tem nada para pular");
-
+  {
+    const embed = new Discord.MessageEmbed()
+  .setColor("#6c856f")
+  .setTitle("Você tem que estar em um canal de voz!");
+  return message.channel.send(embed);
+  }
+  if (!serverQueue) 
+  {
+    const embed = new Discord.MessageEmbed()
+    .setColor("#6c856f")
+    .setTitle("Não há nada!");
+    return message.channel.send(embed);
+  }
   serverQueue.songs = [];
   serverQueue.connection.dispatcher.end();
 }
