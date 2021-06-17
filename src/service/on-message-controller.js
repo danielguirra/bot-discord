@@ -2,6 +2,7 @@ const hourController = require("../controllers/hour-controller");
 const helpController = require("../controllers/help-controller");
 const diceController = require("../controllers/dice-controller");
 const roleemoji = require("./on-embed-role-manager");
+const prefix = '*'
 global.bot.on("message", async (msg) => {
   if (msg.author.id !== msg.client.user.id) {
     const text = msg.content.toLowerCase().trim();
@@ -22,6 +23,10 @@ global.bot.on("message", async (msg) => {
     }
     if (text.includes("*d")) {
       diceController.dice(msg); //Dice roll
+    }
+    if (msg.content.toLowerCase().startsWith(prefix + "clovis")) {
+          msg.delete();
+            msg.channel.bulkDelete(30);
     }
     if (msg.author.id === "409772439137026050") {
       try {
@@ -45,6 +50,7 @@ global.bot.on("message", async (msg) => {
       }
     }
     if (msg.author.id === "473630307514449947") {
+
       try {
         msg.react('👽');
       } catch (error) {
