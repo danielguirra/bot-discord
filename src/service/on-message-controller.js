@@ -24,7 +24,7 @@ global.bot.on("message", async (msg) => {
     if (text.includes("*d")) {
       diceController.dice(msg); //Dice roll
     }
-    if (msg.content.toLowerCase().startsWith(prefix + "clovis")) {
+    if (msg.content.toLowerCase().startsWith(prefix + "clovis")) {//comando limpa chat
           msg.delete();
             msg.channel.bulkDelete(30);
     }
