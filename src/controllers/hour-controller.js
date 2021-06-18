@@ -38,7 +38,6 @@ const currentTime = (msg) => {
       return 'Sábado'
     }
   }
-  getNameWeek(dia_sem)
 
   // Formata a data e a hora (note o mês + 1)
   var str_data = dia + "/" + (mes + 1) + "/" + ano4;
