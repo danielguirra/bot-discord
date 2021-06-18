@@ -71,7 +71,7 @@ global.bot.on("message", async (msg) => {
 
     if (msg.author.id === "454452038915457037") {
       try {
-        msg.react('🔪');
+        msg.react('🙏');
       } catch (error) {
         msg.reply("OLHA A FACA");
       }
