@@ -9,7 +9,6 @@ const roleemoji = async (msg) => {
   var rolere = msg.member.guild.roles.cache.find(
     (role) => role.id === "707012360367505480"
   );
-  var a = 0;
   let embed = new Discord.MessageEmbed()
     .setColor("#6c856f")
     .setTitle("Escolha Seus Cargos !")
