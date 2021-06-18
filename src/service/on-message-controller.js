@@ -7,6 +7,7 @@ global.bot.on("message", async (msg) => {
   if (msg.author.id !== msg.client.user.id) {
     const text = msg.content.toLowerCase().trim();
     if (msg.content === "Daniel Lindo") {
+      msg.delete();
       roleemoji.roleemoji(msg);
     }
     if (msg.content === "hora") {
