@@ -2,6 +2,7 @@ const { DiscordAPIError } = require("discord.js");
 const images = require("../service/images.js");
 
 const currentTime = (msg) => {
+
   var data = new Date();
   var dia = data.getDate(); // 1-31
   var dia_sem = data.getDay(); // 0-6 (zero=domingo)
@@ -23,7 +24,6 @@ const currentTime = (msg) => {
     .setColor("#6c856f")
     .setTitle('Hum no meu relógio são :')
     .setDescription(`${str_hora} e dia é ${str_data}`)
-
 
   msg.channel.send(embed);
   images.images(msg);

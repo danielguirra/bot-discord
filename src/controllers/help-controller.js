@@ -2,7 +2,7 @@
 
 const help = (msg) => {
   let member = msg.guild.member(msg.author);
-  var role = msg.member.guild.roles.cache.find(
+  let role = msg.member.guild.roles.cache.find(
     (role) => role.id === "707000297490481262"
   );
   const cargo = msg.member.guild.channels.cache.find((channel) =>
@@ -12,7 +12,7 @@ const help = (msg) => {
     channel.name.includes("bots")
   );
   const channel = msg.member.guild.channels.cache.find((channel) =>
-    channel.name.includes("ajuda")
+    channel.name.includes("ajuda")//Se possuir canal ajuda 
   );
   let embed = new Discord.MessageEmbed()
     .setColor("#6c856f")
