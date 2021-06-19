@@ -2,7 +2,6 @@ const { DiscordAPIError } = require("discord.js");
 const images = require("../service/images.js");
 
 const currentTime = (msg) => {
-
   var data = new Date();
   var dia = data.getDate(); // 1-31
   var dia_sem = data.getDay(); // 0-6 (zero=domingo)
@@ -17,25 +16,25 @@ const currentTime = (msg) => {
 
   function getNameWeek(x) {
     if (x === 0) {
-      return 'Domingo'
+      return "Domingo";
     }
     if (x === 1) {
-      return 'Segunda-Feira'
+      return "Segunda-Feira";
     }
     if (x === 2) {
-      return 'Terça-Feira'
+      return "Terça-Feira";
     }
     if (x === 3) {
-      return 'Quarta-Feira'
+      return "Quarta-Feira";
     }
     if (x === 4) {
-      return 'Quinta-Feira'
+      return "Quinta-Feira";
     }
     if (x === 5) {
-      return 'Sexta-Feira'
+      return "Sexta-Feira";
     }
     if (x === 6) {
-      return 'Sábado'
+      return "Sábado";
     }
   }
 
@@ -46,11 +45,12 @@ const currentTime = (msg) => {
   // Mostra o resultado
   let embed = new Discord.MessageEmbed()
     .setColor("#6c856f")
-    .setTitle('Hum no meu relógio são :')
-    .setDescription(`Hoje é ${getNameWeek(dia_sem)} são ${str_hora}
-    ${str_data}`)
+    .setTitle("Hum no meu relógio são :").setDescription(`Hoje é ${getNameWeek(
+    dia_sem
+  )} são ${str_hora}
+    ${str_data}`);
   msg.channel.send(embed);
-  msg.react('⌚')
+  msg.react("⌚");
 };
 
 module.exports = { currentTime };
