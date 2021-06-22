@@ -57,25 +57,17 @@ global.bot.on("message", async (msg) => {
 
     if (msg.author.id === "409772439137026050") {
       try {
-        msg.react("🐀");
+        msg.react("🕶");
       } catch (error) {
-        msg.reply("MUKEY");
+        msg.reply("Capivara");
       }
     }
-
-    if (msg.author.id === "324622323447496705") {
-      try {
-        msg.react("🐈");
-      } catch (error) {
-        msg.reply("MIAUUUU");
-      }
-    }
-
+    
     if (msg.author.id === "454452038915457037") {
       try {
         msg.react("🙏");
       } catch (error) {
-        msg.reply("OLHA A FACA");
+        msg.reply("Uga");
       }
     }
 
