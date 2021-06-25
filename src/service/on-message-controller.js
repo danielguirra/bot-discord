@@ -57,12 +57,12 @@ global.bot.on("message", async (msg) => {
 
     if (msg.author.id === "409772439137026050") {
       try {
-        msg.react("🕶");
+        msg.react("👓");
       } catch (error) {
         msg.reply("Capivara");
       }
     }
-    
+
     if (msg.author.id === "454452038915457037") {
       try {
         msg.react("🙏");
