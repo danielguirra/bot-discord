@@ -180,6 +180,6 @@ function play(guild, song) {
 
   dispatcher.setVolumeLogarithmic(serverQueue.volume / 5);
   serverQueue.textChannel.send(
-    getEmbed(song.title + "\n🐺", "Vai tocar agora\n" + "\n" + song.url)
+    getEmbed(song.title + "\n🎧", "Vai tocar agora\n" + "\n" + song.url)
   );
 }

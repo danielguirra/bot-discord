@@ -12,13 +12,12 @@ global.bot.on("guildMemberAdd", async (member) => {
     .setColor("#6c856f")
     .setTitle('Bem Vindo')
     .setDescription(`
-    :wolf:Bem vindo <@${member.id}> ao servidor,  
-    por favor verificar nossas ${regras}:wolf:,
+    Bem vindo <@${member.id}> ao servidor,  
+    por favor verificar nossas ${regras},
     se precisar de ajuda digite 'Ajuda' em qualquer canal`)
   channel.send({ embed: embed }).then((embedMessage) => {
     embedMessage.react("😁");
     embedMessage.react("😀");
-    embedMessage.react("🐺")
   });
   var role = member.guild.roles.cache.find(
     (role) => role.id === "707012360367505480"

@@ -38,7 +38,7 @@ global.bot.on("message", async (msg) => {
     }
 
     if (text === "salve") {
-      msg.reply("🐺");
+      msg.reply("Eae");
     }
 
     if (text.includes("*d")) {
