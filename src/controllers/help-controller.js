@@ -18,7 +18,7 @@ const help = (msg) => {
       Se quiser saber como pegar seus cargos está aqui: ${cargo},
       Comandos para usar os Bots: ${bots}
 
-      Se nenhuma das opções ajudar entre em contato com um dos ${role} que irão te ajudar :wolf:`);
+      Se nenhuma das opções ajudar entre em contato com um dos ${role} que irão te ajudar!`);
   msg.reply(embed);
   msg.react("🆘");
 };
