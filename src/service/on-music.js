@@ -3,6 +3,7 @@ const ytdl = require("ytdl-core");
 const queue = new Map();
 const Youtube = require("simple-youtube-api");
 const Util = require('util')
+const escape = require('markdown-escape')
 
 const youtube = new Youtube(process.env.YOUTOKEN);
 
@@ -63,7 +64,7 @@ async function execute(message, serverQueue) {
     return message.channel.send(embed);
   }
   if (url.match(/^https?:\/\/(www.youtube.com|youtube.com)\/playlist(.*)$/)) {
-    const playlist = await youtube.getPlaylist(url)
+    const playlist = youtube.getPlaylist(url)
     console.log(playlist)
     const videos = await playlist.getVideos()
     for (const video of Object.values(videos)) {
@@ -130,11 +131,12 @@ function clear(message, serverQueue) {
   );
 }
 async function handleVideo(video, message, voiceChannel) {
+  console.log(video.title)
 
   const serverQueue = queue.get(message.guild.id)
   const song = {
     id: video.id,
-    title: video.title, ///Util.escapeMarkdown
+    title: escape(video.title),
     url: `https://www.youtube.com/watch?v=${video.id}`,
   };
 
