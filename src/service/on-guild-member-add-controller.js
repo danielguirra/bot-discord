@@ -11,7 +11,7 @@ global.bot.on("guildMemberAdd", async (member) => {
     .setColor("#6c856f")
     .setTitle('Bem Vindo')
     .setDescription(`
-    Bem vindo <@${member.id}> ao servidor,  
+    Bem vindo(a) <@${member.id}> ao servidor,  
     por favor verificar nossas ${regras},
     se precisar de ajuda digite 'Ajuda' em qualquer canal`)
   channel.send({ embed: embed }).then((embedMessage) => {
