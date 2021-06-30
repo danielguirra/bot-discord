@@ -61,21 +61,5 @@ global.bot.on("message", async (msg) => {
         msg.reply("Capivara");
       }
     }
-
-    if (msg.author.id === "454452038915457037") {
-      try {
-        msg.react("🙏");
-      } catch (error) {
-        msg.reply("Uga");
-      }
-    }
-
-    if (msg.author.id === "473630307514449947") {
-      try {
-        msg.react("👽");
-      } catch (error) {
-        msg.reply("alien");
-      }
-    }
   }
 });
