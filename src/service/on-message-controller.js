@@ -19,7 +19,6 @@ global.bot.on("message", async (msg) => {
       msg.delete();
       roleemoji.roleemoji(msg);
     }
-
     if (text === prefix + "hora") {
       hourController.currentTime(msg);
     }
