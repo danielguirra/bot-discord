@@ -4,3 +4,4 @@ require("./service/on-music");
 require("./service/on-guild-member-add-controller");
 require("./service/on-message-controller");
 require("./service/on-kick-member")
+require("./service/on-ban-member")
