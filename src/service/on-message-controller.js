@@ -53,5 +53,13 @@ global.bot.on("message", async (msg) => {
         msg.channel.bulkDelete(rText);
       }
     }
+
+    if (msg.author.id === "409772439137026050") {
+      try {
+        msg.react("👓");
+      } catch (error) {
+        msg.reply("Capivara");
+      }
+    }
   }
 });
