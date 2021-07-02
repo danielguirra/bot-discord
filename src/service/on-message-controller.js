@@ -25,7 +25,7 @@ global.bot.on("message", async (msg) => {
     if (text === prefix + "hora") {
       hourController.currentTime(msg);
     }
-    if (text.content = "capivara") {
+    if (text === "capivara") {
       images.images(msg);
     }
 
