@@ -4,6 +4,7 @@ const diceController = require("../controllers/dice-controller");
 const roleemoji = require("./on-embed-role-manager");
 const fetch = require('node-fetch');
 const prefix = "*";
+const images = require('./images')
 
 function getEmbed(title, description) {
   let embed = new Discord.MessageEmbed()
@@ -20,13 +21,17 @@ global.bot.on("message", async (msg) => {
       msg.delete();
       roleemoji.roleemoji(msg);
     }
+
     if (text === prefix + "hora") {
       hourController.currentTime(msg);
     }
-    let tokens = msg.content.split(" ")
+    if (text.content = "capivara") {
+      images.images(msg);
+    }
+
+    let tokens = msg.content.split(" ")//Gif
     if (tokens[0] === prefix + "gif") {
       let searchGif = 'Capivara'
-
       if (tokens.length > 1) {
         searchGif = tokens.slice(1, tokens.length).join(' ');
       }
