@@ -15,27 +15,7 @@ const currentTime = (msg) => {
   var tz = data.getTimezoneOffset(); // em minutos
 
   function getNameWeek(x) {
-    if (x === 0) {
-      return "Domingo";
-    }
-    if (x === 1) {
-      return "Segunda-Feira";
-    }
-    if (x === 2) {
-      return "Terça-Feira";
-    }
-    if (x === 3) {
-      return "Quarta-Feira";
-    }
-    if (x === 4) {
-      return "Quinta-Feira";
-    }
-    if (x === 5) {
-      return "Sexta-Feira";
-    }
-    if (x === 6) {
-      return "Sábado";
-    }
+    return ["Domingo","Segunda-Feira","Terça-Feira","Quarta-Feira","Quinta-Feira","Sexta-Feira","Sábado"][x]
   }
 
   // Formata a data e a hora (note o mês + 1)
