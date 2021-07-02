@@ -2,6 +2,7 @@ const hourController = require("../controllers/hour-controller");
 const helpController = require("../controllers/help-controller");
 const diceController = require("../controllers/dice-controller");
 const roleemoji = require("./on-embed-role-manager");
+const fetch = require('node-fetch');
 const prefix = "*";
 
 function getEmbed(title, description) {
@@ -21,6 +22,20 @@ global.bot.on("message", async (msg) => {
     }
     if (text === prefix + "hora") {
       hourController.currentTime(msg);
+    }
+    let tokens = msg.content.split(" ")
+    if (tokens[0] === prefix + "gif") {
+      let searchGif = 'Capivara'
+
+      if (tokens.length > 1) {
+        searchGif = tokens.slice(1, tokens.length).join(' ');
+      }
+      let url = `https://g.tenor.com/v1/search?q=${searchGif}&key=${process.env.TENORKEY}&ContentFilter=G`
+      let response = await fetch(url);
+      let json = await response.json();
+      console.log(json);
+      const random = Math.floor(Math.random() * json.results.length);
+      msg.channel.send(json.results[random].url);
     }
 
     if (text === prefix + "aviso") {
