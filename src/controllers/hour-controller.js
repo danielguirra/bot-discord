@@ -14,7 +14,7 @@ const currentTime = (msg) => {
   var mseg = data.getMilliseconds(); // 0-999
   var tz = data.getTimezoneOffset(); // em minutos
 
-  function getNameWeek(x) {
+  const getNameWeek = (x)=> {
     return ["Domingo","Segunda-Feira","Terça-Feira","Quarta-Feira","Quinta-Feira","Sexta-Feira","Sábado"][x]
   }
 
