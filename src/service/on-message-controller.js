@@ -45,18 +45,18 @@ global.bot.on("message", async (msg) => {
       msg.channel.send(json.results[random].url);
     }
 
-    if (text.content === prefix + "aviso") {
-      const rText = text.replace("*aviso", " ").trim();
+    if (text.toLowerCase().startsWith("*aviso")) {
+      const rText = text.replace("*aviso", "").trim();
       msg.delete();
       msg.channel.send("@everyone");
-      msg.channel.send(getEmbed("Importante", `@everyone ${rText}`)); //No bláblá coloque o recado lembre-se de usar no canal que quer enviar o aviso
+      msg.channel.send(getEmbed("Importante", `@everyone ${rText}`));
     }
 
-    if (text === "ajuda") {
+    if (text === "ajuda") {//command help
       helpController.help(msg);
     }
 
-    if (text === "avatar") {
+    if (text === "avatar") {//Avatar
       msg.reply(msg.author.displayAvatarURL());
     }
 
@@ -64,9 +64,9 @@ global.bot.on("message", async (msg) => {
       diceController.dice(msg); //Dice roll
     }
 
-    if (text === prefix + "cls") {
-      //comando limpa chat
-      const rText = text.replace("cls", "").trim();
+    if (text.toLowerCase().startsWith("*cls")) {
+      //command clean channel
+      const rText = text.replace("*cls", "").trim();
       msg.delete();
       if (!isNaN(Number(rText))) {
         msg.channel.bulkDelete(1);
