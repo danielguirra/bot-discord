@@ -45,7 +45,7 @@ global.bot.on("message", async (msg) => {
       msg.channel.send(json.results[random].url);
     }
 
-    if (text.content = prefix + "aviso") {
+    if (text.content === prefix + "aviso") {
       const rText = text.replace("*aviso", " ").trim();
       msg.delete();
       msg.channel.send("@everyone");
