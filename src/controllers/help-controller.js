@@ -3,6 +3,9 @@ const help = (msg) => {
   let role = msg.member.guild.roles.cache.find(
     (role) => role.id === "707000297490481262"
   );
+  let roley = msg.member.guild.roles.cache.find(
+    (roley) => roley.id === "854333407773196308"
+  );
   const cargo = msg.member.guild.channels.cache.find((channel) =>
     channel.name.includes("cargo")
   );
@@ -18,7 +21,7 @@ const help = (msg) => {
       Se quiser saber como pegar seus cargos está aqui: ${cargo},
       Comandos para usar os Bots: ${bots}
 
-      Se nenhuma das opções ajudar entre em contato com um dos ${role} que irão te ajudar!`);
+      Se nenhuma das opções ajudar entre em contato com um dos ${role} ou o ${roley} que irão te ajudar!`);
   msg.reply(embed);
   msg.react("🆘");
 };
