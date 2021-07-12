@@ -4,7 +4,7 @@ const diceController = require("../controllers/dice-controller");
 const roleemoji = require("./on-embed-role-manager");
 const fetch = require('node-fetch');
 const prefix = "*";
-const images = require('./images');
+const images = require('../controllers/images');
 
 function getEmbed(title, description) {
   let embed = new Discord.MessageEmbed()
