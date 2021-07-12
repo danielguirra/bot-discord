@@ -5,7 +5,7 @@ const roleemoji = async (msg) => {
   const Gamer = msg.guild.roles.cache.find(
     (role) => role.id === "818235836206153768"
   );
-  const channel = "844950448740892672";
+  const channel = "862723926396370944";
   var rolere = msg.member.guild.roles.cache.find(
     (role) => role.id === "707012360367505480"
   );
