@@ -2,8 +2,6 @@ const prefix = "*";
 const ytdl = require("ytdl-core");
 const queue = new Map();
 const Youtube = require("simple-youtube-api");
-const Util = require('util')
-const escape = require('markdown-escape')
 
 const youtube = new Youtube(process.env.YOUTOKEN);
 
@@ -63,35 +61,64 @@ async function execute(message, serverQueue) {
 
     return message.channel.send(embed);
   }
-  if (url.match(/^https?:\/\/(www.youtube.com|youtube.com)\/playlist(.*)$/)) {
-    const playlist = youtube.getPlaylist(url)
-    console.log(playlist)
-    const videos = await playlist.getVideos()
-    for (const video of Object.values(videos)) {
-      const video2 = await youtube.getVideoByID(video.id)
-      await handleVideo(video2, message, voiceChannel)
-    }
-  } else {
-    try {
-      //Aqui pega o texto e busca na API e pega o id do video
-      // Here take the text and search the API and get the video id
-      console.log(url);
-      var video = await youtube.getVideo(url);
-    } catch (error) {
-      try {
-        var videos = await youtube.searchVideos(url, 1);
-        var video = await youtube.getVideoByID(videos[0].id);
-      } catch (err) {
-        const embed = new Discord.MessageEmbed()
-          .setColor("#6c856f")
-          .setTitle("Não posso buscar por isso!");
 
-        return message.channel.send(embed);
-      }
+  try {
+    //Aqui pega o texto e busca na API e pega o id do video
+    // Here take the text and search the API and get the video id
+    console.log(url);
+    var video = await youtube.getVideo(url);
+  } catch (error) {
+    try {
+      var videos = await youtube.searchVideos(url, 1);
+      var video = await youtube.getVideoByID(videos[0].id);
+    } catch (err) {
+      const embed = new Discord.MessageEmbed()
+        .setColor("#6c856f")
+        .setTitle("Não posso buscar por isso!");
+
+      return message.channel.send(embed);
     }
-    return handleVideo(video, message, voiceChannel)
   }
 
+  const song = {
+    id: video.id,
+    title: video.title,
+    url: `https://www.youtube.com/watch?v=${video.id}`,
+  };
+
+  if (!serverQueue) {
+    const queueContruct = {
+      textChannel: message.channel,
+      voiceChannel: voiceChannel,
+      connection: null,
+      songs: [],
+      volume: 5,
+      playing: true,
+    };
+
+    queue.set(message.guild.id, queueContruct);
+
+    queueContruct.songs.push(song);
+
+    try {
+      var connection = await voiceChannel.join();
+
+      queueContruct.connection = connection;
+
+      play(message.guild, queueContruct.songs[0]);
+    } catch (err) {
+      console.log(err);
+      queue.delete(message.guild.id);
+
+      return message.channel.send(err);
+    }
+  } else {
+    serverQueue.songs.push(song);
+
+    return message.channel.send(
+      getEmbed(song.title + "\n🐺", "Foi Colocado na Fila:" + "\n" + song.url)
+    );
+  }
 }
 
 function skip(message, serverQueue) {
@@ -129,50 +156,6 @@ function clear(message, serverQueue) {
   return message.channel.send(
     getEmbed("Limpandu", "Pano passado niguém vai ouvir música aqui")
   );
-}
-async function handleVideo(video, message, voiceChannel) {
-  console.log(video.title)
-
-  const serverQueue = queue.get(message.guild.id)
-  const song = {
-    id: video.id,
-    title: escape(video.title),
-    url: `https://www.youtube.com/watch?v=${video.id}`,
-  };
-
-  if (!serverQueue) {
-    const queueContruct = {
-      textChannel: message.channel,
-      voiceChannel: voiceChannel,
-      connection: null,
-      songs: [],
-      volume: 5,
-      playing: true,
-    };
-
-    queue.set(message.guild.id, queueContruct);
-
-    queueContruct.songs.push(song);
-
-    try {
-      var connection = await voiceChannel.join();
-
-      queueContruct.connection = connection;
-
-      play(message.guild, queueContruct.songs[0]);
-    } catch (err) {
-      console.log(err);
-      queue.delete(message.guild.id);
-
-      return message.channel.send(err);
-    }
-  } else {
-    serverQueue.songs.push(song);
-
-    return message.channel.send(
-      getEmbed(song.title + "\n🐺", "Foi Colocado na Fila:" + "\n" + song.url)
-    );
-  }
 }
 
 function play(guild, song) {
