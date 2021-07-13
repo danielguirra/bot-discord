@@ -19,6 +19,7 @@
     "ffmpeg": "^0.0.4",
     "ffmpeg-static": "^4.2.7",
     "fluent-ffmpeg": "^2.1.2",
+    "images-scraper": "^6.3.0",
     "markdown-escape": "^1.1.0",
     "node-fetch": "^2.6.1",
     "nodemon": "^2.0.7",
