@@ -5,7 +5,7 @@ const roleemoji = require("./on-embed-role-manager");
 const fetch = require('node-fetch');
 const prefix = "*";
 const images = require('../controllers/image-controller');
-var Scaper = require('images-scraper')
+var gis = require('g-i-s')
 
 function getEmbed(title, description) {
   let embed = new Discord.MessageEmbed()
@@ -15,21 +15,21 @@ function getEmbed(title, description) {
   return embed;
 }
 
-const google = new Scaper({
-  puppertter: {
-    headless: true
-  }
-})
-
 global.bot.on("message", async (msg) => {
   if (msg.author.id !== msg.client.user.id) {
     const text = msg.content.toLowerCase().trim();
 
     if (text.toLowerCase().startsWith("*img")) {
       const args = msg.content.replace("*img", "")
-      const image_query = args
-      const image_results = await google.scrape(image_query, 1)
-      msg.channel.send(image_results[0].url)
+      gis(args, logResults);
+      function logResults(error, results) {
+        if (error) {
+          console.log(error)
+        } else {
+          return msg.channel.send(results[0].url)
+          //return msg.channel.send(JSON.stringify(results));
+        }
+      }
     }
 
     if (text === prefix + "cargos") {
