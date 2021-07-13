@@ -27,7 +27,7 @@ global.bot.on("message", async (msg) => {
           console.log(error)
         } else {
           return msg.channel.send(results[0].url)
-          //return msg.channel.send(JSON.stringify(results));
+
         }
       }
     }
@@ -53,7 +53,6 @@ global.bot.on("message", async (msg) => {
       let url = `https://g.tenor.com/v1/search?q=${searchGif}&key=${process.env.TENORKEY}&ContentFilter=G`
       let response = await fetch(url);
       let json = await response.json();
-      console.log(json);
       const random = Math.floor(Math.random() * json.results.length);
       msg.channel.send(json.results[random].url);
     }
