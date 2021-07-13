@@ -27,8 +27,8 @@ const currentTime = (msg) => {
     .setColor("#6c856f")
     .setTitle("Hum no meu relógio são :").setDescription(`Hoje é ${getNameWeek(
       dia_sem
-    )} são ${str_hora}
-    ${str_data}`);
+    )} dia : ${str_data}
+      são : ${str_hora}`);
   msg.channel.send(embed);
   msg.react("⌚");
 };
