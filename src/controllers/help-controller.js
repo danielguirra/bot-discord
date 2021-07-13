@@ -12,9 +12,6 @@ const help = (msg) => {
   const bots = msg.member.guild.channels.cache.find((channel) =>
     channel.name.includes("bots")
   );
-  const channel = msg.member.guild.channels.cache.find(
-    (channel) => channel.name.includes("ajuda") //Se possuir canal ajuda
-  );
   let embed = new Discord.MessageEmbed()
     .setColor("#6c856f")
     .setTitle(`Meu chamou?`).setDescription(`${member}
