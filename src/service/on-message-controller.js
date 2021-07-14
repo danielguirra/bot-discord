@@ -34,7 +34,10 @@ global.bot.on("message", async (msg) => {
 
     if (text === prefix + "cargos") {
       msg.delete();
-      roleemoji.roleemoji(msg);
+      const Dev = "818235920448487464"
+      const Gamer = "818235836206153768"
+      var rolere = "707012360367505480"
+      roleemoji.roleemoji(Dev, Gamer, rolere);
     }
 
     if (text === prefix + "hora") {
