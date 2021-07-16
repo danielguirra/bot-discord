@@ -1,3 +1,6 @@
+
+module.exports = { roleemoji };
+
 const roleemoji = async (Dev, Gamer, rolere) => {
 
 
@@ -16,9 +19,7 @@ const roleemoji = async (Dev, Gamer, rolere) => {
         embedMessage.react("🕹");
 
 
-
-
-        global.bot.on(
+        global.bot.on(//wait for the reaction to add the role based on the id
           "messageReactionAdd",
           async (reaction, user) => {
             const channel = '862723926396370944'
@@ -47,29 +48,32 @@ const roleemoji = async (Dev, Gamer, rolere) => {
               return;
             }
           },
-          global.bot.on("messageReactionRemove", async (reaction, user) => {
-            const channel = '862723926396370944'
-            if (reaction.message.partial) await reaction.message.fetch();
-            if (reaction.partial) await reaction.fetch();
-            if (user.bot) return;
-            if (!reaction.message.guild) return;
-            if (reaction.message.channel.id === channel) {
-              if (reaction.emoji.name === "💻") {
-                await reaction.message.guild.members.cache
-                  .get(user.id)
-                  .roles.remove(Dev);
+
+
+
+          global.bot.on("messageReactionRemove",//wait for the reaction to remove the role based on the id
+            async (reaction, user) => {
+              const channel = '862723926396370944'
+              if (reaction.message.partial) await reaction.message.fetch();
+              if (reaction.partial) await reaction.fetch();
+              if (user.bot) return;
+              if (!reaction.message.guild) return;
+              if (reaction.message.channel.id === channel) {
+                if (reaction.emoji.name === "💻") {
+                  await reaction.message.guild.members.cache
+                    .get(user.id)
+                    .roles.remove(Dev);
+                }
+                if (reaction.emoji.name === "🕹") {
+                  await reaction.message.guild.members.cache
+                    .get(user.id)
+                    .roles.remove(Gamer);
+                }
+              } else {
+                return;
               }
-              if (reaction.emoji.name === "🕹") {
-                await reaction.message.guild.members.cache
-                  .get(user.id)
-                  .roles.remove(Gamer);
-              }
-            } else {
-              return;
-            }
-          })
+            })
         );
       });
     });
 }
-module.exports = { roleemoji };

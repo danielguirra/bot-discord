@@ -12,7 +12,7 @@ global.bot.on("guildMemberAdd", async (member) => {
     .setDescription(`
     Bem vindo(a) <@${member.id}> ao servidor,  
     por favor verificar nossas ${regras},
-    se precisar de ajuda digite 'Ajuda' em qualquer canal`)
+    se precisar de ajuda digite 'Ajuda' em qualquer canal`);
 
   channel.send(embed);
 

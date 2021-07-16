@@ -12,7 +12,7 @@ global.bot.on('message', message => {
                         message.channel.send(getEmbed('BANIDO', `${user.tag}`));
                     })
                     .catch(err => {
-                        message.channel.send(getEmbed('ERRO', 'Não posso banir'))
+                        message.channel.send(getEmbed('ERRO', 'Não posso banir'));
                         console.error(err);
                     });
             } else {

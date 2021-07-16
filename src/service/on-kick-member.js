@@ -13,7 +13,7 @@ global.bot.on('message', message => {
                         message.channel.send(getEmbed('Expulso', `${user.tag}`));
                     })
                     .catch(err => {
-                        message.channel.send(getEmbed('ERRO', 'Não posso expulsar'))
+                        message.channel.send(getEmbed('ERRO', 'Não posso expulsar'));
                         console.error(err);
                     });
             } else {

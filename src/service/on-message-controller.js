@@ -17,6 +17,7 @@ function getEmbed(title, description) {
 
 global.bot.on("message", async (msg) => {
   if (msg.author.id !== msg.client.user.id) {
+
     const text = msg.content.toLowerCase().trim();
 
     if (text.toLowerCase().startsWith("*img")) {
@@ -25,10 +26,7 @@ global.bot.on("message", async (msg) => {
       function logResults(error, results) {
         if (error) {
           console.log(error)
-        } else {
-          return msg.channel.send(results[0].url)
-
-        }
+        } else { return msg.channel.send(results[0].url) }
       }
     }
 
@@ -40,48 +38,44 @@ global.bot.on("message", async (msg) => {
       roleemoji.roleemoji(Dev, Gamer, rolere);
     }
 
-    if (text === prefix + "hora") {
-      hourController.currentTime(msg);
-    }
-    if (text === "capivara") {
-      images.images(msg);
-    }
+    if (text === prefix + "hora") { hourController.currentTime(msg); }
+
+    if (text === "capivara") { images.images(msg); }
 
     let tokens = msg.content.split(" ")//Gif
     if (tokens[0] === prefix + "gif") {
+
       let searchGif = 'Capivara'
-      if (tokens.length > 1) {
-        searchGif = tokens.slice(1, tokens.length).join(' ');
-      }
+
+      if (tokens.length > 1) { searchGif = tokens.slice(1, tokens.length).join(' '); }
+
       let url = `https://g.tenor.com/v1/search?q=${searchGif}&key=${process.env.TENORKEY}&ContentFilter=G`
       let response = await fetch(url);
       let json = await response.json();
       const random = Math.floor(Math.random() * json.results.length);
+
       msg.channel.send(json.results[random].url);
     }
 
     if (text.toLowerCase().startsWith("*aviso")) {
+
       const rText = text.replace("*aviso", "").trim();
+
       msg.delete();
       msg.channel.send("@everyone");
       msg.channel.send(getEmbed("Importante", `@everyone ${rText}`));
     }
 
-    if (text === "ajuda") {//command help
-      helpController.help(msg);
-    }
+    if (text === "ajuda") { helpController.help(msg); }//command help
 
-    if (text === "avatar") {//Avatar
-      msg.reply(msg.author.displayAvatarURL());
-    }
+    if (text === prefix + "avatar") { msg.reply(msg.author.displayAvatarURL()) }
 
-    if (text === prefix + 'd') {
-      diceController.dice(msg); //Dice roll
-    }
+    if (text === prefix + 'd') { diceController.dice(msg); } //Dice roll
 
-    if (text.toLowerCase().startsWith("*cls")) {
-      //command clean channel
+    if (text.toLowerCase().startsWith("*cls")) {//command clean channel
+
       const rText = text.replace("*cls", "").trim();
+
       msg.delete();
       if (!isNaN(Number(rText))) {
         msg.channel.bulkDelete(1);
@@ -91,7 +85,7 @@ global.bot.on("message", async (msg) => {
 
     if (msg.author.id === "409772439137026050") {
       try {
-        msg.react("👓");
+        msg.react(":]");
       } catch (error) {
         msg.reply("Capivara");
       }
