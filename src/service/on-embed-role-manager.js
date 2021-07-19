@@ -1,5 +1,4 @@
 
-module.exports = { roleemoji };
 
 const roleemoji = async (Dev, Gamer, rolere) => {
 
@@ -77,3 +76,5 @@ const roleemoji = async (Dev, Gamer, rolere) => {
       });
     });
 }
+
+module.exports = { roleemoji };
