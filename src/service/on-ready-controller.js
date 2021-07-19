@@ -7,7 +7,6 @@ global.bot.on("ready", () => {
   var rolere = "707012360367505480"
   global.bot.channels.fetch('862723926396370944')
     .then(channel => {
-      console.log(channel.lastMessageID)
       message = channel.lastMessageID
       global.bot.api.channels('862723926396370944').messages(message).delete('reboot')
     })
