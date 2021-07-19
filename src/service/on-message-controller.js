@@ -1,6 +1,7 @@
 const hourController = require("../controllers/hour-controller");
 const helpController = require("../controllers/help-controller");
 const diceController = require("../controllers/dice-controller");
+const command = require("../controllers/commands-controller");
 const roleemoji = require("./on-embed-role-manager");
 const fetch = require('node-fetch');
 const prefix = "*";
@@ -37,6 +38,8 @@ global.bot.on("message", async (msg) => {
       var rolere = "707012360367505480"
       roleemoji.roleemoji(Dev, Gamer, rolere);
     }
+
+    if (text === prefix + "comandos") { command.command(msg); }
 
     if (text === prefix + "hora") { hourController.currentTime(msg); }
 
