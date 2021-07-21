@@ -1,19 +1,11 @@
 const hourController = require("../controllers/hour-controller");
 const helpController = require("../controllers/help-controller");
-const diceController = require("../controllers/dice-controller");
+const diceController = require("../controllers/dice");
 const command = require("../controllers/commands-controller");
 const roleemoji = require("./on-embed-role-manager");
 const fetch = require('node-fetch');
 const prefix = "*";
 var gis = require('g-i-s')
-
-function getEmbed(title, description) {
-  let embed = new Discord.MessageEmbed()
-    .setColor("#6c856f")
-    .setTitle(title)
-    .setDescription(description);
-  return embed;
-}
 
 global.bot.on("message", async (msg) => {
   if (msg.author.id !== msg.client.user.id) {
