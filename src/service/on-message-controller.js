@@ -42,8 +42,6 @@ global.bot.on("message", async (msg) => {
 
     if (text === prefix + "hora") { hourController.currentTime(msg); }
 
-    if (text === "capivara") { images.images(msg); }
-
     let tokens = msg.content.split(" ")//Gif
     if (tokens[0] === prefix + "gif") {
 
