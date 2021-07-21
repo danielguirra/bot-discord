@@ -33,8 +33,8 @@ global.bot.on("message", async (msg) => {
     if (text === prefix + "cargos") {
       msg.delete();
       roleemoji.roleemoji(
-        Dev = "818235920448487464",
-        Gamer = "818235836206153768",
+        role1 = "818235920448487464",
+        role2 = "818235836206153768",
         rolere = "707012360367505480");
     }
 
