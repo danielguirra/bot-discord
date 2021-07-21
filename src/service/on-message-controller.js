@@ -5,7 +5,6 @@ const command = require("../controllers/commands-controller");
 const roleemoji = require("./on-embed-role-manager");
 const fetch = require('node-fetch');
 const prefix = "*";
-const images = require('../controllers/image-controller');
 var gis = require('g-i-s')
 
 function getEmbed(title, description) {
@@ -33,10 +32,10 @@ global.bot.on("message", async (msg) => {
 
     if (text === prefix + "cargos") {
       msg.delete();
-      const Dev = "818235920448487464"
-      const Gamer = "818235836206153768"
-      var rolere = "707012360367505480"
-      roleemoji.roleemoji(Dev, Gamer, rolere);
+      roleemoji.roleemoji(
+        Dev = "818235920448487464",
+        Gamer = "818235836206153768",
+        rolere = "707012360367505480");
     }
 
     if (text === prefix + "comandos") { command.command(msg); }
@@ -88,7 +87,7 @@ global.bot.on("message", async (msg) => {
 
     if (msg.author.id === "409772439137026050") {
       try {
-        msg.react(":]");
+        msg.react("🍖");
       } catch (error) {
         msg.reply("Capivara");
       }

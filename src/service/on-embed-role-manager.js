@@ -1,6 +1,6 @@
 
 
-const roleemoji = async (Dev, Gamer, rolere) => {
+const roleemoji = async (role1, role2, rolere) => {
 
 
   let embed = new Discord.MessageEmbed()
@@ -30,7 +30,7 @@ const roleemoji = async (Dev, Gamer, rolere) => {
               if (reaction.emoji.name === "💻") {
                 await reaction.message.guild.members.cache
                   .get(user.id)
-                  .roles.add(Dev);
+                  .roles.add(role1);
                 await reaction.message.guild.members.cache
                   .get(user.id)
                   .roles.remove(rolere);
@@ -38,7 +38,7 @@ const roleemoji = async (Dev, Gamer, rolere) => {
               if (reaction.emoji.name === "🕹") {
                 await reaction.message.guild.members.cache
                   .get(user.id)
-                  .roles.add(Gamer);
+                  .roles.add(role2);
                 await reaction.message.guild.members.cache
                   .get(user.id)
                   .roles.remove(rolere);
@@ -61,12 +61,12 @@ const roleemoji = async (Dev, Gamer, rolere) => {
                 if (reaction.emoji.name === "💻") {
                   await reaction.message.guild.members.cache
                     .get(user.id)
-                    .roles.remove(Dev);
+                    .roles.remove(role1);
                 }
                 if (reaction.emoji.name === "🕹") {
                   await reaction.message.guild.members.cache
                     .get(user.id)
-                    .roles.remove(Gamer);
+                    .roles.remove(role2);
                 }
               } else {
                 return;
