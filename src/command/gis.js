@@ -6,10 +6,10 @@ module.exports = {
   execute(message, args) {
     const text = message.content.replace("*img", "")
     gis(text, logResults);
-    function logResults(error, results) {
+    async function logResults(error, results) {
       if (error) {
         console.log(error)
-      } else { return message.channel.send(results[0].url) }
+      } else { return await message.channel.send(results[0].url) }
     }
   }
 }
