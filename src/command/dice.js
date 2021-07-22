@@ -2,7 +2,7 @@
 
 module.exports = {
 
-  name: 'dice',
+  name: 'd',
   discription: 'Dice controller',
   execute(message, args) {
     if (!isNaN(Number(args))) {
