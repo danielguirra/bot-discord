@@ -1,4 +1,4 @@
-
+const getEmbed = require('./getEmbed')
 
 module.exports = {
   name: 'ajuda',
@@ -17,7 +17,6 @@ module.exports = {
     const bots = message.member.guild.channels.cache.find((channel) =>
       channel.name.includes("bots")
     );
-    const getEmbed = require('./getEmbed')
     message.reply(getEmbed.getEmbed(`Meu chamou?`,
       `${member}
     Se quiser saber como pegar seus cargos está aqui: ${cargo},

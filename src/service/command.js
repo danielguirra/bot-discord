@@ -3,6 +3,8 @@ const fs = require('fs')
 
 const prefix = '*'
 
+const getEmbed = require('../command/getEmbed')
+
 global.bot.commands = new Discord.Collection()
 
 const commandsFiles = fs.readdirSync('./src/command').filter(file => file.endsWith('.js'))
@@ -24,7 +26,7 @@ global.bot.on('message', message => {
         global.bot.commands.get(command).execute(message, args)
     } catch (error) {
         console.error(error)
-        message.reply('Não é um comando válido digite *comandos')
+        message.reply(getEmbed.getEmbed('Verifique oque digitou', 'Não é um comando válido digite *comandos'))
     }
 
 });

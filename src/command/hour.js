@@ -2,8 +2,6 @@
 const getEmbed = require("./getEmbed");
 
 
-
-
 module.exports = {
   name: 'hora',
   description: 'hour controller',

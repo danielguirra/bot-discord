@@ -1,4 +1,5 @@
 
+const getEmbed = require('./getEmbed')
 
 module.exports = {
 
@@ -6,7 +7,7 @@ module.exports = {
   discription: 'Dice controller',
   execute(message, args) {
     if (!isNaN(Number(args))) {
-      const getEmbed = require('./getEmbed')
+
       if (args >= 2) {
         let member = message.guild.member(message.author);
         var dado = Math.floor(Math.random() * args);
