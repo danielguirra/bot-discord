@@ -19,9 +19,9 @@ NodeJS
     [official Node.js website](https://nodejs.org/) and download the installer.
 
 - #### Node installation on Ubuntu
-    $ sudo apt install nodejs
-    /n
-    $ sudo apt install npm 
+
+     $ sudo apt install nodejs
+      $ sudo apt install npm 
 
 - #### Other Operating Systems
   You can find more information about the installation on the [official Node.js website](https://nodejs.org/) and the [official NPM website](https://npmjs.org/).
