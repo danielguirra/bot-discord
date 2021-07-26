@@ -1,6 +1,7 @@
 # BOT-DISCORD
 
 Summary 
+---
 A bot that does server administration like banning, creating important tags with embed's, welcome message and much more.
 
 ---
