@@ -20,6 +20,7 @@ NodeJS
 
 - #### Node installation on Ubuntu
     $ sudo apt install nodejs
+    /n
     $ sudo apt install npm 
 
 - #### Other Operating Systems
