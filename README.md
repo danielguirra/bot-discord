@@ -9,14 +9,14 @@ A bot that does server administration like banning, creating important tags with
 
 For development, you will only need Node.js and a node global package, installed in your environement.
 
-Token Discord https://discord.com/developers
+Token Discord [Offical Discord Developer website](https://discord.com/developers)
 
-Token TenorGif https://tenor.com/gifapi
+Token TenorGif [Offical TenorApi website](https://tenor.com/gifapi)
 
 ---
 NodeJS
 - #### Windows
-    [official Node.js website](https://nodejs.org/) and download the installer.
+    [Official Node.js website](https://nodejs.org/) and download the installer.
 
 - #### Node installation on Ubuntu
 
