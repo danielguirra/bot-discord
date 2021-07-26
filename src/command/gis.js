@@ -2,7 +2,7 @@ const gis = require('g-i-s')
 
 module.exports = {
   name: 'img',
-  discripton: 'Search google image return url image',
+  discripton: 'Search google return image return URL',
   execute(message, args) {
     const text = message.content.replace("*img", "")
     gis(text, logResults);
