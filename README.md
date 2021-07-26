@@ -8,9 +8,9 @@ A bot that does server administration like banning, creating important tags with
 ### Requirements
 
 For development, you will only need Node.js and a node global package, installed in your environement.
---
+
 Token Discord https://discord.com/developers
---
+
 Token TenorGif https://tenor.com/gifapi
 
 ---
