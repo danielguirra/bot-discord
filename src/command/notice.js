@@ -4,6 +4,7 @@ module.exports = {
     name: 'aviso',
     discription: 'Notice send channel',
     execute(message, args) {
+        args = message.content.replace("*aviso", "").trim()
         let avatar = message.author.displayAvatarURL()
         let member = message.guild.member(message.author)
         let nickname = member.displayName
