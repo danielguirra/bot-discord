@@ -9,7 +9,6 @@ module.exports = {
         let nickname = member.displayName
         message.delete();
         message.channel.send("@everyone");
-        //message.channel.send(author)
         message.channel.send(getEmbed.getEmbed("Importante", `@everyone ${args}`, avatar, nickname));
 
     }
