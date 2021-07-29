@@ -1,16 +1,11 @@
+const getEmbed = require("../command/getEmbed");
 
 
 const roleemoji = async (role1, role2, rolere) => {
 
 
-  let embed = new Discord.MessageEmbed()
-    .setColor("#6c856f")
-    .setTitle("Escolha Seus Cargos !")
-    .setDescription(
-      "Clique no computador para liberação de Dev: :computer:\n Ou no Joystick para Gamer: :joystick:"
-    );
-
-
+  let embed = getEmbed.getEmbed('Pegue aqui seu cargo(os)!', "Clique no computador para liberação de Dev: :computer:\n Ou no Joystick para Gamer: :joystick:"
+  )
   global.bot.channels.fetch('862723926396370944')
     .then(channel => {
       channel.send({ embed: embed }).then((embedMessage) => {
