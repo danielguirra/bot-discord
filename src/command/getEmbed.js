@@ -8,7 +8,7 @@ const getEmbed = (title, description, authorAvatarURL, nickname) => {
         nickname = 'Capivara do TI'
     }
     let embed = new Discord.MessageEmbed()
-        .setColor("#6c856f")
+        .setColor("#e69e19")
         .setTitle(title)
         .setDescription(description)
         .setFooter(nickname, authorAvatarURL)
