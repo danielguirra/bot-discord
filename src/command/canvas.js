@@ -41,7 +41,6 @@ async function canvas(member) {
     context.drawImage(avatar, 25, 25, 200, 200);
 
     const attachment = new Discord.MessageAttachment(canvas.toBuffer(), 'welcome-image.png')
-    console.log('Passo')
     return (attachment)
 }
 
