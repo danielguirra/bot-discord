@@ -1,5 +1,7 @@
 const Canvas = require('canvas')
 const Discord = require("discord.js");
+const { registerFont, createCanvas } = require('canvas')
+registerFont('./fonts/comic.ttf', { family: 'Comic' })
 async function canvas(member) {
 
     const applyText = (canvas, text) => {
@@ -7,7 +9,7 @@ async function canvas(member) {
         let fontSize = 70;
 
         do {
-            context.font = `${fontSize -= 10}px sans-serif`;
+            context.font = `${fontSize -= 10}px comic`;
         } while (context.measureText(text).width > canvas.width - 300);
 
         return context.font;
@@ -22,7 +24,7 @@ async function canvas(member) {
     context.strokeStyle = '#74037b';
     context.strokeRect(0, 0, canvas.width, canvas.height);
 
-    context.font = '28px sans-serif';
+    context.font = '28px comic';
     context.fillStyle = '#ffffff';
     context.fillText('Seja bem Vindo,', canvas.width / 2.5, canvas.height / 3.5);
 
