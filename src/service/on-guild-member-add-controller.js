@@ -1,6 +1,8 @@
 
 const getEmbed = require('../command/getEmbed')
 
+const canvas = require("../command/canvas")
+
 global.bot.on("guildMemberAdd", async (member) => {
   const channel = member.guild.channels.cache.find((channel) =>
     channel.name.includes("bem-vindo")
@@ -8,11 +10,11 @@ global.bot.on("guildMemberAdd", async (member) => {
   const regras = member.guild.channels.cache.find((channel) =>
     channel.name.includes("regras")
   );
-  channel.send(getEmbed.getEmbed('Bem Vindo',
-    `Bem vindo(a) <@${member.id}> ao servidor,  
-     por favor verificar nossas ${regras},
-     se precisar de ajuda digite '*ajuda' em qualquer canal`));
+  channel.send(await canvas.canvas(member))
 
+  channel.send(await getEmbed.getEmbed(`${member.displayName}`, `
+  Por favor verificar nossas ${regras},
+  se precisar de ajuda digite '*ajuda em qualquer canal'`))
   var role = member.guild.roles.cache.find(
     (role) => role.id === "707012360367505480"
   );
