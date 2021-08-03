@@ -14,6 +14,10 @@ module.exports = {
           *img/ Pesquisa no Google Images 
           *gif/ Pesquisa no Tenor o um gif
           *aviso/ Cria uma caixinha com um aviso
+          *tiltado @fulano /Cria uma imagem do gratis tiltado com a 
+          foto do @fulano
+          *paz @fulano/Cria um ambiente de paz com a foto do 
+          @fulano
        `));
 
   }
