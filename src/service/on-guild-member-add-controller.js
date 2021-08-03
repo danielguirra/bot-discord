@@ -1,7 +1,7 @@
 
 const getEmbed = require('../command/getEmbed')
 
-const canvas = require("../command/canvas")
+const canvas = require("../command/welcomeCanvas")
 
 global.bot.on("guildMemberAdd", async (member) => {
   const channel = member.guild.channels.cache.find((channel) =>
