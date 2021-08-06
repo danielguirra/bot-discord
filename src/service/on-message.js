@@ -30,3 +30,11 @@ global.bot.on('message', message => {
     }
 
 });
+
+let statuses = ['Dama', 'Xadrez', 'Cacheta', 'Qualquer coisa menos Dota2'
+    , 'Uno', 'Yugioh', 'Pokemon'];
+setInterval(function () {
+    let status = statuses[Math.floor(Math.random() * statuses.length)];
+    global.bot.user.setActivity(status, { type: "PLAYING" });
+}, 10000)
+

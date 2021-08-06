@@ -46,3 +46,7 @@ I used this version of NodeJS, I don't guarantee it will work on older versions
 ## Running the project
 
     $ node .
+    
+## License
+
+[MIT](https://choosealicense.com/licenses/mit/)
