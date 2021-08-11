@@ -5,7 +5,7 @@ const getEmbed = require("./getEmbed");
 module.exports = {
   name: 'hora',
   description: 'hour controller',
-  execute(message, args) {
+   execute(message, args) {
     var data = new Date();
     var dia = data.getDate(); // 1-31
     var dia_sem = data.getDay(); // 0-6 (zero=domingo)
