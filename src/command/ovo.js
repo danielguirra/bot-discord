@@ -17,7 +17,7 @@ module.exports = {
 
         context.font = '13px comic';
 
-        context.fillText(`Ovo pegar ${text}`, 40, 130);
+        context.fillText(`Ovo${text}`, 40, 130);
 
         const attachment = new Discord.MessageAttachment(canvas.toBuffer(), 'ovo.png')
 
