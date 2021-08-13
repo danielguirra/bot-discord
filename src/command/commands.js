@@ -23,6 +23,7 @@ module.exports = {
           *buzz @fulano/Cria uma imagem do ele é do buzz
           *kick @fulano/Expulsa a pessoa marcada se tiver permissão
           *ban @fulano/Bane a pessoa marcada se tiver permissão
+          *status/Mostra o status do servidor do bot
        `));
 
   }
