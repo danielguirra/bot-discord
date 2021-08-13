@@ -18,6 +18,11 @@ module.exports = {
           foto do @fulano
           *paz @fulano/Cria um ambiente de paz com a foto do 
           @fulano
+          *ovo 'texto'/Cria uma imagem com de homem das cavernas
+          com o texto inserido 
+          *buzz @fulano/Cria uma imagem do ele é do buzz
+          *kick @fulano/Expulsa a pessoa marcada se tiver permissão
+          *ban @fulano/Bane a pessoa marcada se tiver permissão
        `));
 
   }
