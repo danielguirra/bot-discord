@@ -1,3 +1,4 @@
+//server hardware status and bot status
 const { MessageEmbed, version } = require("discord.js");
 const moment = require("moment");
 require("moment-duration-format");
