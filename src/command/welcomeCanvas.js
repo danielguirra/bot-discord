@@ -21,7 +21,7 @@ async function canvas(member) {
 
     context.drawImage(background, 0, 0, canvas.width, canvas.height);
 
-    context.strokeStyle = '#74037b';
+    context.strokeStyle = "#e69e19";
     context.strokeRect(0, 0, canvas.width, canvas.height);
 
     context.fillStyle = '#ffffff';
