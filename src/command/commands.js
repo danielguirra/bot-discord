@@ -24,6 +24,8 @@ module.exports = {
           *kick @fulano/Expulsa a pessoa marcada se tiver permissão
           *ban @fulano/Bane a pessoa marcada se tiver permissão
           *status/Mostra o status do servidor do bot
+          *burgues @fulano/Mostra o seu nível de burgues
+          *confia @fulano/Confia do mestre WILL
        `));
 
   }
