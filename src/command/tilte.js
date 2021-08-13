@@ -2,8 +2,9 @@
 
 module.exports = {
     name: 'tiltado',
+    aliases: 't',
     async execute(message, args) {
-        if (message.content.startsWith('*tiltado')) {
+        if (message.content.startsWith('*t')) {
             const user = message.mentions.users.first();
             if (user) {
                 message.delete();

@@ -13,19 +13,19 @@ module.exports = {
           *hora/ Mostra o horário do servidor
           *img/ Pesquisa no Google Images 
           *gif/ Pesquisa no Tenor o um gif
-          *aviso/ Cria uma caixinha com um aviso
-          *tiltado @fulano /Cria uma imagem do gratis tiltado com a 
+          *aviso ou *a / Cria uma caixinha com um aviso
+          *tiltado ou *t @fulano /Cria uma imagem do gratis tiltado com a 
           foto do @fulano
           *paz @fulano/Cria um ambiente de paz com a foto do 
           @fulano
           *ovo 'texto'/Cria uma imagem com de homem das cavernas
           com o texto inserido 
-          *buzz @fulano/Cria uma imagem do ele é do buzz
+          *buzz ou *b @fulano/Cria uma imagem do ele é do buzz
           *kick @fulano/Expulsa a pessoa marcada se tiver permissão
           *ban @fulano/Bane a pessoa marcada se tiver permissão
-          *status/Mostra o status do servidor do bot
-          *burgues @fulano/Mostra o seu nível de burgues
-          *confia @fulano/Confia do mestre WILL
+          *status ou *s/Mostra o status do servidor do bot
+          *burgues ou *m @fulano/Mostra o seu nível de burgues
+          *confia ou *c @fulano/Confia do mestre WILL
        `));
 
   }

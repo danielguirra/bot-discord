@@ -2,6 +2,7 @@ const getEmbed = require('./getEmbed')
 
 module.exports = {
     name: 'aviso',
+    aliases: 'a',
     discription: 'Notice send channel',
     execute(message, args) {
         args = message.content.replace("*aviso", "").trim()

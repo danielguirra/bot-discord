@@ -12,6 +12,8 @@ const commandsFiles = fs.readdirSync('./src/command').filter(file => file.endsWi
 for (const file of commandsFiles) {
     const command = require(`../command/${file}`)
     global.bot.commands.set(command.name, command)
+    global.bot.commands.set(command.aliases, command)
+
 }
 
 global.bot.on('message', message => {

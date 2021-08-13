@@ -2,8 +2,9 @@
 
 module.exports = {
     name: 'buzz',
+    aliases: 'b',
     async execute(message, args) {
-        if (message.content.startsWith('*buzz')) {
+        if (message.content.startsWith('*b')) {
             const user = message.mentions.users.first();
             if (user) {
                 message.delete();

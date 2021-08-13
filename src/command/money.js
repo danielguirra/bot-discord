@@ -1,6 +1,7 @@
 
 module.exports = {
     name: 'burgues',
+    aliases: 'm',
     async execute(message, args) {
         const user = message.mentions.users.first();
         const member = message.guild.member(user)

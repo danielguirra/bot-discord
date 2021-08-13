@@ -7,7 +7,7 @@ const si = require('systeminformation');
 module.exports = {
     name: "status",
     category: "info",
-    aliases: ["stats"],
+    aliases: "s",
     description: "Show status bot",
     args: false,
     usage: "",
