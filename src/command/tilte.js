@@ -26,7 +26,7 @@ module.exports = {
                     };
                     const canvas = Canvas.createCanvas(344, 297)
                     const context = canvas.getContext("2d")
-                    const background = await Canvas.loadImage('./images/gratis.png')
+                    const background = await Canvas.loadImage('https://i.im.ge/2021/08/13/m4fxS.jpg')
 
                     context.drawImage(background, 0, 0, canvas.width, canvas.height);
                     context.fillStyle = '#ffffff';

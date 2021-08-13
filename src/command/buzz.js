@@ -40,7 +40,7 @@ module.exports = {
                     context.strokeText('Man tu é guei, cara?', 260, 200);
 
 
-                    const buzz = await Canvas.loadImage('./images/buzz.png');
+                    const buzz = await Canvas.loadImage('https://i.im.ge/2021/08/04/U9iPL.jpg');
 
 
                     context.drawImage(buzz, 0, 250, 500, 500);

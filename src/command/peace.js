@@ -25,7 +25,7 @@ module.exports = {
                     };
                     const canvas = Canvas.createCanvas(1000, 600)
                     const context = canvas.getContext("2d")
-                    const background = await Canvas.loadImage('./images/gambull.png')
+                    const background = await Canvas.loadImage('https://i.im.ge/2021/08/13/m4KMJ.png')
 
                     context.drawImage(background, 0, 0, canvas.width, canvas.height);
 
