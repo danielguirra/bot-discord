@@ -26,6 +26,7 @@ module.exports = {
           *status ou *s/Mostra o status do servidor do bot
           *burgues ou *m @fulano/Mostra o seu nível de burgues
           *confia ou *c @fulano/Confia do mestre WILL
+          *you ou y @fulano/Cria um imagem do you cracudo
        `));
 
   }
