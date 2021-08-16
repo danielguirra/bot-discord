@@ -27,6 +27,8 @@ module.exports = {
           *burgues ou *m @fulano/Mostra o seu nível de burgues
           *confia ou *c @fulano/Confia do mestre WILL
           *you ou y @fulano/Cria um imagem do you cracudo
+          *sig 'texto'/Procura o Significado da palavra
+          *sin 'texto'/Procura o Sinônimo da palavra
        `));
 
   }
