@@ -1,12 +1,12 @@
 module.exports = {
-    name: 'cls',
-    discription: 'Clean channel 99 message max',
-    execute(message, args)
-    {
-            message.delete();
-            if (!isNaN(Number(args))) {
-              message.channel.bulkDelete(1);
-              message.channel.bulkDelete(args);
-            }
-          }
+  name: 'cls',
+  discription: 'Clean channel 99 message max',
+  execute(message) {
+    const num = message.content.replace("*cls", "")
+    message.delete();
+    if (!isNaN(Number(num))) {
+      message.channel.bulkDelete(1);
+      message.channel.bulkDelete(num);
     }
+  }
+}
