@@ -1,6 +1,6 @@
 const Canvas = require('canvas')
 const Discord = require("discord.js");
-const { registerFont, createCanvas } = require('canvas')
+const { registerFont } = require('canvas')
 registerFont('./fonts/comic.ttf', { family: 'Comic' })
 async function canvas(member) {
 

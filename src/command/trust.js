@@ -2,7 +2,7 @@
 module.exports = {
     name: 'confia',
     alises: 'c',
-    async execute(message, args) {
+    async execute(message) {
         const user = message.mentions.users.first();
         const member = message.guild.member(user)
         message.delete();

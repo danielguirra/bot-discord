@@ -3,7 +3,7 @@
 module.exports = {
     name: 'buzz',
     aliases: 'b',
-    async execute(message, args) {
+    async execute(message) {
         if (message.content.startsWith('*b')) {
             const user = message.mentions.users.first();
             if (user) {

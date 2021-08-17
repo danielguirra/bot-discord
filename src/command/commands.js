@@ -3,7 +3,7 @@ const getEmbed = require('./getEmbed')
 module.exports = {
   name: 'comandos',
   discription: 'list commands',
-  execute(message, args) {
+  execute(message) {
 
     let member = message.guild.member(message.author);
     message.reply(getEmbed.getEmbed(`Lista Comandos`,

@@ -2,7 +2,7 @@
 
 module.exports = {
     name: 'paz',
-    async execute(message, args) {
+    async execute(message) {
         if (message.content.startsWith('*paz')) {
             const user = message.mentions.users.first();
             if (user) {
