@@ -10,6 +10,7 @@
   "author": "DanielGuirra",
   "license": "ISC",
   "dependencies": {
+    "@vitalets/google-translate-api": "^7.0.0",
     "canvas": "^2.8.0",
     "discord.js": "^12.5.3",
     "dotenv": "^8.6.0",
