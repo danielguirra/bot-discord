@@ -5,7 +5,7 @@ const fetch = require('node-fetch');
 
 module.exports = {
     name: 'clima',
-    description: 'clima da cidade inserida',
+    description: 'Climate of the city inserted',
     async execute(message) {
         var strDefault = message.content.replace("*clima ", "")
         var semAcento = strDefault.normalize("NFD").replace(/[\u0300-\u036f]/g, "");
