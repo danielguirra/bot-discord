@@ -2,14 +2,14 @@
 module.exports = {
     name: 'you',
     alises: 'y',
-    async execute(message, args) {
+    async execute(message) {
         const user = message.mentions.users.first();
         const member = message.guild.member(user)
         message.delete();
         const Canvas = require('canvas')
         const Discord = require("discord.js");
-        const { registerFont, createCanvas } = require('canvas')
-                registerFont('./fonts/comic.ttf', { family: 'Comic' })
+        const { registerFont } = require('canvas')
+        registerFont('./fonts/comic.ttf', { family: 'Comic' })
 
         const canvas = Canvas.createCanvas(400, 400)
         const context = canvas.getContext("2d")

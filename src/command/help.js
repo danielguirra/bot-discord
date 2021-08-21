@@ -3,7 +3,7 @@ const getEmbed = require('./getEmbed')
 module.exports = {
   name: 'ajuda',
   description: 'Help controller',
-  execute(message, args) {
+  execute(message) {
     let member = message.guild.member(message.author);
     let role = message.member.guild.roles.cache.find(
       (role) => role.id === "707000297490481262"

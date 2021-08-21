@@ -1,7 +1,7 @@
 
 module.exports = {
     name: 'ovo',
-    async execute(message, args) {
+    async execute(message) {
         const text = message.content.replace("*ovo", "")
         const Canvas = require('canvas')
         const Discord = require("discord.js");

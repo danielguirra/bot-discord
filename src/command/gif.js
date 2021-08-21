@@ -3,7 +3,7 @@ const fetch = require('node-fetch');
 module.exports = {
   name: 'gif',
   discription: 'Search Tenor Gif return url',
-  execute(message, args) {
+  execute(message) {
     async function Gif() {
       let tokens = message.content.split(" ")//Gif
       if (tokens[0] === "*gif") {

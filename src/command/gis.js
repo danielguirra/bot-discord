@@ -3,7 +3,7 @@ const gis = require('g-i-s')
 module.exports = {
   name: 'img',
   discripton: 'Search google return image return URL',
-  execute(message, args) {
+  execute(message) {
     const text = message.content.replace("*img", "")
     gis(text, logResults);
     async function logResults(error, results) {

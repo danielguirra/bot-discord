@@ -2,7 +2,7 @@
 module.exports = {
     name: 'kick',
     discription: 'Kick controller',
-    execute(message, args) {
+    execute(message) {
         const getEmbed = require('./getEmbed')
         if (!message.guild) return;
         if (message.content.startsWith('*chutar')) {
