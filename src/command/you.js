@@ -16,7 +16,7 @@ module.exports = {
         const background = await Canvas.loadImage('https://pbs.twimg.com/profile_images/1257129471007694849/jZd6covt_400x400.jpg')
         context.drawImage(background, -150, 0, 700, canvas.height);
         const avatar = await Canvas.loadImage(member.user.displayAvatarURL({ format: 'png' }));
-        context.drawImage(avatar, 130, 30, 200, 200);
+        context.drawImage(avatar, 150, 40, 200, 200);
         context.fillStyle = '#ffffff';
         context.strokeStyle = '#000000'
 
