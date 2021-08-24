@@ -30,7 +30,9 @@ module.exports = {
           *sig 'texto'/Procura o Significado da palavra
           *sin 'texto'/Procura o Sinônimo da palavra
           *clima 'cidade'/Procura o clima da cidade
-          *dol/Mostra a Cotação atual do Dolar e Euro
+          *coins/Códigos das moedas mais usadas
+          *dol 'código da moeda'/Mostra a Cotação atual do Dolar, Euro e da 
+          moeda inserida
        `));
 
   }
