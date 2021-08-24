@@ -1,7 +1,7 @@
 
 module.exports = {
     name: 'you',
-    alises: 'y',
+    aliases: 'y',
     async execute(message) {
         let user = message.mentions.users.first();
         if (!user) {
