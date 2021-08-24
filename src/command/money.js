@@ -3,7 +3,10 @@ module.exports = {
     name: 'burgues',
     aliases: 'm',
     async execute(message) {
-        const user = message.mentions.users.first();
+        let user = message.mentions.users.first();
+        if (!user) {
+            user = message.guild.member(message.author)
+        }
         const member = message.guild.member(user)
         message.delete();
         const Canvas = require('canvas')

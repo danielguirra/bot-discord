@@ -1,9 +1,12 @@
 
 module.exports = {
     name: 'confia',
-    alises: 'c',
+    aliases: 'c',
     async execute(message) {
-        const user = message.mentions.users.first();
+        let user = message.mentions.users.first();
+        if (!user) {
+            user = message.guild.member(message.author)
+        }
         const member = message.guild.member(user)
         message.delete();
         const Canvas = require('canvas')

@@ -4,7 +4,10 @@ module.exports = {
     name: 'paz',
     async execute(message) {
         if (message.content.startsWith('*paz')) {
-            const user = message.mentions.users.first();
+            let user = message.mentions.users.first();
+            if (!user) {
+                user = message.guild.member(message.author)
+            }
             if (user) {
                 const member = message.guild.member(user)
                 const Canvas = require('canvas')
@@ -13,16 +16,6 @@ module.exports = {
                 registerFont('./fonts/comic.ttf', { family: 'Comic' })
                 async function canvas() {
 
-                    const applyText = (canvas, text) => {
-                        const context = canvas.getContext('2d');
-                        let fontSize = 70;
-
-                        do {
-                            context.font = `${fontSize -= 10}px comic`;
-                        } while (context.measureText(text).width > canvas.width - 300);
-
-                        return context.font;
-                    };
                     const canvas = Canvas.createCanvas(1000, 600)
                     const context = canvas.getContext("2d")
                     const background = await Canvas.loadImage('https://i.im.ge/2021/08/13/m4KMJ.png')
@@ -38,15 +31,15 @@ module.exports = {
                     context.font = '200px comic';
 
                     context.fillText('Mó paz', canvas.width / 4.2, canvas.height / 2);
+
                     context.strokeText('Mó paz', canvas.width / 4.2, canvas.height / 2);
 
-                    context.font = applyText(canvas);
-
-
                     const avatar = await Canvas.loadImage(member.user.displayAvatarURL({ format: 'png' }));
+                    context.drawImage(avatar, 690, 320, 230, 230);
 
+                    const mcpoze = await Canvas.loadImage('https://i.im.ge/2021/08/24/4GpXF.png')
+                    context.drawImage(mcpoze, 50, 270, 184, 256)
 
-                    context.drawImage(avatar, 690, 290, 250, 250);
                     const attachment = new Discord.MessageAttachment(canvas.toBuffer(), 'paz-image.png')
 
                     message.channel.send(attachment)
