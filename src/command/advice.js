@@ -3,7 +3,7 @@ const translate = require('@vitalets/google-translate-api');
 const getEmbed = require('./getEmbed')
 const fetch = require('node-fetch')
 module.exports = {
-    name: 'advice',
+    name: 'conselho',
     description: 'translate advice for portuguese',
     async execute(message) {
         const member = message.guild.member(message.author)
