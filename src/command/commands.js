@@ -33,6 +33,7 @@ module.exports = {
           *coins/Códigos das moedas mais usadas
           *dol 'código da moeda'/Mostra a Cotação atual do Dolar, Euro e da 
           moeda inserida
+          *conselho/Envia um conselho aleatório
        `));
 
   }
