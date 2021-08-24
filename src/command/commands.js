@@ -3,7 +3,7 @@ const getEmbed = require('./getEmbed')
 module.exports = {
   name: 'comandos',
   discription: 'list commands',
-  execute(message) {
+  execute(message, args) {
 
     let member = message.guild.member(message.author);
     message.reply(getEmbed.getEmbed(`Lista Comandos`,
@@ -29,6 +29,8 @@ module.exports = {
           *you ou y @fulano/Cria um imagem do you cracudo
           *sig 'texto'/Procura o Significado da palavra
           *sin 'texto'/Procura o Sinônimo da palavra
+          *clima 'cidade'/Procura o clima da cidade
+          *dol/Mostra a Cotação atual do Dolar e Euro
        `));
 
   }
