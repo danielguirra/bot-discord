@@ -1,7 +1,8 @@
+
 module.exports = {
   name: 'cls',
   discription: 'Clean channel 99 message max',
-  execute(message) {
+  async execute(message) {
     const num = message.content.replace("*cls", "")
     message.delete();
     if (!isNaN(Number(num))) {

@@ -16,6 +16,7 @@
     "dotenv": "^8.6.0",
     "embed": "^0.0.1",
     "g-i-s": "^2.1.6",
+    "lol-discord": "^0.1.5",
     "moment": "^2.29.1",
     "moment-duration-format": "^2.3.2",
     "node-fetch": "^2.6.1",
