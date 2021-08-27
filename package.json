@@ -8,7 +8,7 @@
     "prod": "node server"
   },
   "author": "DanielGuirra",
-  "license": "ISC",
+  "license": "MIT",
   "dependencies": {
     "@vitalets/google-translate-api": "^7.0.0",
     "canvas": "^2.8.0",
