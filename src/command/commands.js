@@ -34,6 +34,9 @@ module.exports = {
           *dol 'código da moeda'/Mostra a Cotação atual do Dolar, Euro e da 
           moeda inserida
           *conselho/Envia um conselho aleatório
+          *lol @fulano/mostra histórico do lol
+          *duel @fulano/Desafia o fulano para duelo
+          *x1/x1 lixo do inhaçu
        `));
 
   }
