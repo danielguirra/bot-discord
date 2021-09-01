@@ -37,6 +37,7 @@ module.exports = {
           *lol @fulano/mostra histórico do lol
           *duel @fulano/Desafia o fulano para duelo
           *x1/x1 lixo do inhaçu
+          *email/Envia um email pelo discord
        `));
 
   }
