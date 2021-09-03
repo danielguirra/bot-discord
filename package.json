@@ -12,6 +12,7 @@
   "dependencies": {
     "@vitalets/google-translate-api": "^7.0.0",
     "canvas": "^2.8.0",
+    "cron": "^1.8.2",
     "discord.js": "^12.5.3",
     "dotenv": "^8.6.0",
     "embed": "^0.0.1",
@@ -23,6 +24,7 @@
     "nodemailer": "^6.6.3",
     "nodemon": "^2.0.12",
     "os": "^0.1.2",
+    "pensador": "^1.0.4",
     "python": "^0.0.4",
     "systeminformation": "^5.8.0"
   }
