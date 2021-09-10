@@ -38,6 +38,8 @@ module.exports = {
           *duel @fulano/Desafia o fulano para duelo
           *x1/x1 lixo do inhaçu
           *email/Envia um email pelo discord
+          *pensador/Envia uma mensagem filosófica
+          *poke @pokemon/Pokedex básica do pokemon
        `));
 
   }
