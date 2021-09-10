@@ -25,6 +25,7 @@
     "nodemon": "^2.0.12",
     "os": "^0.1.2",
     "pensador": "^1.0.4",
+    "pokemon.js": "^1.1.8",
     "python": "^0.0.4",
     "systeminformation": "^5.8.0"
   }
