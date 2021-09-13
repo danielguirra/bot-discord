@@ -32,7 +32,7 @@ module.exports = {
         }
         let femea
         if (!poke['sprites']['front_female']) {
-            femea = '***Sem Sexo***'
+            femea = '***Sem Sexo ou Sem Mudança***'
         } else {
             femea = '***Fêmea***'
         }
