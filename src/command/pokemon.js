@@ -2,11 +2,6 @@
 module.exports = {
     name: 'poke',
     async execute(message) {
-        const Canvas = require('canvas')
-        const { registerFont } = require('canvas')
-        registerFont('./fonts/comic.ttf', { family: 'Comic' })
-
-
         const pokeType = require('../util/json/poketype.json')
         const Pokemon = require('pokemon.js');
         Pokemon.setLanguage('english');
