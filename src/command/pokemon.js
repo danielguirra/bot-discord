@@ -51,6 +51,8 @@ module.exports = {
         curiosidade = await tra(curiosidade)
 
         let embed = new Discord.MessageEmbed()
+            .setAuthor(`${name}`, `${poke['sprites']['front_shiny']}`, `https://www.pokemon.com/br/pokedex/${name}`)
+            .setURL(`https://www.pokemon.com/br/pokedex/${name}`)
             .setColor("#e69e19")
             .setTitle(`Pokedex do ${name}`)
             .setImage(poke['sprites']['front_female'])
