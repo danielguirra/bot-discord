@@ -1,0 +1,20 @@
+{
+    "grass": "🍃**Planta**🍃",
+    "fire": "🔥**Fogo**🔥",
+    "water": "💧**Água**💧",
+    "bug": "🐛**Inseto**🐛",
+    "normal": "🥔**Normal**🥔",
+    "poison": "☠️**Veneno**☠️",
+    "electric": "⚡**Elétrico**⚡",
+    "ground": "🟤**Terra**🟤",
+    "fighting": "🥊**Lutador**🥊",
+    "psychic": "🧙‍♂️**Psíquico**🧙‍♂️",
+    "rock": "⛰️**Pedra**⛰️",
+    "flying": "🌪️**Voador**🌪️",
+    "ghost": "👻**Fantasma**👻",
+    "ice": "🧊**Gelo**🧊",
+    "dragon": "🐉**Dragão**🐉",
+    "steel": "🔩**Metal**🔩",
+    "dark": "🌑**Noturno**🌑",
+    "fairy": "🧚‍♂️**Fada**🧚"
+}

@@ -1,5 +1,5 @@
 const roleemoji = require("./on-embed-role-manager");
-const pensador = require('./pesadorday')
+const pensador = require('./pensadorday')
 global.bot.on("ready", () => {
   console.log("Online");
   global.bot.channels.fetch('862723926396370944')
