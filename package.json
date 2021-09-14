@@ -17,6 +17,7 @@
     "dotenv": "^8.6.0",
     "embed": "^0.0.1",
     "g-i-s": "^2.1.6",
+    "jsdom": "^17.0.0",
     "lol-discord": "^0.1.5",
     "moment": "^2.29.1",
     "moment-duration-format": "^2.3.2",
@@ -27,6 +28,7 @@
     "pensador": "^1.0.4",
     "pokemon.js": "^1.1.8",
     "python": "^0.0.4",
+    "request": "^2.88.2",
     "systeminformation": "^5.8.0"
   }
 }
