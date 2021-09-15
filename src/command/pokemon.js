@@ -20,7 +20,6 @@ module.exports = {
 
                 const dom = new JSDOM(html);
                 let test = dom.window.document.querySelector("p").textContent;
-                console.log(typeof test)
 
                 let type1 = poke['types'][0]['name']
                 let type2
@@ -54,14 +53,16 @@ module.exports = {
                     let curiosidade = test
                     curiosidade = await tra.tra(curiosidade)
                     curiosidade = JSON.stringify(curiosidade)
-                    let embed = new Discord.MessageEmbed()
+
+
+                    let embedM = new Discord.MessageEmbed()
                         .setAuthor(`${name}`, `${poke['sprites']['front_shiny']}`, `https://www.pokemon.com/br/pokedex/${name}`)
                         .setURL(`https://www.pokemon.com/br/pokedex/${name}`)
                         .setColor("#e69e19")
                         .setTitle(`Pokedex do ${name}`)
                         .setImage(poke['sprites']['front_female'])
                         .setDescription(`
-                O ${name} é um pokémon do tipo:
+                     O ${name} é um pokémon do tipo:
                     ${type1}
                      ${type2}
                     Curiosidade:
@@ -82,8 +83,58 @@ module.exports = {
                         .setFooter(`${name} como shiny`, `${poke['sprites']['front_shiny']}`)
                         .setThumbnail(`${poke['sprites']['front_default']}`)
 
+                    let embedS = new Discord.MessageEmbed()
+                        .setAuthor(`${name}`, `${poke['sprites']['front_shiny']}`, `https://www.pokemon.com/br/pokedex/${name}`)
+                        .setURL(`https://www.pokemon.com/br/pokedex/${name}`)
+                        .setColor("#e69e19")
+                        .setTitle(`Pokedex do ${name} como shiny`)
+                        .setImage(poke['sprites']['front_shiny'])
+                        .setDescription(`
+                     O ${name} é um pokémon do tipo:
+                    ${type1}
+                     ${type2}
+                    Curiosidade:
+                    ${curiosidade}
+                    \n--------------------------
+                    Estatística base:
+                    --------------------------
+                    |HP :    |${statusHp}   ❤|
+                    |ATK :   |${statusAtk}  ⚔|
+                    |DEF :   |${statusDef}  🛡|
+                    |S.ATK : |${statusSatk} 🔥⚔|
+                    |S.DEF : |${statusSdef} 🔥🛡|
+                    |VEL :   |${statusSpe}  👟|
+                    |PESO:   |${statusWei}  ⚖|
+                    --------------------------
+                    `)
+                        .setFooter(`${name} como shiny`, `${poke['sprites']['front_shiny']}`)
+                        .setThumbnail(`${poke['sprites']['front_shiny']}`)
 
-                    message.channel.send(embed);
+
+                    const messsageEmbed = await message.channel.send(embedM)
+
+                    messsageEmbed.react("🌟")
+
+                    const filter = (reaction, user) =>
+                        ["🌟"].includes(reaction.emoji.name) && message.author.id === user.id;
+                    const collector = messsageEmbed.createReactionCollector(filter, { time: 60000 });
+                    collector.on("collect", async (reaction, user) => {
+                        if (user.bot) return;
+                        try {
+                            if (reaction.emoji.name === "🌟") {
+                                {
+                                    messsageEmbed.edit(embedS
+                                    );
+                                }
+                            }
+
+                        } catch (error) {
+                            console.error(error);
+                            return message.channel.send(error.message).catch(console.error);
+                        }
+
+                    })
+
 
                 }
                 Funccuriosidade()
