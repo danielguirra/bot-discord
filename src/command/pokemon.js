@@ -1,3 +1,4 @@
+const translate = require('./translate');
 
 module.exports = {
     name: 'poke',
@@ -6,17 +7,17 @@ module.exports = {
         const Pokemon = require('pokemon.js');
         Pokemon.setLanguage('english');
         const text = message.content.replace("*poke ", "")
-        const translate = require('@vitalets/google-translate-api');
+
         let poke = await Pokemon.getPokemon(`${text}`)
 
         let name = poke['name']
         const pokeInfo = async (pokename) => {
             const rq = require("request")
             const url = `https://www.pokemon.com/br/pokedex/${pokename}`
-            console.log(url)
             const jsdom = require("jsdom");
             const { JSDOM } = jsdom;
             rq(url, function (error, response, html) {
+
                 const dom = new JSDOM(html);
                 let test = dom.window.document.querySelector("p").textContent;
                 console.log(typeof test)
@@ -38,13 +39,6 @@ module.exports = {
                 } else {
                     femea = '***Fêmea***'
                 }
-                let tra = (text) => {//Tradutor para português
-                    let resut
-                    resut = translate(`${text}`, { to: `pt` }).then(res => {
-                        return res.text
-                    })
-                    return resut
-                }
                 let statusHp = poke['stats']['hp']
                 let statusAtk = poke['stats']['attack']
                 let statusDef = poke['stats']['defense']
@@ -53,17 +47,20 @@ module.exports = {
                 let statusSpe = poke['stats']['speed']
                 let statusWei = poke['weight']
 
-                let curiosidade = test
 
-                //curiosidade =await tra(curiosidade) 
 
-                let embed = new Discord.MessageEmbed()
-                    .setAuthor(`${name}`, `${poke['sprites']['front_shiny']}`, `https://www.pokemon.com/br/pokedex/${name}`)
-                    .setURL(`https://www.pokemon.com/br/pokedex/${name}`)
-                    .setColor("#e69e19")
-                    .setTitle(`Pokedex do ${name}`)
-                    .setImage(poke['sprites']['front_female'])
-                    .setDescription(`
+                let Funccuriosidade = async () => {
+                    const tra = require('./tra')
+                    let curiosidade = test
+                    curiosidade = await tra.tra(curiosidade)
+                    curiosidade = JSON.stringify(curiosidade)
+                    let embed = new Discord.MessageEmbed()
+                        .setAuthor(`${name}`, `${poke['sprites']['front_shiny']}`, `https://www.pokemon.com/br/pokedex/${name}`)
+                        .setURL(`https://www.pokemon.com/br/pokedex/${name}`)
+                        .setColor("#e69e19")
+                        .setTitle(`Pokedex do ${name}`)
+                        .setImage(poke['sprites']['front_female'])
+                        .setDescription(`
                 O ${name} é um pokémon do tipo:
                     ${type1}
                      ${type2}
@@ -82,11 +79,15 @@ module.exports = {
                     --------------------------
                     ${femea}
                     `)
-                    .setFooter(`${name} como shiny`, `${poke['sprites']['front_shiny']}`)
-                    .setThumbnail(`${poke['sprites']['front_default']}`)
+                        .setFooter(`${name} como shiny`, `${poke['sprites']['front_shiny']}`)
+                        .setThumbnail(`${poke['sprites']['front_default']}`)
 
 
-                message.channel.send(embed);
+                    message.channel.send(embed);
+
+                }
+                Funccuriosidade()
+
 
             })
 
