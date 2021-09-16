@@ -15,10 +15,9 @@ module.exports = {
                     console.log(error)
                 } else {
                     return message.channel.send(getEmbed.getEmbed(`Frase de ${frase['author']}`
-                        , `${frase['message']}`, results[0].url, frase['author']))
+                        , `${frase['message']}`, results[0].url, frase['author'], results[0].url))
                 }
             }
-            console.log(frase)
 
         });
 
