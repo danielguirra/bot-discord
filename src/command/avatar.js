@@ -1,15 +1,14 @@
 module.exports = {
     name: 'avatar',
     description: 'return avatar URL',
-    execute(message, args) {
-        if (args = 'avatar') {
-            const user = message.mentions.users.first();
-            if (user) {
-                message.delete();
-                const member = message.guild.member(message.author)
-                message.channel.send(`Coisa linda`)
-                message.reply(member.user.displayAvatarURL())
-            }
+    execute(message) {
+        let user = message.mentions.users.first();
+        if (!user) {
+            user = message.guild.member(message.author)
         }
+        const member = message.guild.member(user)
+        message.channel.send(member.user.displayAvatarURL())
+        message.react('🔍')
+
     }
 }
