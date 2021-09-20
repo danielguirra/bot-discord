@@ -40,6 +40,7 @@ module.exports = {
           *email/Envia um email pelo discord
           *pensador/Envia uma mensagem filosófica
           *poke @pokemon/Pokedex básica do pokemon
+          *avatar @fulano/Mostra o Avatar do fulano
        `));
 
   }
