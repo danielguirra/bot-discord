@@ -8,7 +8,7 @@ module.exports = {
         let transporter = nodemailer.createTransport({
             service: 'gmail',
             auth: {
-                user: `your@gmail.com`, //Change this to your gmail email
+                user: process.env.EMAIL, //Change this to your gmail email
                 pass: process.env.PASS //Your password
             }
         });
