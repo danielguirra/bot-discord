@@ -41,6 +41,8 @@ module.exports = {
           *pensador/Envia uma mensagem filosófica
           *poke @pokemon/Pokedex básica do pokemon
           *avatar @fulano/Mostra o Avatar do fulano
+          *day @fulano/Grande dia 👍
+          *fine @fulano/Mostra o @fulano no It's fine
        `));
 
   }
