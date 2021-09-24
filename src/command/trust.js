@@ -10,7 +10,7 @@ module.exports = {
         const member = message.guild.member(user)
         message.delete();
         const Canvas = require('canvas')
-        const Discord = require("discord.js");
+        const { MessageAttachment } = require("discord.js");
 
         const canvas = Canvas.createCanvas(302, 167)
         const context = canvas.getContext("2d")
@@ -19,7 +19,7 @@ module.exports = {
         const avatar = await Canvas.loadImage(member.user.displayAvatarURL({ format: 'png' }));
         context.drawImage(avatar, 60, 30, 150, 90);
 
-        const attachment = new Discord.MessageAttachment(canvas.toBuffer(), 'confia.png')
+        const attachment = new MessageAttachment(canvas.toBuffer(), 'confia.png')
 
         message.channel.send(attachment)
     }

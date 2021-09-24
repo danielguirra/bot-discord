@@ -1,5 +1,5 @@
 const Canvas = require('canvas')
-const Discord = require("discord.js");
+const { MessageAttachment } = require("discord.js");
 const { registerFont } = require('canvas')
 registerFont('./fonts/comic.ttf', { family: 'Comic' })
 async function canvas(member) {
@@ -44,7 +44,7 @@ async function canvas(member) {
 
     context.drawImage(avatar, 560, 12, 130, 130);
 
-    const attachment = new Discord.MessageAttachment(canvas.toBuffer(), 'welcome-image.png')
+    const attachment = new MessageAttachment(canvas.toBuffer(), 'welcome-image.png')
     return (attachment)
 }
 

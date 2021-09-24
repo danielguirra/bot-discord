@@ -4,7 +4,7 @@ module.exports = {
     async execute(message) {
         const text = message.content.replace("*ovo", "")
         const Canvas = require('canvas')
-        const Discord = require("discord.js");
+        const { MessageAttachment } = require("discord.js");
         const { registerFont } = require('canvas')
         registerFont('./fonts/comic.ttf', { family: 'Comic' })
 
@@ -19,7 +19,7 @@ module.exports = {
 
         context.fillText(`Ovo${text}`, 40, 130);
 
-        const attachment = new Discord.MessageAttachment(canvas.toBuffer(), 'ovo.png')
+        const attachment = new MessageAttachment(canvas.toBuffer(), 'ovo.png')
 
         message.channel.send(attachment)
     }

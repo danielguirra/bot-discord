@@ -1,8 +1,9 @@
-const translate = require('./translate');
+
 
 module.exports = {
     name: 'poke',
     async execute(message) {
+        const { MessageEmbed } = require('discord.js')
         const pokeType = require('../util/json/poketype.json')
         const Pokemon = require('pokemon.js');
         Pokemon.setLanguage('english');
@@ -55,7 +56,7 @@ module.exports = {
                     curiosidade = JSON.stringify(curiosidade)
 
 
-                    let embedM = new Discord.MessageEmbed()
+                    let embedM = new MessageEmbed()
                         .setAuthor(`${name}`, `${poke['sprites']['front_shiny']}`, `https://www.pokemon.com/br/pokedex/${name}`)
                         .setURL(`https://www.pokemon.com/br/pokedex/${name}`)
                         .setColor("#e69e19")
@@ -83,7 +84,7 @@ module.exports = {
                         .setFooter(`${name} como shiny`, `${poke['sprites']['front_shiny']}`)
                         .setThumbnail(`${poke['sprites']['front_default']}`)
 
-                    let embedS = new Discord.MessageEmbed()
+                    let embedS = new MessageEmbed()
                         .setAuthor(`${name}`, `${poke['sprites']['front_shiny']}`, `https://www.pokemon.com/br/pokedex/${name}`)
                         .setURL(`https://www.pokemon.com/br/pokedex/${name}`)
                         .setColor("#e69e19")

@@ -1,4 +1,4 @@
-const Discord = require('discord.js')
+const { MessageEmbed } = require('discord.js')
 
 const getEmbed = (title, description, authorAvatarURL, nickname, image) => {
     if (!authorAvatarURL) {
@@ -10,7 +10,7 @@ const getEmbed = (title, description, authorAvatarURL, nickname, image) => {
     if (!image) {
         image = authorAvatarURL
     }
-    let embed = new Discord.MessageEmbed()
+    let embed = new MessageEmbed()
         .setColor("#e69e19")
         .setTitle(title)
         .setDescription(description)
