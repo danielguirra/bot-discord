@@ -14,7 +14,7 @@ module.exports = {
         const canvas = Canvas.createCanvas(400, 400)
         const context = canvas.getContext("2d")
         const background = await Canvas.loadImage('https://i.im.ge/2021/09/24/T3cfXF.png')
-        context.drawImage(background, 0, 0, 700, canvas.height);
+        context.drawImage(background, 0, 0, canvas.width, canvas.height);
         const avatar = await Canvas.loadImage(member.user.displayAvatarURL({ format: 'png' }));
         context.drawImage(avatar, 100, 40, 200, 200);
 
