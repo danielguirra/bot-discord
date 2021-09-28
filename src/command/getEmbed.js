@@ -7,8 +7,8 @@ const getEmbed = (title, description, authorAvatarURL, nickname, thumbimage,imag
     if (!nickname) {
         nickname = 'Capivara do TI'
     }
-    if (!image) {
-        image = authorAvatarURL
+    if (!thumbimage) {
+        thumbimage = authorAvatarURL
     }
     let embed = new MessageEmbed()
         .setColor("#e69e19")
