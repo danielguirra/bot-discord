@@ -15,7 +15,7 @@ module.exports = {
                 if (error) {
                     console.log(error)
                 } else {
-                    return message.channel.send(getEmbed.getEmbed(`Frase de Amor${frase['author']}`
+                    return message.channel.send(getEmbed.getEmbed(`Frase de Amor`
                         , `${frase['message']}`, results[0].url, frase['author'], results[0].url))
                 }
             }

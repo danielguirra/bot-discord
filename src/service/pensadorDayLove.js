@@ -14,7 +14,7 @@ let getPensador = () => {
                 } else {
                     global.bot.channels.fetch('892378800527126578')
                         .then(channel => {
-                            channel.send(getEmbed.getEmbed(`Frase de Amor${frase['author']}`
+                            channel.send(getEmbed.getEmbed(`Frase de Amor`
                                 , `${frase['message']}`, results[0].url, frase['author'], results[0].url))
                         }
                         )
