@@ -43,6 +43,7 @@ module.exports = {
           *avatar @fulano/Mostra o Avatar do fulano
           *day @fulano/Grande dia 👍
           *fine @fulano/Mostra o @fulano no It's fine
+          *lore @nomedochamp/Mostra a lore do champ
        `));
 
   }
