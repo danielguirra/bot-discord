@@ -1,5 +1,6 @@
 const roleemoji = require("./on-embed-role-manager");
 const pensador = require('./pensadorday')
+const pensadorDayLove = require('./pensadorDayLove')
 const dolday = require("./dolday")
 global.bot.on("ready", () => {
   console.log("Online");
@@ -14,6 +15,7 @@ global.bot.on("ready", () => {
     , role2 = "818235836206153768"
     , rolere = "707012360367505480"
   )
-   pensador.getPensador()
-   dolday.dolday()
+  pensador.getPensador()
+  dolday.dolday()
+  pensadorDayLove.getPensador()
 });
