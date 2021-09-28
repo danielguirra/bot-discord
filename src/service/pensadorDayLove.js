@@ -3,7 +3,7 @@ let getPensador = () => {
     let gis = require('g-i-s')
     let getEmbed = require('../command/getEmbed')
     const { CronJob } = require('cron');
-    (new CronJob('50 13 09 * * *', (() => {
+    (new CronJob('00 00 12 * * *', (() => {
         pensador.getFromCollection().then(result => {
             const textoJson = JSON.stringify(result)
             const frase = JSON.parse(textoJson)
