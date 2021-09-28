@@ -14,7 +14,7 @@ async function canvas(member) {
 
         return context.font;
     };
-    const canvas = Canvas.createCanvas(700, 250)
+    const canvas = Canvas.createCanvas(700, 200)
     const context = canvas.getContext("2d")
 
     const background = await Canvas.loadImage('./images/wallpaper.png')
