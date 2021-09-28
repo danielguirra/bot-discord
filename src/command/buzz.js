@@ -11,8 +11,8 @@ module.exports = {
                 const member = message.guild.member(message.author)
                 const member2 = message.guild.member(user)
                 const Canvas = require('canvas')
-                const Discord = require("discord.js");
-                const { registerFont, createCanvas } = require('canvas')
+                const { MessageAttachment } = require("discord.js");
+                const { registerFont } = require('canvas')
                 registerFont('./fonts/comic.ttf', { family: 'Comic' })
                 async function canvas() {
                     const canvas = Canvas.createCanvas(500, 750)
@@ -35,7 +35,7 @@ module.exports = {
                     const buzz = await Canvas.loadImage('https://i.im.ge/2021/08/04/U9iPL.jpg');
                     context.drawImage(buzz, 0, 250, 500, 500);
 
-                    const attachment = new Discord.MessageAttachment(canvas.toBuffer(), 'guei.png')
+                    const attachment = new MessageAttachment(canvas.toBuffer(), 'guei.png')
 
                     message.channel.send(attachment)
                 }

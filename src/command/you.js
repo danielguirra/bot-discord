@@ -8,28 +8,17 @@ module.exports = {
             user = message.guild.member(message.author)
         }
         const member = message.guild.member(user)
-        message.delete();
+        //message.delete();
         const Canvas = require('canvas')
-        const Discord = require("discord.js");
-        const { registerFont } = require('canvas')
-        registerFont('./fonts/comic.ttf', { family: 'Comic' })
-
+        const { MessageAttachment } = require("discord.js");
         const canvas = Canvas.createCanvas(400, 400)
         const context = canvas.getContext("2d")
-        const background = await Canvas.loadImage('https://pbs.twimg.com/profile_images/1257129471007694849/jZd6covt_400x400.jpg')
-        context.drawImage(background, -150, 0, 700, canvas.height);
+        const background = await Canvas.loadImage('https://i.im.ge/2021/09/24/T3cfXF.png')
+        context.drawImage(background, 0, 0, canvas.width, canvas.height);
         const avatar = await Canvas.loadImage(member.user.displayAvatarURL({ format: 'png' }));
         context.drawImage(avatar, 100, 40, 200, 200);
-        context.fillStyle = '#ffffff';
-        context.strokeStyle = '#000000'
 
-        context.font = '35px comic';
-
-        context.fillText('You cracudo man?', 80, 320);
-        context.strokeText('You cracudo man?', 80, 320);
-
-
-        const attachment = new Discord.MessageAttachment(canvas.toBuffer(), 'confia.png')
+        const attachment = new MessageAttachment(canvas.toBuffer(), 'you.png')
 
         message.channel.send(attachment)
     }
