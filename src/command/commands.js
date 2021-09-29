@@ -44,6 +44,7 @@ module.exports = {
           *day @fulano/Grande dia 👍
           *fine @fulano/Mostra o @fulano no It's fine
           *lore @nomedochamp/Mostra a lore do champ
+          *skill @nomedochamp/Mostra as skill's do champ
        `));
 
   }
