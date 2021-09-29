@@ -19,8 +19,10 @@ module.exports = {
         let loading = `http://ddragon.leagueoflegends.com/cdn/img/champion/loading/${champ}_0.jpg`
         let splash = `https://ddragon.leagueoflegends.com/cdn/img/champion/splash/${champ}_0.jpg`
 
+
         let response = await fetch(json);
         let teste = await response.json();
+
         let lore = JSON.stringify(teste['data'][`${champ}`]['lore'])
 
         let role = JSON.stringify(teste['data'][`${champ}`]['tags'][0])
@@ -43,12 +45,19 @@ module.exports = {
         dica = dica.substring(1);
         dica = dica.replace(/.$/, '');
 
+        let title = JSON.stringify(teste['data'][`${champ}`]['title'])
+        title = title.substring(1);
+        title = title.replace(/.$/, '');
+
 
         let fraqueza = JSON.stringify(teste['data'][`${champ}`]['enemytips'])
         fraqueza = fraqueza.substring(1);
         fraqueza = fraqueza.replace(/.$/, '');
 
-        message.channel.send(getEmbed.getEmbed(`Lore de ${champ}`, `
+        message.channel.send(getEmbed.getEmbed(`****Lore de ${champ} ${title}****`, `
+        **Se quiser saber as skill's**
+        *skill ${champ}
+        ---------------
         **Lore**: ${lore}
         ---------------
         **Posição**: **\n${role}\n${role2}**
@@ -59,5 +68,6 @@ module.exports = {
         
         `, icone, champ, loading, splash)
         )
+
     }
 }
