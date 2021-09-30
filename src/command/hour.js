@@ -12,6 +12,7 @@ module.exports = {
     var mes = data.getMonth(); // 0-11 (zero=janeiro)
     var ano4 = data.getFullYear(); // 4 dígitos
     var hora = data.getHours(); // 0-23
+    hora = hora - process.env.HORA || hora + 0
     var min = data.getMinutes(); // 0-59
     var seg = data.getSeconds(); // 0-59
     const getNameWeek = (x) => {
