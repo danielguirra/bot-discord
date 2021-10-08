@@ -15,7 +15,7 @@ let getReiniciar = () => {
     // Formata a data e a hora (note o mês + 1)
     var str_data = dia + "/" + (mes + 1) + "/" + ano4;
     var str_hora = hora + ":" + min + ":" + seg;
-    global.bot.channels.fetch('892378800527126578')
+    global.bot.channels.fetch('896032845699624971')
         .then(channel => {
             channel.send(getEmbed("***SERVIÇOS**",
                 `${getNameWeek(dia_sem)}
