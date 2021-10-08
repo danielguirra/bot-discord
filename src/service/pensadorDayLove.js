@@ -4,7 +4,7 @@ let getPensador = () => {
     let getEmbed = require('../command/getEmbed')
     const { CronJob } = require('cron');
     (new CronJob('00 00 12 * * *', (() => {
-        pensador.getFromCollection().then(result => {
+        pensador.getFromAmor().then(result => {
             const textoJson = JSON.stringify(result)
             const frase = JSON.parse(textoJson)
             gis(frase['author'], logResults);
