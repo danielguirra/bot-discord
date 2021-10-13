@@ -1,4 +1,4 @@
-const { getEmbed } = require("./getEmbed");
+const { getEmbed } = require("../util/getEmbed");
 
 module.exports = {
   name: "d",

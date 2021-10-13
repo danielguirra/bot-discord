@@ -1,10 +1,10 @@
-let getPensador = () => {
+let getPensadorLove = () => {
   let pensador = require("pensador");
   let gis = require("g-i-s");
-  let getEmbed = require("../command/getEmbed");
+  let getEmbed = require("./getEmbed");
   const { CronJob } = require("cron");
-  new CronJob("00 00 11 * * *", () => {
-    pensador.getFromCollection().then((result) => {
+  new CronJob("00 00 12 * * *", () => {
+    pensador.getFromAmor().then((result) => {
       const textoJson = JSON.stringify(result);
       const frase = JSON.parse(textoJson);
       gis(frase["author"], logResults);
@@ -12,10 +12,10 @@ let getPensador = () => {
         if (error) {
           console.log(error);
         } else {
-          global.bot.channels.fetch("883409576140107866").then((channel) => {
+          global.bot.channels.fetch("892378800527126578").then((channel) => {
             channel.send(
               getEmbed.getEmbed(
-                `Frase de ${frase["author"]}`,
+                `Frase de Amor`,
                 `${frase["message"]}`,
                 results[0].url,
                 frase["author"],
@@ -29,4 +29,4 @@ let getPensador = () => {
   }).start();
 };
 
-module.exports = { getPensador };
+module.exports = { getPensadorLove };

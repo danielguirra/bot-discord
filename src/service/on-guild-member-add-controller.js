@@ -1,4 +1,4 @@
-const { getEmbed } = require("../command/getEmbed");
+const { getEmbed } = require("../util/getEmbed");
 
 const canvas = require("../command/welcomeCanvas");
 

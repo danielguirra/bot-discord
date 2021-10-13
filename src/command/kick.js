@@ -2,7 +2,7 @@ module.exports = {
   name: "kick",
   discription: "Kick controller",
   execute(message) {
-    const { getEmbed } = require("./getEmbed");
+    const { getEmbed } = require("../util/getEmbed");
     if (!message.guild) return;
     if (message.content.startsWith("*chutar")) {
       const user = message.mentions.users.first();

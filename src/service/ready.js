@@ -1,7 +1,7 @@
 const { roleemoji } = require("./on-embed-role-manager");
-const { getPensador } = require("./pensadorday");
-const { getPensadorLove } = require("./pensadorDayLove");
-const { dolday } = require("./dolday");
+const { getPensador } = require("../util/pensadorday");
+const { getPensadorLove } = require("../util/pensadorDayLove");
+const { dolday } = require("../util/dolday");
 const { getReiniciar } = require("./logreiniciador");
 global.bot.on("ready", () => {
   console.log("Online");

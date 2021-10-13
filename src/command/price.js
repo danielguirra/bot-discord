@@ -1,4 +1,4 @@
-const { getEmbed } = require("./getEmbed");
+const { getEmbed } = require("../util/getEmbed");
 const fetch = require("node-fetch");
 
 module.exports = {

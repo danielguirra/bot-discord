@@ -1,6 +1,6 @@
 const nodemailer = require("nodemailer");
 let password = process.env.PASS;
-let { getEmbed } = require("./getEmbed");
+let { getEmbed } = require("../util/getEmbed");
 module.exports = {
   name: "email",
   execute(message) {

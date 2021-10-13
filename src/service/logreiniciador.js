@@ -1,5 +1,5 @@
 let getReiniciar = () => {
-  let { getEmbed } = require("../command/getEmbed");
+  let { getEmbed } = require("../util/getEmbed");
   var data = new Date();
   var dia = data.getDate(); // 1-31
   var dia_sem = data.getDay(); // 0-6 (zero=domingo)

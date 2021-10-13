@@ -1,7 +1,7 @@
 let dolday = () => {
   const { CronJob } = require("cron");
   const fetch = require("node-fetch");
-  const getEmbed = require("../command/getEmbed");
+  const getEmbed = require("./getEmbed");
   new CronJob("00 00 11 * * *", async () => {
     let url = `https://economia.awesomeapi.com.br/last/USD-BRL,EUR-BRL`;
     let response = await fetch(url);

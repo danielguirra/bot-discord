@@ -45,7 +45,7 @@ module.exports = {
         let statusWei = poke["weight"];
 
         let Funccuriosidade = async () => {
-          const tra = require("./tra");
+          const tra = require("../util/tra");
           let curiosidade = test;
           curiosidade = await tra.tra(curiosidade);
           curiosidade = JSON.stringify(curiosidade);

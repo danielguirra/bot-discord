@@ -1,4 +1,4 @@
-const { getEmbed } = require("../command/getEmbed");
+const { getEmbed } = require("../util/getEmbed");
 
 const roleemoji = async (role1, role2, rolere) => {
   let embed = getEmbed(

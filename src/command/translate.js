@@ -1,5 +1,5 @@
 const translate = require("@vitalets/google-translate-api");
-const { getEmbed } = require("./getEmbed");
+const { getEmbed } = require("../util/getEmbed");
 module.exports = {
   name: "tra",
   description: "translate text for portuguese",

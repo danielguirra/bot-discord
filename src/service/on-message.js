@@ -3,7 +3,7 @@ const fs = require("fs");
 
 const prefix = "*";
 
-const { getEmbed } = require("../command/getEmbed");
+const { getEmbed } = require("../util/getEmbed");
 
 global.bot.commands = new Discord.Collection();
 

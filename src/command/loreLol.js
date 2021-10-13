@@ -1,5 +1,5 @@
 const fetch = require("node-fetch");
-const { getEmbed } = require("./getEmbed");
+const { getEmbed } = require("../util/getEmbed");
 
 module.exports = {
   name: "lore",

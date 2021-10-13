@@ -1,5 +1,5 @@
 let pensador = require("pensador");
-let { getEmbed } = require("./getEmbed");
+let { getEmbed } = require("../util/getEmbed");
 const gis = require("g-i-s");
 
 module.exports = {
