@@ -1,4 +1,4 @@
-const getEmbed = require("../command/getEmbed");
+const { getEmbed } = require("../command/getEmbed");
 
 const canvas = require("../command/welcomeCanvas");
 
@@ -12,7 +12,7 @@ global.bot.on("guildMemberAdd", async (member) => {
   channel.send(await canvas.canvas(member));
 
   channel.send(
-    await getEmbed.getEmbed(
+    await getEmbed(
       `${member.displayName}`,
       `
   Por favor verificar nossas ${regras},

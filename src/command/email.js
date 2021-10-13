@@ -1,6 +1,6 @@
 const nodemailer = require("nodemailer");
 let password = process.env.PASS;
-let getEmbed = require("./getEmbed");
+let { getEmbed } = require("./getEmbed");
 module.exports = {
   name: "email",
   execute(message) {
@@ -14,7 +14,7 @@ module.exports = {
     });
     let filter = (m) => m.author.id === message.author.id;
     message.channel
-      .send(getEmbed.getEmbed(`**EMAIL**`, `Para quem é o email?`))
+      .send(getEmbed(`**EMAIL**`, `Para quem é o email?`))
       .then(() => {
         message.channel
           .awaitMessages(filter, {
@@ -26,7 +26,7 @@ module.exports = {
             message = message.first();
             let emailenviar = message.content;
             message.channel
-              .send(getEmbed.getEmbed(`**EMAIL**`, `Qual é o texto ?`))
+              .send(getEmbed(`**EMAIL**`, `Qual é o texto ?`))
               .then(() => {
                 message.channel
                   .awaitMessages(filter, {
@@ -51,7 +51,7 @@ module.exports = {
                         } else {
                           console.log("Email Sent!");
                           message.channel.send(
-                            getEmbed.getEmbed(
+                            getEmbed(
                               `Email enviado`,
                               `Para o ${emailenviar}
                                             Assunto

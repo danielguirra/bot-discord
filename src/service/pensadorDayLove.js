@@ -1,4 +1,4 @@
-let getPensador = () => {
+let getPensadorLove = () => {
   let pensador = require("pensador");
   let gis = require("g-i-s");
   let getEmbed = require("../command/getEmbed");
@@ -29,4 +29,4 @@ let getPensador = () => {
   }).start();
 };
 
-module.exports = { getPensador };
+module.exports = { getPensadorLove };

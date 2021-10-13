@@ -1,4 +1,4 @@
-const getEmbed = require("./getEmbed");
+const { getEmbed } = require("./getEmbed");
 const wait = require("util").promisify(setTimeout);
 
 module.exports = {
@@ -7,7 +7,7 @@ module.exports = {
   async execute(message, args) {
     await wait(1000);
     message.channel.send(
-      getEmbed.getEmbed(`Latência`, `Ping : **${message.client.ws.ping}**ms`)
+      getEmbed(`Latência`, `Ping : **${message.client.ws.ping}**ms`)
     );
   },
 };

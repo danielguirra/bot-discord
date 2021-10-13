@@ -1,5 +1,5 @@
 const fetch = require("node-fetch");
-const getEmbed = require("./getEmbed");
+const { getEmbed } = require("./getEmbed");
 
 module.exports = {
   name: "sin",
@@ -13,7 +13,7 @@ module.exports = {
     const textoJson = JSON.stringify(json);
     const sinonimo = JSON.parse(textoJson);
     message.channel.send(
-      getEmbed.getEmbed(
+      getEmbed(
         `Sinônimos de ${text.toUpperCase()}`,
         ` ${sinonimo}
 

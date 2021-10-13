@@ -1,9 +1,10 @@
+const { getEmbed } = require("./getEmbed");
+
 module.exports = {
   name: "musgas",
   execute(message) {
-    let getEmbed = require("./getEmbed");
     message.channel.send(
-      getEmbed.getEmbed(
+      getEmbed(
         "Comandos do DJ CAPIVARA",
         `
         *p + URL do Youtube ou nome da Música

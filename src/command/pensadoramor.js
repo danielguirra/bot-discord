@@ -1,5 +1,5 @@
 let pensador = require("pensador");
-let getEmbed = require("./getEmbed");
+let { getEmbed } = require("./getEmbed");
 const gis = require("g-i-s");
 
 module.exports = {
@@ -15,7 +15,7 @@ module.exports = {
           console.log(error);
         } else {
           return message.channel.send(
-            getEmbed.getEmbed(
+            getEmbed(
               `Frase de Amor`,
               `${frase["message"]}`,
               results[0].url,

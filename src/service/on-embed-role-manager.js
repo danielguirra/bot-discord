@@ -1,7 +1,7 @@
-const getEmbed = require("../command/getEmbed");
+const { getEmbed } = require("../command/getEmbed");
 
 const roleemoji = async (role1, role2, rolere) => {
-  let embed = getEmbed.getEmbed(
+  let embed = getEmbed(
     "Pegue aqui seu cargo(os)!",
     "Clique no computador para liberação de Dev: :computer:\n Ou no Joystick para Gamer: :joystick:"
   );

@@ -1,4 +1,4 @@
-const getEmbed = require("./getEmbed");
+const { getEmbed } = require("./getEmbed");
 
 module.exports = {
   name: "ajuda",
@@ -18,7 +18,7 @@ module.exports = {
       channel.name.includes("bots")
     );
     message.reply(
-      getEmbed.getEmbed(
+      getEmbed(
         `Meu chamou?`,
         `${member}
     Se quiser saber como pegar seus cargos está aqui: ${cargo},

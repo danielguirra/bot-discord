@@ -1,4 +1,4 @@
-const getEmbed = require("./getEmbed");
+const { getEmbed } = require("./getEmbed");
 const fetch = require("node-fetch");
 
 module.exports = {
@@ -15,7 +15,7 @@ module.exports = {
     let médiaeur = moedas["EURBRL"]["ask"];
     let médiaselec = moedas[`${moeda.toUpperCase()}BRL`]["ask"];
     message.channel.send(
-      getEmbed.getEmbed(
+      getEmbed(
         `Cotação`,
         `
         💵Dollar em R$: ${médiadol}

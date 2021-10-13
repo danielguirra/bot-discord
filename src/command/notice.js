@@ -1,4 +1,4 @@
-const getEmbed = require("./getEmbed");
+const { getEmbed } = require("./getEmbed");
 
 module.exports = {
   name: "aviso",
@@ -12,7 +12,7 @@ module.exports = {
     message.delete();
     message.channel.send("@everyone");
     message.channel.send(
-      getEmbed.getEmbed("Importante", `@everyone ${args}`, avatar, nickname)
+      getEmbed("Importante", `@everyone ${args}`, avatar, nickname)
     );
   },
 };

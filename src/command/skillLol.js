@@ -1,5 +1,5 @@
 const fetch = require("node-fetch");
-const getEmbed = require("./getEmbed");
+const { getEmbed } = require("./getEmbed");
 
 module.exports = {
   name: "skill",
@@ -46,7 +46,7 @@ module.exports = {
     let nameR = teste["data"][`${champ}`]["spells"][3]["name"];
 
     message.channel.send(
-      getEmbed.getEmbed(
+      getEmbed(
         `**PASSIVA** do ${champ}`,
         `***${passiveN}***
         -------------------
@@ -61,7 +61,7 @@ module.exports = {
     );
 
     message.channel.send(
-      getEmbed.getEmbed(
+      getEmbed(
         `**HABILIDADE Q** do ${champ}`,
         `***${nameQ}***
         -------------------
@@ -76,7 +76,7 @@ module.exports = {
     );
 
     message.channel.send(
-      getEmbed.getEmbed(
+      getEmbed(
         `**HABILIDADE W** do ${champ}`,
         `***${nameW}***
         -------------------
@@ -91,7 +91,7 @@ module.exports = {
     );
 
     message.channel.send(
-      getEmbed.getEmbed(
+      getEmbed(
         `**HABILIDADE E** do ${champ}`,
         `***${nameE}***
         -------------------
@@ -106,7 +106,7 @@ module.exports = {
     );
 
     message.channel.send(
-      getEmbed.getEmbed(
+      getEmbed(
         `**HABILIDADE ULTIMATE** do ${champ}`,
         `***${nameR}***
         -------------------

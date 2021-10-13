@@ -1,5 +1,5 @@
 const fetch = require("node-fetch");
-const getEmbed = require("./getEmbed");
+const { getEmbed } = require("./getEmbed");
 
 module.exports = {
   name: "lore",
@@ -53,7 +53,7 @@ module.exports = {
     fraqueza = fraqueza.replace(/.$/, "");
 
     message.channel.send(
-      getEmbed.getEmbed(
+      getEmbed(
         `****Lore de ${champ} ${title}****`,
         `
         **Se quiser saber as skill's**

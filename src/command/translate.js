@@ -1,5 +1,5 @@
 const translate = require("@vitalets/google-translate-api");
-const getEmbed = require("./getEmbed");
+const { getEmbed } = require("./getEmbed");
 module.exports = {
   name: "tra",
   description: "translate text for portuguese",
@@ -12,7 +12,7 @@ module.exports = {
     translate(`${text}`, { to: `${languageSearch}` })
       .then((res) => {
         message.channel.send(
-          getEmbed.getEmbed(
+          getEmbed(
             "Traduzi",
             `Isso
                      ${text}

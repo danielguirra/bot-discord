@@ -1,11 +1,11 @@
-const getEmbed = require("./getEmbed");
+const { getEmbed } = require("./getEmbed");
 
 module.exports = {
   name: "lan",
   description: "send a message on the channel about all translatable languages",
   execute(message) {
     message.channel.send(
-      getEmbed.getEmbed(
+      getEmbed(
         "Linguas Traduzíveis",
         `'af': 'Afrikaans',
             'sq': 'Albanian',

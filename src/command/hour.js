@@ -1,4 +1,4 @@
-const getEmbed = require("./getEmbed");
+const { getEmbed } = require("./getEmbed");
 
 module.exports = {
   name: "hora",
@@ -28,7 +28,7 @@ module.exports = {
     var str_data = dia + "/" + (mes + 1) + "/" + ano4;
     var str_hora = hora + ":" + min + ":" + seg;
     message.channel.send(
-      getEmbed.getEmbed(
+      getEmbed(
         "Hum no meu relógio são :",
         `Hoje é ${getNameWeek(dia_sem)}
        dia : ${str_data}

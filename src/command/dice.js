@@ -1,4 +1,4 @@
-const getEmbed = require("./getEmbed");
+const { getEmbed } = require("./getEmbed");
 
 module.exports = {
   name: "d",
@@ -10,13 +10,11 @@ module.exports = {
         var dado = Math.floor(Math.random() * args);
         dado + 1;
         message.reply(
-          getEmbed.getEmbed(`SORTEANDOOO`, `${member} seu número é : ${dado}`)
+          getEmbed(`SORTEANDOOO`, `${member} seu número é : ${dado}`)
         );
         message.react("🤞");
       } else {
-        message.reply(
-          getEmbed.getEmbed(`ERRO`, `Digite um valor maior ou igual a 2`)
-        );
+        message.reply(getEmbed(`ERRO`, `Digite um valor maior ou igual a 2`));
         message.react("❌");
       }
     }

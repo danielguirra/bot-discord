@@ -3,7 +3,7 @@ const fs = require("fs");
 
 const prefix = "*";
 
-const getEmbed = require("../command/getEmbed");
+const { getEmbed } = require("../command/getEmbed");
 
 global.bot.commands = new Discord.Collection();
 
@@ -30,7 +30,7 @@ global.bot.on("message", (message) => {
   } catch (error) {
     console.error(error);
     message.reply(
-      getEmbed.getEmbed(
+      getEmbed(
         "Verifique oque digitou",
         "Não é um comando válido digite *comandos"
       )

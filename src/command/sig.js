@@ -1,5 +1,5 @@
 const fetch = require("node-fetch");
-const getEmbed = require("./getEmbed");
+const { getEmbed } = require("./getEmbed");
 
 module.exports = {
   name: "sig",
@@ -13,7 +13,7 @@ module.exports = {
     const textoJson = JSON.stringify(json);
     const significado = JSON.parse(textoJson);
     message.channel.send(
-      getEmbed.getEmbed(
+      getEmbed(
         `Significado de ${text.toUpperCase()}`,
         ` ${significado[0]["class"]}
         ${significado[0]["meanings"][0]}

@@ -1,6 +1,6 @@
 const { roleemoji } = require("./on-embed-role-manager");
-const pensador = require("./pensadorday");
-const pensadorDayLove = require("./pensadorDayLove");
+const { getPensador } = require("./pensadorday");
+const { getPensadorLove } = require("./pensadorDayLove");
 const { dolday } = require("./dolday");
 const { getReiniciar } = require("./logreiniciador");
 global.bot.on("ready", () => {
@@ -16,8 +16,8 @@ global.bot.on("ready", () => {
     (role2 = "818235836206153768"),
     (rolere = "707012360367505480")
   );
-  pensador.getPensador();
+  getPensador();
   dolday();
   getReiniciar();
-  pensadorDayLove.getPensador();
+  getPensadorLove();
 });
