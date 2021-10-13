@@ -1,12 +1,7 @@
 {
-    "name": "bot-discord",
-    "description": "A bot that does server administration like banning, creating important tags with embed's, welcome message, league of legends status,pokedex, price of coins and much more.",
-    "repository": "https://github.com/danielguirra/bot-discord",
-    "logo": "https://images-ext-2.discordapp.net/external/IJ0PgKwjlyOKOK53FvR9pqS8kWUxmSgPbJ840Vqgz6Y/https/cdn.discordapp.com/avatars/811255307673010246/e62838ac7e74bd5879f19ad254b457e7.webp",
-    "keywords": [
-        "discord",
-        "discordjs",
-        "music",
-        "bot"
-    ]
+  "name": "bot-discord",
+  "description": "A bot that does server administration like banning, creating important tags with embed's, welcome message, league of legends status,pokedex, price of coins and much more.",
+  "repository": "https://github.com/danielguirra/bot-discord",
+  "logo": "https://images-ext-2.discordapp.net/external/IJ0PgKwjlyOKOK53FvR9pqS8kWUxmSgPbJ840Vqgz6Y/https/cdn.discordapp.com/avatars/811255307673010246/e62838ac7e74bd5879f19ad254b457e7.webp",
+  "keywords": ["discord", "discordjs", "music", "bot"]
 }

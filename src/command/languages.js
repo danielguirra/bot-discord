@@ -1,13 +1,13 @@
-const getEmbed = require("./getEmbed")
-
-
+const getEmbed = require("./getEmbed");
 
 module.exports = {
-    name: 'lan',
-    description: 'send a message on the channel about all translatable languages',
-    execute(message) {
-        message.channel.send(getEmbed.getEmbed('Linguas Traduzíveis',
-            `'af': 'Afrikaans',
+  name: "lan",
+  description: "send a message on the channel about all translatable languages",
+  execute(message) {
+    message.channel.send(
+      getEmbed.getEmbed(
+        "Linguas Traduzíveis",
+        `'af': 'Afrikaans',
             'sq': 'Albanian',
             'am': 'Amharic',
             'ar': 'Arabic',
@@ -112,6 +112,8 @@ module.exports = {
             'yi': 'Yiddish',
             'yo': 'Yoruba',
             'zu': 'Zulu'
-    `))
-    }
-}
+    `
+      )
+    );
+  },
+};

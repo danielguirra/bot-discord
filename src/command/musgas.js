@@ -1,8 +1,11 @@
 module.exports = {
-    name: 'musgas',
-    execute(message) {
-        let getEmbed = require("./getEmbed")
-        message.channel.send(getEmbed.getEmbed("Comandos do DJ CAPIVARA", `
+  name: "musgas",
+  execute(message) {
+    let getEmbed = require("./getEmbed");
+    message.channel.send(
+      getEmbed.getEmbed(
+        "Comandos do DJ CAPIVARA",
+        `
         *p + URL do Youtube ou nome da Música
         *fs/ Pula próxima música na fila
         *q/Mostra as música na fila
@@ -14,6 +17,8 @@ module.exports = {
         *resum/Resume a música
         *clear/Limpa a fila
         *s/Pesquisa no Youtube vc escolhe por emote
-        *vol/ ajusta o volume ` ))
-    }
-}
+        *vol/ ajusta o volume `
+      )
+    );
+  },
+};

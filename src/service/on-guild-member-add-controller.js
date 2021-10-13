@@ -1,7 +1,6 @@
+const getEmbed = require("../command/getEmbed");
 
-const getEmbed = require('../command/getEmbed')
-
-const canvas = require("../command/welcomeCanvas")
+const canvas = require("../command/welcomeCanvas");
 
 global.bot.on("guildMemberAdd", async (member) => {
   const channel = member.guild.channels.cache.find((channel) =>
@@ -10,11 +9,16 @@ global.bot.on("guildMemberAdd", async (member) => {
   const regras = member.guild.channels.cache.find((channel) =>
     channel.name.includes("regras")
   );
-  channel.send(await canvas.canvas(member))
+  channel.send(await canvas.canvas(member));
 
-  channel.send(await getEmbed.getEmbed(`${member.displayName}`, `
+  channel.send(
+    await getEmbed.getEmbed(
+      `${member.displayName}`,
+      `
   Por favor verificar nossas ${regras},
-  se precisar de ajuda digite '*ajuda em qualquer canal'`))
+  se precisar de ajuda digite '*ajuda em qualquer canal'`
+    )
+  );
   var role = member.guild.roles.cache.find(
     (role) => role.id === "707012360367505480"
   );

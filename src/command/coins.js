@@ -1,13 +1,13 @@
-const getEmbed = require("./getEmbed")
-
-
+const { getEmbed } = require("./getEmbed");
 
 module.exports = {
-    name: 'coins',
-    description: 'Tipos de moedas que podem ser convertidas no price.js',
-    execute(message) {
-        message.reply(getEmbed.getEmbed('Tipo de moedas',
-            `AED	Dirham dos Emirados Árabes Unidos
+  name: "coins",
+  description: "Tipos de moedas que podem ser convertidas no price.js",
+  execute(message) {
+    message.reply(
+      getEmbed(
+        "Tipo de moedas",
+        `AED	Dirham dos Emirados Árabes Unidos
         AFN	Afeganistão Afegane
         ALL	Albânia Lek
         AMD	Armênia Dram
@@ -145,6 +145,8 @@ module.exports = {
         ZAR	Rand da África do Sul
         ZWD	Zimbábue Dólar
 
-        `))
-    }
-}
+        `
+      )
+    );
+  },
+};

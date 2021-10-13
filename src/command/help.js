@@ -1,8 +1,8 @@
-const getEmbed = require('./getEmbed')
+const getEmbed = require("./getEmbed");
 
 module.exports = {
-  name: 'ajuda',
-  description: 'Help controller',
+  name: "ajuda",
+  description: "Help controller",
   execute(message) {
     let member = message.guild.member(message.author);
     let role = message.member.guild.roles.cache.find(
@@ -17,11 +17,15 @@ module.exports = {
     const bots = message.member.guild.channels.cache.find((channel) =>
       channel.name.includes("bots")
     );
-    message.reply(getEmbed.getEmbed(`Meu chamou?`,
-      `${member}
+    message.reply(
+      getEmbed.getEmbed(
+        `Meu chamou?`,
+        `${member}
     Se quiser saber como pegar seus cargos está aqui: ${cargo},
     Comandos para usar os Bots: ${bots}
-    Se nenhuma das opções ajudar entre em contato com um dos ${role} ou o ${roley} que irão te ajudar!`));
+    Se nenhuma das opções ajudar entre em contato com um dos ${role} ou o ${roley} que irão te ajudar!`
+      )
+    );
     message.react("🆘");
   },
-}
+};

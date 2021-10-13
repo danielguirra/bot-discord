@@ -1,13 +1,13 @@
-
-const getEmbed = require('./getEmbed')
+const { getEmbed } = require("./getEmbed");
 module.exports = {
-  name: 'comandos',
-  discription: 'list commands',
+  name: "comandos",
+  discription: "list commands",
   execute(message, args) {
-
     let member = message.guild.member(message.author);
-    message.reply(getEmbed.getEmbed(`Lista Comandos`,
-      `${member}
+    message.reply(
+      getEmbed(
+        `Lista Comandos`,
+        `${member}
         Comandos para usar o Bot: 
           *d/ Roda um dado com valor que digitar após o d
           *hora/ Mostra o horário do servidor
@@ -45,7 +45,8 @@ module.exports = {
           *fine @fulano/Mostra o @fulano no It's fine
           *lore @nomedochamp/Mostra a lore do champ
           *skill @nomedochamp/Mostra as skill's do champ
-       `));
-
-  }
-}
+       `
+      )
+    );
+  },
+};

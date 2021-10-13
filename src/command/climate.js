@@ -1,5 +1,5 @@
 
-const getEmbed = require("./getEmbed")
+const {getEmbed} = require("./getEmbed")
 const fetch = require('node-fetch');
 
 
@@ -17,7 +17,7 @@ module.exports = {
         const clima = JSON.parse(textoJson)
         const chuva = clima['results']['forecast']
 
-        message.channel.send(getEmbed.getEmbed(`Clima de **${strDefault.toUpperCase()}**`, `
+        message.channel.send(getEmbed(`Clima de **${strDefault.toUpperCase()}**`, `
                ☀ Temperatura Agora = °C ${clima['results']['temp']}
                     max : °C ${chuva[0]['max']}
                     min : °C ${chuva[0]['min']}
