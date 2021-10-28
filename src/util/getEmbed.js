@@ -10,7 +10,7 @@ const getEmbed = (
 ) => {
   if (!authorAvatarURL) {
     authorAvatarURL =
-      "https://cdn.discordapp.com/avatars/811255307673010246/e62838ac7e74bd5879f19ad254b457e7.png?size=2048";
+      "https://cdn.discordapp.com/avatars/811255307673010246/8f145d7279847a9a6e46efd5ee3df6bf.webp";
   }
   if (!nickname) {
     nickname = "Capivara do TI";

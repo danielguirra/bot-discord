@@ -26,7 +26,7 @@ let getReiniciar = () => {
   global.bot.channels.fetch("896032845699624971").then((channel) => {
     channel.send(
       getEmbed(
-        "***SERVIÇOS**",
+        "**SERVIÇOS**",
         `${getNameWeek(dia_sem)}
            dia : ${str_data}
            são : ${str_hora}`
