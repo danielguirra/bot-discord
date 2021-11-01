@@ -6,7 +6,9 @@ const getEmbed = (
   authorAvatarURL,
   nickname,
   thumbimage,
-  image
+  image,
+  color,
+  url
 ) => {
   if (!authorAvatarURL) {
     authorAvatarURL =
@@ -18,13 +20,17 @@ const getEmbed = (
   if (!thumbimage) {
     thumbimage = authorAvatarURL;
   }
+  if (!color) {
+    color = "#e69e19";
+  }
   let embed = new MessageEmbed()
-    .setColor("#e69e19")
+    .setColor(color)
     .setTitle(title)
     .setDescription(description)
     .setFooter(nickname, authorAvatarURL)
     .setThumbnail(thumbimage)
-    .setImage(image);
+    .setImage(image)
+    .setURL(url);
 
   return embed;
 };

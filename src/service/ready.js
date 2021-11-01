@@ -3,6 +3,7 @@ const { getPensador } = require("../util/pensadorday");
 const { getPensadorLove } = require("../util/pensadorDayLove");
 const { dolday } = require("../util/dolday");
 const { getReiniciar } = require("./logreiniciador");
+const { brave } = require("../util/braveday");
 global.bot.on("ready", () => {
   console.log("Online");
   global.bot.channels.fetch("862723926396370944").then((channel) => {
@@ -20,4 +21,5 @@ global.bot.on("ready", () => {
   dolday();
   getReiniciar();
   getPensadorLove();
+  brave();
 });
