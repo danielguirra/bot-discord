@@ -1,10 +1,10 @@
 let getPensadorLove = () => {
-  let pensador = require("pensador");
+  let { getFromAmor } = require("pensador");
   let gis = require("g-i-s");
-  let getEmbed = require("./getEmbed");
+  let { getEmbed } = require("./getEmbed");
   const { CronJob } = require("cron");
   new CronJob("00 00 12 * * *", () => {
-    pensador.getFromAmor().then((result) => {
+    getFromAmor().then((result) => {
       const textoJson = JSON.stringify(result);
       const frase = JSON.parse(textoJson);
       gis(frase["author"], logResults);
@@ -14,7 +14,7 @@ let getPensadorLove = () => {
         } else {
           global.bot.channels.fetch("892378800527126578").then((channel) => {
             channel.send(
-              getEmbed.getEmbed(
+              getEmbed(
                 `Frase de Amor`,
                 `${frase["message"]}`,
                 results[0].url,
