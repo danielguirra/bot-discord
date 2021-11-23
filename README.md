@@ -8,6 +8,8 @@
 
 A bot that does server administration like banning, creating important tags with embed's, welcome message and much more.
 
+## PLEASE FOR COMMITS FORK PROJECT
+
 ### Requirements
 
 For development, you will only need Node.js and a node global package, installed in your environement.
@@ -55,5 +57,3 @@ I used this version of NodeJS, I don't guarantee it will work on older versions
 ## License
 
 [MIT](https://choosealicense.com/licenses/mit/)
-
-## PLEASE FOR COMMITS FORK PROJECT
