@@ -1,36 +1,38 @@
 {
-  "name": "bot",
+  "name": "bot-discord-2.0",
   "version": "1.0.0",
   "description": "",
   "main": "server.js",
   "scripts": {
-    "dev": "nodemon server",
-    "prod": "node server"
+    "dev": "npx nodemon server.js"
   },
-  "author": "DanielGuirra",
-  "license": "MIT",
+  "keywords": [],
+  "engines": {
+    "node": "16.10.0"
+  },
+  "author": "",
+  "license": "ISC",
   "dependencies": {
+    "@discordjs/rest": "^0.1.0-canary.0",
     "@vitalets/google-translate-api": "^7.0.0",
+    "axios": "^0.21.4",
+    "bible-pt": "^1.2.0",
     "canvas": "^2.8.0",
     "cron": "^1.8.2",
-    "discord.js": "^12.5.3",
-    "dotenv": "^8.6.0",
-    "embed": "^0.0.1",
+    "discord-api-types": "^0.24.0",
+    "discord.js": "^13.3.1",
+    "dotenv": "^10.0.0",
     "express": "^4.17.1",
     "g-i-s": "^2.1.6",
     "jsdom": "^17.0.0",
     "latest-tweets": "^1.0.4",
+    "lerolero": "^0.1.0",
     "lol-discord": "^0.1.5",
-    "moment": "^2.29.1",
-    "moment-duration-format": "^2.3.2",
-    "node-fetch": "^2.6.1",
-    "nodemailer": "^6.6.3",
-    "nodemon": "^2.0.12",
-    "os": "^0.1.2",
+    "nodemailer": "^6.7.0",
+    "nodemon": "^2.0.13",
     "pensador": "^1.0.4",
     "pokemon.js": "^1.1.8",
     "python": "^0.0.4",
-    "request": "^2.88.2",
-    "systeminformation": "^5.8.0"
+    "request": "^2.88.2"
   }
 }

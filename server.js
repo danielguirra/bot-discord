@@ -1,8 +1,8 @@
 require("dotenv").config();
-require("./src/index");
+require("./index");
 const express = require("express");
 const app = express();
-const port = 10;
+const port = 20;
 app.get("/", (req, res) => res.send("Servidor online!"));
 
 app.listen(process.env.PORT || port, () =>
