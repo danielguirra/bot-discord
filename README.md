@@ -8,7 +8,7 @@
 
 A bot that does server administration like banning, creating important tags with embed's, welcome message and much more.
 
-## PLEASE FOR COMMITS FORK PROJECT
+## PLEASE FOR COMMITS FORK PROJEC
 
 ### Requirements
 
