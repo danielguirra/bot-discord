@@ -8,19 +8,18 @@ module.exports = {
     .setDescription("Frase de um pensador"),
   async execute(interaction) {
     getFromCollection().then((result) => {
-      let textoJSON = JSON.stringify(result);
-      let frase = JSON.parse(textoJSON);
-      gis(frase["author"], logResults);
+      console.log(result.author);
+      gis(result.author, logResults);
       async function logResults(err, results) {
         if (err) throw err;
         else {
-          return interaction.reply({
+          interaction.reply({
             embeds: [
               getEmbed(
-                `Frase de ${frase["author"]}`,
-                frase["message"],
+                `Frase de ${result.author}`,
+                result.message,
                 results[0].url,
-                frase["author"],
+                result.author,
                 results[0].url
               ),
             ],

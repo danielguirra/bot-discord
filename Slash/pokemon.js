@@ -18,10 +18,6 @@ module.exports = {
       type = type + ` ${res["data"]["type"][1]}`;
     }
     interaction.reply({
-      content: `${poke.toUpperCase()} foi selecionado carregandooo...`,
-      ephemeral: false,
-    });
-    interaction.channel.send({
       embeds: [
         getEmbed(
           `**${res["data"]["name"]}**`,
