@@ -1,5 +1,5 @@
 const translate = require("@vitalets/google-translate-api");
-const getEmbed = require("../util/getEmbed");
+const { getEmbed } = require("../util/getEmbed");
 const { default: axios } = require("axios");
 const { SlashCommandBuilder } = require("@discordjs/builders");
 module.exports = {
@@ -7,27 +7,38 @@ module.exports = {
     .setName("conselho")
     .setDescription("Conselho aletório"),
   async execute(interaction) {
-    let avatar = interaction.user.displayAvatarURL();
+    let avatar;
+    let nick;
+    if (interaction.type === "APPLICATION_COMMAND") {
+      avatar = interaction.user.avatarURL();
+      nick = interaction.user.tag;
+    } else {
+      avatar = interaction.author.avatarURL();
+      nick = interaction.author.tag;
+    }
     let url = `https://api.adviceslip.com/advice`;
-    let advice;
-    teste.return(
-      (advice = await axios.get(url).then(async (response) => {
-        let text = response["data"]["slip"]["advice"];
-        translate(`${text}`, { to: `pt` })
-          .then((res) => {
-            interaction.reply({
-              embeds: [
-                getEmbed.getEmbed(
-                  "Conselho",
-                  `${res.text}`,
-                  avatar,
-                  interaction.user.tag
-                ),
-              ],
-            });
-          })
-          .catch((err) => {});
-      }))
-    );
+    let response = await axios.get(url);
+    let json = response["data"];
+    let text = json["slip"]["advice"];
+    translate(`${text}`, { to: `pt` })
+      .then((res) => {
+        interaction.channel.send({
+          embeds: [
+            getEmbed(
+              "Conselho",
+              `${res.text}
+                      `,
+              avatar,
+              nick
+            ),
+          ],
+        });
+        if (interaction.type === "APPLICATION_COMMAND") {
+          interaction.reply({ content: "**Conselho usado**", ephemeral: true });
+        }
+      })
+      .catch((err) => {
+        console.error(err);
+      });
   },
 };
