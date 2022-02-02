@@ -19,7 +19,7 @@ CapituloDoDiaKingJames().then((f) => {
                 f.data,
                 JSON.stringify(vec.data),
                 "",
-                JSON.stringify(f.data),
+                f.data,
                 "",
                 "",
                 "",
