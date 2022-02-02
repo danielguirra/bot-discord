@@ -6,6 +6,7 @@ const { sendLove } = require("./sendLove");
 const { sendday } = require("./sendday");
 const { dolday } = require("./senddol");
 const { sendClimate } = require("./sendclimate");
+const { usr } = require("./bibleDayDm");
 
 client.on("ready", async () => {
   let guildID = await client.guilds.fetch(process.env.GUILD);

@@ -3,7 +3,6 @@ const { getClima } = require("./climateDay");
 
 async function sendClimate(channel) {
   let clima = await getClima();
-  console.log(clima);
   channel.send({
     embeds: [
       getEmbed(

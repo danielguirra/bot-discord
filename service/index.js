@@ -3,3 +3,4 @@ require("./interactioncreate");
 require("./messagecreate");
 require("./on");
 require("./rolesadd");
+require("./bibleDayDm");
