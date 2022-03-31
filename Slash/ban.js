@@ -1,4 +1,4 @@
-const { getEmbed } = require("../util/getEmbed");
+const getEmbed = require("../util/getEmbed");
 const { SlashCommandBuilder } = require("@discordjs/builders");
 
 module.exports = {
@@ -17,7 +17,7 @@ module.exports = {
         .then(() => {
           interaction.reply({
             embeds: [
-              getEmbed(
+              getEmbed.getEmbed(
                 `${user.username}Banido`,
                 `Por ${interaction.author.tag}`,
                 interaction.displayAvatarURL(),
@@ -30,12 +30,12 @@ module.exports = {
         })
         .catch((err) => {
           interaction.reply({
-            embeds: [getEmbed(`Erro`, `Não posso banir`)],
+            embeds: [getEmbed.getEmbed(`Erro`, `Não posso banir`)],
           });
         });
     } else {
       interaction.reply({
-        embeds: [getEmbed(`Erro`, `Ele tem que estar no servidor`)],
+        embeds: [getEmbed.getEmbed(`Erro`, `Ele tem que estar no servidor`)],
       });
     }
   },

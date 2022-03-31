@@ -30,7 +30,8 @@ const getEmbed = (
     .setFooter(nickname, authorAvatarURL)
     .setThumbnail(thumbimage)
     .setImage(image)
-    .setURL(url);
+    .setURL(url)
+
 
   return embed;
 };

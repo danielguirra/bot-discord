@@ -17,6 +17,10 @@ module.exports = {
     if (res["data"]["type"][1]) {
       type = type + ` ${res["data"]["type"][1]}`;
     }
+    // interaction.reply({
+    //   content: `${poke.toUpperCase()} foi selecionado carregandooo...`,
+    //   ephemeral: true,
+    // });
     interaction.reply({
       embeds: [
         getEmbed(

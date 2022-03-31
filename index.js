@@ -13,7 +13,6 @@ const commandFiles = fs
 for (const file of commandFiles) {
   const command = require(`./Slash/${file}`);
   client.commands.set(command.data.name, command);
-  console.log(`Command slash load ${file.toUpperCase()}`);
 }
 const commandFiles2 = fs
   .readdirSync("./command")
@@ -23,7 +22,6 @@ for (const file of commandFiles2) {
   const command = require(`./command/${file}`);
   client.commands.set(command.name, command);
   client.commands.set(command.aliases, command);
-  console.log(`Command message load ${file.toUpperCase()}`);
 }
 require("./service/index");
 require("./client");

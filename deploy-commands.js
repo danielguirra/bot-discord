@@ -20,3 +20,4 @@ rest
   .put(Routes.applicationGuildCommands(clientId, guildId), { body: commands })
   .then(() => console.log("É O REGISTRAS"))
   .catch(console.error);
+

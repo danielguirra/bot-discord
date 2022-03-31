@@ -2,13 +2,11 @@
 
 [![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/danielguirra/bot-discord/)
 
-[Deploy replit](https://repl.it/github/DanielGuirra/bot-discord-2.0)
+[Deploy replit](https://github.com/danielguirra/bot-discord-2.0)
 
 ## Summary
 
 A bot that does server administration like banning, creating important tags with embed's, welcome message and much more.
-
-## PLEASE FOR COMMITS FORK PROJEC
 
 ### Requirements
 
@@ -39,10 +37,10 @@ NodeJS
 I used this version of NodeJS, I don't guarantee it will work on older versions
 
     $ node --version
-    16.10.0
+    v14.17.0
 
     $ npm --version
-    v7.6.2
+    v6.14.13
 
 ## Install
 
