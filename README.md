@@ -2,7 +2,7 @@
 
 [![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/danielguirra/bot-discord/)
 
-[Deploy replit](https://github.com/danielguirra/bot-discord-2.0)
+[Deploy replit](https://github.com/danielguirra/bot-discord)
 
 ## Summary
 
