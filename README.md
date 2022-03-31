@@ -1,7 +1,7 @@
 # BOT-DISCORD
 
 [![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/danielguirra/bot-discord/)
-<img src="https://i.pinimg.com/originals/9d/6d/be/9d6dbe00f60b0449344024bc57e3e3b8.png" height="50" href='https://replit.com/github/danielguirra/bot-discord'>
+<img src="https://i.pinimg.com/originals/9d/6d/be/9d6dbe00f60b0449344024bc57e3e3b8.png" height="50" href='https://replit.com/github/danielguirra/bot-discord'/>
 
 ## Summary
 
