@@ -1,8 +1,7 @@
 # BOT-DISCORD
 
 [![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/danielguirra/bot-discord/)
-
-[![Deploy replit](https://i.pinimg.com/originals/9d/6d/be/9d6dbe00f60b0449344024bc57e3e3b8.png)](https://github.com/danielguirra/bot-discord)
+<img src="https://i.pinimg.com/originals/9d/6d/be/9d6dbe00f60b0449344024bc57e3e3b8.png" height="50" href='https://replit.com/github/danielguirra/bot-discord'>
 
 ## Summary
 
@@ -37,10 +36,10 @@ NodeJS
 I used this version of NodeJS, I don't guarantee it will work on older versions
 
     $ node --version
-    v14.17.0
+    v16.14.2
 
     $ npm --version
-    v6.14.13
+    v8.5.5s
 
 ## Install
 
