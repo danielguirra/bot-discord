@@ -9,8 +9,10 @@ async function sendClimate(channel, city) {
   if (city === "ribeirao") {
     url = "https://pt.wttr.in/ribeir%C3%A3o%20preto%20brasil?format=j1";
   }
-  if (!city) city = "franca";
-  let teste = axios.get(url).then((clim) => {
+  if (!city) return "Erro sendClimateCurrentTime " + " Cidade? 🤔" + city;
+  if (city === "*climadodia")
+    return "Erro sendClimateCurrentTime " + " Cidade? 🤔";
+  return axios.get(url).then((clim) => {
     try {
       let climatePorHora = [];
       let weather = clim.data.weather[0].hourly;
@@ -51,7 +53,7 @@ async function sendClimate(channel, city) {
         temperaturaMediaC: clim.data.weather[0].avgtempC,
         porHora: climatePorHora,
       };
-      channel.send({
+      return {
         embeds: [
           getEmbed(
             `Clima de ${city} Hoje`,
@@ -130,7 +132,7 @@ async function sendClimate(channel, city) {
             ""
           ),
         ],
-      });
+      };
     } catch (err) {
       console.log(err);
     }
@@ -141,9 +143,9 @@ async function sendClimateCurrentTime(channel, city) {
   if (city === "ribeirao") {
     url = "https://pt.wttr.in/ribeir%C3%A3o%20preto%20brasil?format=j1";
   }
-  if (!city) return channel.send("Erro sendClimateCurrentTime");
-
-  let teste = axios.get(url).then((clim) => {
+  if (!city) return "Erro sendClimateCurrentTime " + " Cidade? 🤔" + city;
+  if (city === "*clima") return "Erro sendClimateCurrentTime " + " Cidade? 🤔";
+  return axios.get(url).then((clim) => {
     try {
       let weather = clim.data.current_condition[0];
 
@@ -159,7 +161,7 @@ async function sendClimateCurrentTime(channel, city) {
         text: weather.lang_pt[0].value,
         heatIndex: heatString.slice(0, 4),
       };
-      channel.send({
+      return {
         embeds: [
           getEmbed(
             `Clima de ${city} agora`,
@@ -170,7 +172,7 @@ async function sendClimateCurrentTime(channel, city) {
         `
           ),
         ],
-      });
+      };
     } catch (err) {
       console.log(err);
     }

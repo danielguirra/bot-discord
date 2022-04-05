@@ -12,13 +12,20 @@ module.exports = {
         .setDescription("O avatar do usuário para mostrar")
     ),
   async execute(interaction) {
-    const user = interaction.options.getUser("target");
+    let user;
+    let avatar;
+    if (interaction.type === "DEFAULT") {
+      avatar = interaction.author.displayAvatarURL();
+      user = interaction.mentions.users.first();
+    } else {
+      avatar = interaction.user.displayAvatarURL();
+      user = interaction.options.getUser("target");
+    }
+
     if (user)
       return interaction.reply(
-        `${user.username}'s avatar: ${user.displayAvatarURL({ dynamic: true })}`
+        `${user.username} avatar: ${user.displayAvatarURL({ dynamic: true })}`
       );
-    return interaction.reply(
-      `Seu avatar ${interaction.user.displayAvatarURL({ dynamic: true })}`
-    );
+    return interaction.reply(`Seu avatar: ${avatar}`);
   },
 };

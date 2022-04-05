@@ -8,8 +8,11 @@ module.exports = {
     .setDescription("Frase de um pensador"),
   async execute(interaction) {
     getFromCollection().then((result) => {
-          interaction.reply(`Frase de ${result.author} 
+      if (result["message"] === undefined || result["author"] === undefined)
+        return interaction.reply("Sem frase hoje");
+      interaction.reply(`Frase de ${result[author]} 
           
-          ${result.message}`)});
+          ${result[message]}`);
+    });
   },
 };

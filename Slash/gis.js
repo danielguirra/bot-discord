@@ -9,7 +9,12 @@ module.exports = {
       option.setName("input").setDescription("Digite algo")
     ),
   async execute(interaction) {
-    const string = interaction.options.getString("input");
+    let string;
+    if (interaction.type === "DEFAULT") {
+      string = interaction.content.replace("*image ", "");
+    } else {
+      string = interaction.options.getString("input");
+    }
     gis(string, logResults);
     async function logResults(error, results) {
       if (error) {

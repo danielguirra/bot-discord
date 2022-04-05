@@ -9,7 +9,16 @@ module.exports = {
       option.setName("int").setDescription("valor a ser sorteado")
     ),
   async execute(interaction) {
-    const num = interaction.options.getInteger("int");
+    let num;
+    let user;
+    if (interaction.type === "DEFAULT") {
+      num = interaction.content.replace("*sorteio ", "");
+      user = interaction.author;
+    } else {
+      num = interaction.options.getInteger("int");
+      user = interaction.user;
+    }
+
     if (num >= 2) {
       let dado = Math.floor(Math.random() * num);
       dado + 1;
@@ -17,7 +26,7 @@ module.exports = {
         embeds: [
           getEmbed(
             `SORTEANDOOO`,
-            `${interaction.user.tag} vc escolheu o valor **${num}**
+            `${user} vc escolheu o valor **${num}**
             ------------------------------
             seu número é :🎲 **${dado}**  🎲`
           ),

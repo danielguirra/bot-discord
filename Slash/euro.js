@@ -6,22 +6,24 @@ module.exports = {
     .setName("euro")
     .setDescription("Preço do euro"),
   async execute(interaction) {
-    let res = await axios.get(
-      "https://economia.awesomeapi.com.br/last/EUR-BRL"
-    );
-    interaction.reply({
-      embeds: [
-        getEmbed(
-          res["data"]["EURBRL"]["name"],
-          `  Até o momento
-            *ALTA*:**${res["data"]["EURBRL"]["high"]}**
+    axios.get("https://economia.awesomeapi.com.br/last/EUR-BRL").then((res) => {
+      if (res) {
+        const euro = res.data["EUR"];
+        interaction.reply({
+          embeds: [
+            getEmbed(
+              euro.name,
+              `  Até o momento
+            *ALTA*:**${euro.high}💶**
             -----------------
-            *BAIXA*:**${res["data"]["EURBRL"]["low"]}**
+            *BAIXA*:**${euro.low}💶**
             -----------------
-            *MÉDIA*:**${res["data"]["EURBRL"]["ask"]}**
+            *MÉDIA*:**${euro.ask}💶**
       `
-        ),
-      ],
+            ),
+          ],
+        });
+      }
     });
   },
 };

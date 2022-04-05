@@ -4,11 +4,12 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev": "nodemon server.js"
+    "dev": "nodemon server.js",
+    "start": "node index.js"
   },
   "keywords": [],
   "engines": {
-    "node": "16.10.0"
+    "node": "16.14.2"
   },
   "author": "",
   "license": "ISC",

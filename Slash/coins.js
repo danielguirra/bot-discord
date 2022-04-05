@@ -3,14 +3,20 @@ const { getEmbed } = require("../util/getEmbed");
 
 module.exports = {
   data: new SlashCommandBuilder()
-    .setName("coins")
+    .setName("moedas")
     .setDescription("lista de moedas"),
   async execute(interaction) {
+    let tag;
+    if (interaction.type === "DEFAULT") {
+      tag = interaction.author;
+    } else {
+      tag = interaction.user;
+    }
     interaction.reply({
       embeds: [
         getEmbed(
           `Lista de moedas`,
-          `${interaction.user.tag}
+          `${tag}
         AED	Dirham dos Emirados Árabes Unidos
         AFN	Afeganistão Afegane
         ALL	Albânia Lek

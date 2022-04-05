@@ -1,3 +1,8 @@
+/**
+ *
+ * @returns Clima em imagem desativado por crash em servidor fraco
+ */
+
 async function getClima() {
   const Canvas = require("canvas");
   const { MessageAttachment } = require("discord.js");

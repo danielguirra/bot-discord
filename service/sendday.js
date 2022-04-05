@@ -2,6 +2,7 @@ const { getEmbed } = require("../util/getEmbed");
 const gis = require("g-i-s");
 
 function sendday(embed, love) {
+  if (embed === "bug") return console.log(embed);
   gis(embed["author"], logResults);
   async function logResults(error, results) {
     if (error) {

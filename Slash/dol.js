@@ -6,22 +6,24 @@ module.exports = {
     .setName("dolar")
     .setDescription("Preço do dolar"),
   async execute(interaction) {
-    let res = await axios.get(
-      "https://economia.awesomeapi.com.br/last/USD-BRL"
-    );
-    interaction.reply({
-      embeds: [
-        getEmbed(
-          res["data"]["USDBRL"]["name"],
-          `  Até o momento
-            *ALTA*:**${res["data"]["USDBRL"]["high"]}**
+    axios.get("https://economia.awesomeapi.com.br/last/USD-BRL").then((res) => {
+      if (res) {
+        let dolar = res["data"]["USD"];
+        interaction.reply({
+          embeds: [
+            getEmbed(
+              dolar.name,
+              `  Até o momento
+            *ALTA*:**${dolar.high}💵**
             -----------------
-            *BAIXA*:**${res["data"]["USDBRL"]["low"]}**
+            *BAIXA*:**${dolar.low}💵**
             -----------------
-            *MÉDIA*:**${res["data"]["USDBRL"]["ask"]}**
+            *MÉDIA*:**${dolar.ask}💵**
       `
-        ),
-      ],
+            ),
+          ],
+        });
+      }
     });
   },
 };

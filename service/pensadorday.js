@@ -1,15 +1,11 @@
 const { getFromCollection } = require("pensador");
-let colecao = async () => {
-  let amor = getFromCollection().then((result) => {
-    const textoJson = JSON.stringify(result);
-    const frase = JSON.parse(textoJson);
-    let amor = {
-      message: frase["message"],
-      author: frase["author"],
-    };
-    return amor;
-  });
-  return amor;
-};
+let colecao;
+getFromCollection().then((result) => {
+  if (result["message"] === undefined || result["author"] === undefined) {
+    colecao = "bug";
+    return;
+  }
+  colecao = result;
+});
 
 module.exports = { colecao };
