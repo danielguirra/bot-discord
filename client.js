@@ -10,4 +10,5 @@ const client = new Client({
   ],
   partials: ["MESSAGE", "CHANNEL", "REACTION"],
 });
-module.exports = { client };
+
+exports.client = client;
