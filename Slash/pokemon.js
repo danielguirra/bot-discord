@@ -9,23 +9,31 @@ module.exports = {
       option.setName("input").setDescription("Digite o nome do pokemon")
     ),
   async execute(interaction) {
-    let poke = interaction.options.getString("input");
-    let res = await axios.get(
-      `https://pokemonapi.danielguirra.repl.co/pokemon/${poke}`
-    );
-    let type = res["data"]["type"][0];
-    if (res["data"]["type"][1]) {
-      type = type + ` ${res["data"]["type"][1]}`;
+    let poke;
+    if (interaction.type === "DEFAULT") {
+      poke = interaction.content.replace("*poke ", "");
+    } else {
+      poke = interaction.options.getString("input");
     }
-    // interaction.reply({
-    //   content: `${poke.toUpperCase()} foi selecionado carregandooo...`,
-    //   ephemeral: true,
-    // });
-    interaction.reply({
-      embeds: [
-        getEmbed(
-          `**${res["data"]["name"]}**`,
-          ` Tipo:**${type.toUpperCase()}**
+
+    try {
+      axios
+        .get(`https://pokemonapi.danielguirra.repl.co/pokemon/${poke}`)
+        .then((res) => {
+          if (res) {
+            let type = res["data"]["type"][0];
+            if (res["data"]["type"][1]) {
+              type = type + ` ${res["data"]["type"][1]}`;
+            }
+            // interaction.reply({
+            //   content: `${poke.toUpperCase()} foi selecionado carregandooo...`,
+            //   ephemeral: true,
+            // });
+            interaction.reply({
+              embeds: [
+                getEmbed(
+                  `**${res["data"]["name"]}**`,
+                  ` Tipo:**${type.toUpperCase()}**
             Porcentagem de genero :
             Machos: ${res["data"]["gender_rate"]["male"]} %
             Femeas: ${res["data"]["gender_rate"]["female"]} %
@@ -50,13 +58,18 @@ module.exports = {
 
             Forma shiny
       `,
-          res["data"]["sprite"]["sprite_normal"],
-          res["data"]["name"],
-          res["data"]["sprite"]["sprite_normal"],
-          res["data"]["sprite"]["sprite_shiny"],
-          "#f00000"
-        ),
-      ],
-    });
+                  res["data"]["sprite"]["sprite_normal"],
+                  res["data"]["name"],
+                  res["data"]["sprite"]["sprite_normal"],
+                  res["data"]["sprite"]["sprite_shiny"],
+                  "#f00000"
+                ),
+              ],
+            });
+          }
+        });
+    } catch (error) {
+      return interaction.reply(error);
+    }
   },
 };

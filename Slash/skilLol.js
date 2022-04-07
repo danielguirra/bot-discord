@@ -10,7 +10,12 @@ module.exports = {
       options.setName("champ").setDescription("Um valor")
     ),
   async execute(interaction) {
-    let champ = interaction.options.getString("champ");
+    let champ;
+    if (interaction.type === "DEFAULT") {
+      champ = interaction.content.replace("*skill ", "");
+    } else {
+      champ = interaction.options.getString("champ");
+    }
     let names = require("./util/nameslol.json");
     let x = names[champ]; //Alguns champs possuem nome diferentes foi criado um JSON para isso
 
@@ -57,7 +62,7 @@ module.exports = {
     let champR = teste["data"][`${champ}`]["spells"][3]["description"];
     let nameR = teste["data"][`${champ}`]["spells"][3]["name"];
 
-    interaction.channel.send({
+    interaction.reply({
       embeds: [
         getEmbed(
           `**PASSIVA** do ${champ}`,

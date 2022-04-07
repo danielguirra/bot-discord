@@ -10,7 +10,13 @@ module.exports = {
       options.setName("champ").setDescription("Um valor")
     ),
   async execute(interaction) {
-    let champ = interaction.options.getString("champ");
+    let champ;
+    if (interaction.type === "DEFAULT") {
+      champ = interaction.content.replace("*lore ", "");
+    } else {
+      champ = interaction.options.getString("champ");
+    }
+
     let name = require("./util/nameslol.json");
     let roles = require("./util/champRole.json");
     let x = name[champ];
@@ -63,7 +69,7 @@ module.exports = {
     fraqueza = fraqueza.substring(1);
     fraqueza = fraqueza.replace(/.$/, "");
 
-    interaction.channel.send({
+    interaction.reply({
       embeds: [
         getEmbed(
           `****Lore de ${champ} ${title}****`,

@@ -2,7 +2,7 @@ const { getEmbed } = require("../util/getEmbed");
 const { client } = require("../client");
 
 client.on("guildMemberAdd", async (member) => {
-  let rolere = "707012360367505480";
+  let rolecapivara = process.env.ROLECAPIVARA;
   const bem = member.guild.channels.cache.find((channel) =>
     channel.name.includes("bem-vindo")
   );
@@ -13,7 +13,7 @@ client.on("guildMemberAdd", async (member) => {
     channel.name.includes("cargos")
   );
 
-  member.roles.add(rolere);
+  member.roles.add(rolecapivara);
 
   bem.send({
     embeds: [

@@ -12,7 +12,13 @@ module.exports = {
       option.setName("target").setDescription("o cidadão")
     ),
   async execute(interaction) {
-    const user = interaction.options.getUser("target");
+    let user;
+    if (interaction.type === "DEFAULT") {
+      user = interaction.mentions.users.first();
+    } else {
+      user = interaction.options.getUser("target");
+    }
+
     async function canvas() {
       const canvas = Canvas.createCanvas(720, 681);
       const context = canvas.getContext("2d");

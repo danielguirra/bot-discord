@@ -10,9 +10,11 @@ module.exports = {
     getFromCollection().then((result) => {
       if (result["message"] === undefined || result["author"] === undefined)
         return interaction.reply("Sem frase hoje");
-      interaction.reply(`Frase de ${result[author]} 
-          
-          ${result[message]}`);
+      interaction.reply({
+        embeds: [
+          getEmbed(`Frase de ${result["author"]} `, ` ${result["message"]}`),
+        ],
+      });
     });
   },
 };

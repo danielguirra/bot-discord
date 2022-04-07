@@ -8,6 +8,9 @@ module.exports = {
     .setDescription("Frase de motivação"),
   async execute(interaction) {
     getFromMotivacionais().then((result) => {
+      if (result["message"] === undefined || result["author"] === undefined) {
+        return interaction.reply("Sem frase hoje");
+      }
       let textoJSON = JSON.stringify(result);
       let frase = JSON.parse(textoJSON);
       gis(frase["author"], logResults);

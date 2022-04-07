@@ -19,7 +19,7 @@ module.exports = {
     getEmbed;
     const $ = cheerio.load(response.data.toString("binary"));
     const text = $("p[class=piada]").text();
-    interaction.channel.send({
+    interaction.reply({
       embeds: [
         getEmbed(
           "Piada-curtas",

@@ -24,7 +24,9 @@ module.exports = {
                   result["message"],
                   results[0].url,
                   result["author"],
-                  results[0].url
+                  results[0].url,
+                  results[0].url,
+                  "#FF6091"
                 ),
               ],
             });

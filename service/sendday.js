@@ -1,25 +1,34 @@
 const { getEmbed } = require("../util/getEmbed");
 const gis = require("g-i-s");
+const { getFromCollection } = require("pensador");
 
-function sendday(embed, love) {
-  if (embed === "bug") return console.log(embed);
-  gis(embed["author"], logResults);
-  async function logResults(error, results) {
-    if (error) {
-      console.log(error);
-    } else {
-      love.send({
-        embeds: [
-          getEmbed(
-            embed["author"],
-            embed["message"],
-            results[0].url,
-            embed["author"],
-            results[0].url
-          ),
-        ],
-      });
-    }
+function sendday(senddayChannel) {
+  try {
+    getFromCollection().then((result) => {
+      if (!result) return console.log("Erro sendDay");
+      gis(result["author"], logResults);
+      async function logResults(error, results) {
+        if (error) {
+          console.log(error);
+        } else {
+          senddayChannel.send({
+            embeds: [
+              getEmbed(
+                result["author"],
+                result["message"],
+                results[0].url,
+                result["author"],
+                results[0].url,
+                results[0].url,
+                "#61208F"
+              ),
+            ],
+          });
+        }
+      }
+    });
+  } catch (error) {
+    console.log("Erro send day " + error);
   }
 }
 exports.sendday = sendday;
