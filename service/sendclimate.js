@@ -1,7 +1,5 @@
 const { getEmbed } = require("../util/getEmbed");
-const { getClima } = require("./climateDay");
 const { default: axios } = require("axios");
-const fs = require("fs");
 let climate;
 
 async function sendClimate(channel, city) {
