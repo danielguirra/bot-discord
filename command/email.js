@@ -4,7 +4,6 @@ let { getEmbed } = require("../util/getEmbed");
 module.exports = {
   name: "email",
   execute(message) {
-    console.log(password);
     let transporter = nodemailer.createTransport({
       service: "gmail",
       auth: {

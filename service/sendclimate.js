@@ -153,7 +153,6 @@ async function sendClimateCurrentTime(channel, city) {
       );
       let heatString = `${heatIndex}`;
       let { str_hora } = hourNow();
-      console.log(str_hora);
       let climate = {
         temp_C: weather.temp_C,
         humidity: weather.humidity,
