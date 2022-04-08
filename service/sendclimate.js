@@ -152,17 +152,19 @@ async function sendClimateCurrentTime(channel, city) {
         weather.windspeedKmph
       );
       let heatString = `${heatIndex}`;
-
+      let { str_hora } = hourNow();
+      console.log(str_hora);
       let climate = {
         temp_C: weather.temp_C,
         humidity: weather.humidity,
         text: weather.lang_pt[0].value,
         heatIndex: heatString.slice(0, 4),
+        str_hora,
       };
       return {
         embeds: [
           getEmbed(
-            `Clima de ${city} agora`,
+            `Clima de ${city} agora ${str_hora}`,
             ` A temperatura está em :**${climate.temp_C}Cº**
           Humidade em **${climate.humidity}%**
           **${climate.text}**
@@ -184,4 +186,31 @@ function heatIndexCalculator(tempC, velWindKm) {
   return (
     33 + ((10 * Math.sqrt(velWindKm) + 10.45 - velWindKm) * (tempC - 33)) / 22
   );
+}
+
+function hourNow() {
+  var data = new Date();
+  var dia = data.getDate(); // 1-31
+  var dia_sem = data.getDay(); // 0-6 (zero=domingo)
+  var mes = data.getMonth(); // 0-11 (zero=janeiro)
+  var ano4 = data.getFullYear(); // 4 dígitos
+  var hora = data.getHours(); // 0-23
+  hora = hora - process.env.HORA || hora + 0;
+  var min = data.getMinutes(); // 0-59
+  var seg = data.getSeconds(); // 0-59
+  const getNameWeek = (x) => {
+    return [
+      "Domingo",
+      "Segunda-Feira",
+      "Terça-Feira",
+      "Quarta-Feira",
+      "Quinta-Feira",
+      "Sexta-Feira",
+      "Sábado",
+    ][x];
+  };
+  // Formata a data e a hora (note o mês + 1)
+  var str_data = dia + "/" + (mes + 1) + "/" + ano4;
+  var str_hora = hora + ":" + min + ":" + seg;
+  return { getNameWeek, dia_sem, str_data, str_hora };
 }
