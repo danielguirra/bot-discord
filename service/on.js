@@ -1,7 +1,6 @@
 const { client } = require("../client");
 const { dayNews } = require("./dayNews");
 const { CronJob } = require("cron");
-const { default: axios } = require("axios");
 const { dateLastItsTrue } = require("./dateLastItsTrue");
 
 const token = process.env.BOTTOKEN;
@@ -21,11 +20,11 @@ client
       lastMessageChannelClimate
     );
     if (dateLastMessageChannelClimateObjc) {
+      dayNews(channellove, channeldia, channeldolar, channelClimate);
+    } else {
       new CronJob("00 00 11 * * *", () => {
         dayNews(channellove, channeldia, channeldolar, channelClimate);
       }).start();
-    } else {
-      dayNews(channellove, channeldia, channeldolar, channelClimate);
     }
   })
   .login(token);

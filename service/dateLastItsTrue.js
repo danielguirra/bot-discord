@@ -1,5 +1,3 @@
-const { default: axios } = require("axios");
-
 function dateLastItsTrue(lastMessageChannelClimate) {
   let dateLastMessageChannelClimate = new Date(
     lastMessageChannelClimate.createdTimestamp
@@ -19,9 +17,9 @@ function dateLastItsTrue(lastMessageChannelClimate) {
     dateLastMessageChannelClimateObjc.day < dateFromNow.day &&
     dateLastMessageChannelClimateObjc.month < dateFromNow.mouth
   ) {
-    return false;
-  } else {
     return true;
+  } else {
+    return false;
   }
 }
 exports.dateLastItsTrue = dateLastItsTrue;
