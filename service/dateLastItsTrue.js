@@ -1,21 +1,23 @@
 function dateLastItsTrue(lastMessageChannelClimate) {
-  let dateLastMessageChannelClimate = new Date(
+  const dateLastMessageChannelClimate = new Date(
     lastMessageChannelClimate.createdTimestamp
   );
-  let dateLastMessageChannelClimateObjc = {
+  const dateLastMessageChannelClimateObjc = {
     month: dateLastMessageChannelClimate.getMonth() + 1,
     day: dateLastMessageChannelClimate.getDate(),
+    hour: dateLastMessageChannelClimate.getHours(),
     timestamp: lastMessageChannelClimate.createdTimestamp,
   };
-
-  let date = new Date();
-  let dateFromNow = {
-    mouth: date.getMonth() + 1,
+  const date = new Date();
+  const dateFromNow = {
+    month: date.getMonth() + 1,
     day: date.getDate(),
+    hour: date.getHours(),
   };
   if (
     dateLastMessageChannelClimateObjc.day < dateFromNow.day &&
-    dateLastMessageChannelClimateObjc.month < dateFromNow.mouth
+    dateLastMessageChannelClimateObjc.month < dateFromNow.month &&
+    dateLastMessageChannelClimateObjc.hour < dateFromNow.hour
   ) {
     return true;
   } else {

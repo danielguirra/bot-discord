@@ -21,7 +21,9 @@ client
     );
     if (dateLastMessageChannelClimateObjc) {
       dayNews(channellove, channeldia, channeldolar, channelClimate);
+      console.log("Send Climate noDaily");
     } else {
+      console.log("Send Climate daily");
       new CronJob("00 00 11 * * *", () => {
         dayNews(channellove, channeldia, channeldolar, channelClimate);
       }).start();
