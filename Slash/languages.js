@@ -1,10 +1,12 @@
 const { getEmbed } = require("../util/getEmbed");
+const { SlashCommandBuilder } = require("@discordjs/builders");
 
 module.exports = {
-  name: "lan",
-  description: "send a message on the channel about all translatable languages",
-  execute(message) {
-    message.channel.send({
+  data: new SlashCommandBuilder()
+    .setName("lan")
+    .setDescription("envia uma lista das linguagens traduziveis"),
+  async execute(interaction) {
+    interaction.reply({
       embeds: [
         getEmbed(
           "Linguas Traduzíveis",

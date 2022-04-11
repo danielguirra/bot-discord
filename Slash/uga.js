@@ -6,7 +6,7 @@ registerFont("./Slash/fonts/comic.ttf", { family: "Comic" });
 
 module.exports = {
   data: new SlashCommandBuilder()
-    .setName("ugabungaovo")
+    .setName("ovo")
     .setDescription("ovo texto")
     .addStringOption((option) =>
       option.setName("string").setDescription("texto ovo")
