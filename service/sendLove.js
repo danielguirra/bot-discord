@@ -12,19 +12,23 @@ async function sendLove(loveChannel) {
       async function logResults(err, results) {
         if (err) throw console.log(err);
         else {
-          return loveChannel.send({
-            embeds: [
-              getEmbed(
-                "Frase de amor",
-                result["message"],
-                results[0].url,
-                result["author"],
-                results[0].url,
-                results[0].url,
-                "#FF6091"
-              ),
-            ],
-          });
+          try {
+            return loveChannel.send({
+              embeds: [
+                getEmbed(
+                  "Frase de amor",
+                  result["message"],
+                  results[0].url,
+                  result["author"],
+                  results[0].url,
+                  results[0].url,
+                  "#FF6091"
+                ),
+              ],
+            });
+          } catch (error) {
+            return console.log("Erro \n" + results);
+          }
         }
       }
     });

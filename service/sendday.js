@@ -11,19 +11,23 @@ function sendday(senddayChannel) {
         if (error) {
           console.log(error);
         } else {
-          senddayChannel.send({
-            embeds: [
-              getEmbed(
-                result["author"],
-                result["message"],
-                results[0].url,
-                result["author"],
-                results[0].url,
-                results[0].url,
-                "#61208F"
-              ),
-            ],
-          });
+          try {
+            return senddayChannel.send({
+              embeds: [
+                getEmbed(
+                  result["author"],
+                  result["message"],
+                  results[0].url,
+                  result["author"],
+                  results[0].url,
+                  results[0].url,
+                  "#61208F"
+                ),
+              ],
+            });
+          } catch (error) {
+            console.log("Erro \n" + results);
+          }
         }
       }
     });
